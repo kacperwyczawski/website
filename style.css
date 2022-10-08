@@ -1,6 +1,6 @@
 body {
-    width: 800px;
-    margin: auto;
+    width: 600px;
+    margin: 0px auto 100px;
     color: #3c3836;
     background: #f9f7d7;
     font-family: "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -15,6 +15,10 @@ a {
 a:hover {
     color: #076678;
     font-weight: bold;
+}
+
+em {
+    color: #7c6f64;
 }
 
 /* colors: */
