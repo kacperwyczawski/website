@@ -1,0 +1,83 @@
+body {
+    width: 800px;
+    margin: auto;
+    color: #3c3836;
+    background: #f9f7d7;
+}
+
+a {
+    color: #458588;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #076678;
+    font-weight: bold;
+}
+
+/* colors: */
+/* todo: replace with sass or something */
+
+.gray {
+    color: #928374;
+}
+
+.dark-gray {
+    color: #7c6f64;
+}
+
+.red {
+    color: #cc241d;
+}
+
+.dark-red {
+    color: #9d0006;
+}
+
+.green {
+    color: #98971a;
+}
+
+.dark-green {
+    color: #79740e;
+}
+
+.yellow {
+    color: #d79921;
+}
+
+.dark-yellow {
+    color: #b57614;
+}
+
+.blue {
+    color: #458588;
+}
+
+.dark-blue {
+    color: #076678;
+}
+
+.purple {
+    color: #b16286;
+}
+
+.dark-purple {
+    color: #8f3f71;
+}
+
+.aqua {
+    color: #689d6a;
+}
+
+.dark-aqua {
+    color: #427b58;
+}
+
+.orange {
+    color: #d65d0e;
+}
+
+.dark-orange {
+    color: #af3a03;
+}
