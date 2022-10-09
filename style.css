@@ -1,6 +1,7 @@
 body {
     width: 600px;
-    margin: 0px auto 100px;
+    margin: auto;
+    padding: 10px;
     color: #3c3836;
     background: #fcfae8;
     font-family: "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
