@@ -1,25 +1,47 @@
+:root {
+    --gray: #928374;
+    --dark-gray: #7c6f64;
+    --red: #cc241d;
+    --dark-red: #9d0006;
+    --green: #98971a;
+    --dark-green: #79740e;
+    --yellow: #d79921;
+    --dark-yellow: #b57614;
+    --blue: #458588;
+    --dark-blue: #076678;
+    --purple: #b16286;
+    --dark-purple: #8f3f71;
+    --aqua: #689d6a;
+    --dark-aqua: #427b58;
+    --orange: #d65d0e;
+    --dark-orange: #af3a03;
+
+    --black: #3c3836;
+    --background: #fcfae8;
+}
+
 body {
     max-width: 600px;
     margin: auto;
     padding: 10px;
-    color: #3c3836;
-    background: #fcfae8;
+    color: var(--black);
+    background: var(--background);
     font-family: "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
     line-height: 1.4;
 }
 
 a {
-    color: #458588;
+    color: var(--blue);
     text-decoration: none;
 }
 
 a:hover {
-    color: #076678;
+    color: var(--dark-blue);
     font-weight: bold;
 }
 
 em {
-    color: #7c6f64;
+    color: var(--dark-gray);
 }
 
 div.technologies {
@@ -27,78 +49,12 @@ div.technologies {
 }
 
 div.technologies span.preferred {
-    color: #af3a03;
+    color: var(--dark-orange);
 }
 
-#hello { color: #79740e; }
-#languages { color: #b57614; }
-#technologies { color: #8f3f71; }
-#work-experience { color: #427b58; }
-#education { color: #9d0006; }
-#spoken-languages { color: #79740e; }
-
-/* colors: */
-
-.gray {
-    color: #928374;
-}
-
-.dark-gray {
-    color: #7c6f64;
-}
-
-.red {
-    color: #cc241d;
-}
-
-.dark-red {
-    color: #9d0006;
-}
-
-.green {
-    color: #98971a;
-}
-
-.dark-green {
-    color: #79740e;
-}
-
-.yellow {
-    color: #d79921;
-}
-
-.dark-yellow {
-    color: #b57614;
-}
-
-.blue {
-    color: #458588;
-}
-
-.dark-blue {
-    color: #076678;
-}
-
-.purple {
-    color: #b16286;
-}
-
-.dark-purple {
-    color: #8f3f71;
-}
-
-.aqua {
-    color: #689d6a;
-}
-
-.dark-aqua {
-    color: #427b58;
-}
-
-.orange {
-    color: #d65d0e;
-}
-
-.dark-orange {
-    color: #af3a03;
-}
+#hello { color: var(--dark-green); }
+#languages { color: var(--dark-yellow); }
+#technologies { color: var(--dark-purple); }
+#work-experience { color: var(--dark-aqua); }
+#education { color: var(--dark-red); }
+#spoken-languages { color: var(--dark-green); }
