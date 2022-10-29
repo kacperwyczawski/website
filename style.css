@@ -22,6 +22,14 @@ em {
     color: #7c6f64;
 }
 
+div.technologies {
+    font-weight: bold;
+}
+
+div.technologies span.preferred {
+    color: #af3a03;
+}
+
 /* colors: */
 
 .gray {
