@@ -30,6 +30,13 @@ div.technologies span.preferred {
     color: #af3a03;
 }
 
+#hello { color: #79740e; }
+#languages { color: #b57614; }
+#technologies { color: #8f3f71; }
+#work-experience { color: #427b58; }
+#education { color: #9d0006; }
+#spoken-languages { color: #79740e; }
+
 /* colors: */
 
 .gray {
