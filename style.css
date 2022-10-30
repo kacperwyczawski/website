@@ -41,6 +41,13 @@ main {
     padding: 10px;
 }
 
+@media only screen and (max-width: 900px) {
+    header, main {
+        float: none;
+        max-width: 100%;
+    }
+}
+
 a {
     color: var(--blue);
     text-decoration: none;
