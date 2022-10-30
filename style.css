@@ -21,13 +21,24 @@
 }
 
 body {
-    max-width: 600px;
+    max-width: 1000px;
     margin: auto;
-    padding: 10px;
     color: var(--black);
     background: var(--background);
     font-family: "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
     line-height: 1.4;
+}
+
+header {
+    float: left;
+    max-width: 40%;
+    padding: 10px;
+}
+
+main {
+    float: right;
+    max-width: 55%;
+    padding: 10px;
 }
 
 a {
