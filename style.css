@@ -27,6 +27,7 @@ body {
     background: var(--background);
     font-family: "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
     line-height: 1.4;
+    scroll-behavior: smooth;
 }
 
 header, main {
@@ -53,6 +54,16 @@ a {
 a:hover {
     color: var(--dark-blue);
     font-weight: bold;
+}
+
+li::marker {
+    content: "# ";
+    color: var(--gray);
+}
+
+ul.no-padding, ol.no-padding {
+    padding: 0%;
+    list-style-position: inside;
 }
 
 em {
