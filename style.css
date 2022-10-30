@@ -29,22 +29,19 @@ body {
     line-height: 1.4;
 }
 
-header {
-    float: left;
-    max-width: 40%;
+header, main {
     padding: 10px;
 }
 
-main {
-    float: right;
-    max-width: 55%;
-    padding: 10px;
-}
+@media only screen and (min-width: 900px) {
+    header {
+        float: left;
+        max-width: 40%;
+    }
 
-@media only screen and (max-width: 900px) {
-    header, main {
-        float: none;
-        max-width: 100%;
+    main {
+        float: right;
+        max-width: 55%;
     }
 }
 
