@@ -33,7 +33,8 @@ body {
     line-height: 1.4;
 }
 
-header, main {
+header,
+main {
     padding: 10px;
 }
 
@@ -52,6 +53,18 @@ header, main {
 h2:target::before {
     content: "# ";
     color: var(--gray);
+    font-weight: normal;
+    animation: fade 2s;
+}
+
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 a {
@@ -86,9 +99,26 @@ div.technologies span.preferred {
     color: var(--dark-orange);
 }
 
-#hello { color: var(--dark-green); }
-#languages { color: var(--dark-yellow); }
-#technologies { color: var(--dark-purple); }
-#work-experience { color: var(--dark-aqua); }
-#education { color: var(--dark-red); }
-#spoken-languages { color: var(--dark-green); }
+#hello {
+    color: var(--dark-green);
+}
+
+#languages {
+    color: var(--dark-yellow);
+}
+
+#technologies {
+    color: var(--dark-purple);
+}
+
+#work-experience {
+    color: var(--dark-aqua);
+}
+
+#education {
+    color: var(--dark-red);
+}
+
+#spoken-languages {
+    color: var(--dark-green);
+}
