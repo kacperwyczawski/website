@@ -20,6 +20,10 @@
     --background: #fcfae8;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     max-width: 1000px;
     margin: auto;
@@ -27,7 +31,6 @@ body {
     background: var(--background);
     font-family: "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
     line-height: 1.4;
-    scroll-behavior: smooth;
 }
 
 header, main {
