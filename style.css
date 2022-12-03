@@ -7,6 +7,44 @@
     font-stretch: 75% 125%;
 }
 
+:root {
+    --very-dark: #11151C;
+    --dark: #212D40;
+}
+
+/* reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Mona Sans', serif;
+    background-color: var(--dark);
+}
+
+header {
+    padding: 1vw;
+
+    background-color: var(--very-dark);
+    color: white;
+}
+
+header > div.name {
+    font-weight: 900;
+    font-style: oblique;
+    font-stretch: 125%;
+    font-size: 5vw;
+}
+
+header > div.title {
+    margin-top: 1vw;
+
+    font-weight: 200;
+    font-size: 3vw;
+}
+
+main {
+    padding: 1vw;
 }
