@@ -48,4 +48,38 @@ header>div.title {
 
 main {
     padding: 1vw;
+
+    color: white;
+}
+
+section>* {
+    margin-bottom: 10px;
+}
+
+section>h1 {
+    font-weight: bold;
+    font-size: 1.5em;
+
+    color: #9061b4;
+}
+
+section>div.subsection {
+    margin-left: 10px
+}
+
+section>div.subsection>span.title {
+    margin-right: 0.2em;
+
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+section>div.subsection>span.title::after {
+    content: ':';
+}
+
+section>div.subsection>span.preferred {
+    font-weight: bold;
+
+    border-bottom: 2px solid #9061b4;
 }
