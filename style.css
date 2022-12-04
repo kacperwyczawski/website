@@ -22,7 +22,7 @@
 }
 
 body {
-    font-family: 'Mona Sans', serif;
+    font-family: 'Mona Sans', Arial, sans-serif;
     background-color: var(--background);
 }
 
@@ -54,6 +54,10 @@ main {
     color: var(--text)
 }
 
+section {
+    font-size: 1.1em;
+}
+
 section>* {
     margin-bottom: 10px;
 }
@@ -73,7 +77,6 @@ div.subsection>span.title {
     margin-right: 0.2em;
 
     font-weight: bold;
-    font-size: 1.2em;
 }
 
 div.subsection>span.title::after {
