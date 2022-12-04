@@ -21,6 +21,18 @@
     box-sizing: border-box;
 }
 
+a {
+    color: var(--primary);
+
+    text-decoration: none;
+    font-weight: bold;
+    font-style: oblique;
+
+    border-bottom: 2px solid var(--primary);
+
+    cursor: pointer;
+}
+
 body {
     font-family: 'Mona Sans', Arial, sans-serif;
     background-color: var(--background);
@@ -90,16 +102,4 @@ div.subsection>span.preferred {
     font-weight: bold;
 
     border-bottom: 2px solid var(--primary);
-}
-
-div.subsection>a.company {
-    color: var(--primary);
-
-    text-decoration: none;
-    font-weight: bold;
-    font-style: oblique;
-
-    border-bottom: 2px solid var(--primary);
-
-    cursor: pointer;
 }
