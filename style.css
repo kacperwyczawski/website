@@ -8,8 +8,10 @@
 }
 
 :root {
-    --very-dark: #11151C;
-    --dark: #212D40;
+    --header-background: #11151C;
+    --background: #212D40;
+    --text: white;
+    --primary: #9061B4;
 }
 
 /* reset */
@@ -21,14 +23,14 @@
 
 body {
     font-family: 'Mona Sans', serif;
-    background-color: var(--dark);
+    background-color: var(--background);
 }
 
 header {
     padding: 2vw 4vw;
 
-    background-color: var(--very-dark);
-    color: white;
+    background-color: var(--header-background);
+    color: var(--text);
 }
 
 header>div.name {
@@ -49,7 +51,7 @@ header>div.title {
 main {
     padding: 1vw;
 
-    color: white;
+    color: var(--text)
 }
 
 section>* {
@@ -60,26 +62,38 @@ section>h1 {
     font-weight: bold;
     font-size: 1.5em;
 
-    color: #9061b4;
+    color: var(--primary)
 }
 
-section>div.subsection {
+div.subsection {
     margin-left: 10px
 }
 
-section>div.subsection>span.title {
+div.subsection>span.title {
     margin-right: 0.2em;
 
     font-weight: bold;
     font-size: 1.2em;
 }
 
-section>div.subsection>span.title::after {
+div.subsection>span.title::after {
     content: ':';
 }
 
-section>div.subsection>span.preferred {
+div.subsection>span.preferred {
     font-weight: bold;
 
-    border-bottom: 2px solid #9061b4;
+    border-bottom: 2px solid var(--primary);
+}
+
+div.subsection>a.company {
+    color: var(--primary);
+
+    text-decoration: none;
+    font-weight: bold;
+    font-style: oblique;
+
+    border-bottom: 2px solid var(--primary);
+
+    cursor: pointer;
 }
