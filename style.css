@@ -49,13 +49,15 @@ header>div.title {
 }
 
 main {
-    padding: 1vw;
-
-    color: var(--text)
+    padding-top: 2vw;
 }
 
 section {
+    padding: 0 2vw;
+
     font-size: 1.1em;
+
+    color: var(--text)
 }
 
 section>* {
