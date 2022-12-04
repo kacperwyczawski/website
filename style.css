@@ -10,9 +10,14 @@
 :root {
     --header-background: #11151C;
     --background: #212D40;
+
     --text: white;
+
     --primary: #9061B4;
     --primary-dark: #7A4F9A;
+
+    --glass: #9061b440;
+    --glass-dark: #7a4f9a40;
 }
 
 /* reset */
@@ -43,10 +48,12 @@ a:hover {
 a.button {
     padding: .3rem .5rem;
 
-    border-bottom: none;
     border-radius: .5rem;
+    border: 1px solid var(--glass);
 
-    background: var(--primary);
+    box-shadow: 0 0 5px var(--glass);
+
+    background: var(--glass);
 
     color: var(--text);
     font-style: normal;
@@ -63,7 +70,10 @@ a.button>img {
 }
 
 a.button:hover {
-    background: var(--primary-dark);
+    background: var(--glass-dark);
+    border-color: var(--glass-dark);
+
+    box-shadow: 0 0 10px var(--glass-dark);
 
     transition: .1s;
 }
