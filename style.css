@@ -31,18 +31,19 @@ header {
     color: white;
 }
 
-header > div.name {
+header>div.name {
     font-weight: 900;
     font-style: oblique;
     font-stretch: 125%;
-    font-size: max(5vw, 50px);
+    font-size: clamp(50px, 5vw, 100px);
 }
 
-header > div.title {
+header>div.title {
     margin-top: 1vw;
 
     font-weight: 200;
     font-size: max(2.5vw, 25px);
+    font-size: clamp(25px, 2.5vw, 50px);
 }
 
 main {
