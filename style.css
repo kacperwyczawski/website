@@ -88,6 +88,8 @@ header {
 
     background-color: var(--header-background);
     color: var(--text);
+
+    box-shadow: 0 0 10px var(--header-background);
 }
 
 header>div.name {
