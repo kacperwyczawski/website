@@ -111,8 +111,7 @@ header>div.title {
 }
 
 main {
-    padding-top: 2vw;
-    padding-bottom: 4vw;
+    padding: 25px 0;
 }
 
 section {
