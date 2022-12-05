@@ -104,7 +104,7 @@ header>div.name {
 
 header>div.title {
     margin-top: 1vw;
-
+    
     font-weight: 200;
     font-size: max(2.5vw, 25px);
     font-size: clamp(25px, 2.5vw, 50px);
@@ -140,6 +140,9 @@ div.subsection {
 
 div.subsection>span.title {
     margin-right: 0.2em;
+    padding-left: 0.2em;
+
+    border-left: 2px solid var(--primary);
 
     font-weight: bold;
 }
