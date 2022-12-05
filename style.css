@@ -16,6 +16,9 @@
     --primary: #9061B4;
     --primary-dark: #7A4F9A;
 
+    --secondary: #4A9FB4;
+    --secondary-dark: #3d8496;
+
     --glass: #9061b440;
     --glass-dark: #7a4f9a40;
 }
@@ -28,20 +31,20 @@
 }
 
 a {
-    color: var(--primary);
+    color: var(--secondary);
 
     text-decoration: none;
     font-weight: bold;
     font-style: oblique;
 
-    border-bottom: 2px solid var(--primary);
+    border-bottom: 2px solid var(--secondary);
 
     cursor: pointer;
 }
 
 a:hover {
-    color: var(--primary-dark);
-    border-bottom: 2px solid var(--primary-dark);
+    color: var(--secondary-dark);
+    border-bottom: 2px solid var(--secondary-dark);
     transition: .1s;
 }
 
@@ -148,7 +151,7 @@ div.subsection>span.title::after {
 div.subsection>span.preferred {
     font-weight: bold;
 
-    border-bottom: 2px solid var(--primary);
+    border-bottom: 2px solid var(--secondary);
 }
 
 .links {
