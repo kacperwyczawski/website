@@ -12,6 +12,7 @@
     --background: #212D40;
 
     --text: white;
+    --text-muted: #c0c0d0;
 
     --primary: #9061B4;
     --primary-dark: #7A4F9A;
@@ -28,6 +29,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    line-height: 1.5;
 }
 
 a {
@@ -116,8 +118,9 @@ main {
 
 section {
     padding: 0 2vw;
+    padding-top: 1rem;
 
-    font-size: 1.1em;
+    font-size: 1.1rem;
 
     color: var(--text)
 }
@@ -128,7 +131,7 @@ section>* {
 
 section>h1 {
     font-weight: bold;
-    font-size: 1.5em;
+    font-size: 1.5rem;
 
     color: var(--primary)
 }
@@ -138,11 +141,13 @@ div.subsection {
 }
 
 div.subsection>span.title {
-    margin-right: 0.2em;
-    padding-left: 0.2em;
+    margin-right: 0.2rem;
+    padding-left: 0.2rem;
 
     border-left: 2px solid var(--primary);
+}
 
+.title {
     font-weight: bold;
 }
 
@@ -156,9 +161,43 @@ div.subsection>span.preferred {
     border-bottom: 2px solid var(--secondary);
 }
 
-.links {
+nav {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     gap: 10px;
+    padding: 0 2vw;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin-left: 15px;
+}
+
+.timeline li {
+    border-left: 1px solid var(--text);
+    padding-bottom: 2rem;
+    padding-left: 20px;
+}
+
+.timeline li:last-child {
+    border-left: none;
+    padding-bottom: 0;
+}
+
+.timeline li::before {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border: 3px solid var(--primary);
+    border-radius: 50%;
+    left: calc(25px - 1px);
+    background-color: var(--background);
+}
+
+.timeline .date {
+    font-size: .9rem;
+    color: var(--text-muted);
 }
