@@ -33,6 +33,52 @@
     line-height: 1.5;
 }
 
+body {
+    font-family: 'Mona Sans', Arial, sans-serif;
+    background-color: var(--background);
+    color: var(--text);
+    font-size: 1.1rem;
+    line-height: 1.5;
+}
+
+header {
+    padding: clamp(7.5px, 2vw, 40px) clamp(15px, 4vw, 40px);
+    background-color: var(--header-background);
+    color: var(--text);
+    box-shadow: 0 0 10px var(--header-background);
+}
+
+header>.name {
+    font-weight: 900;
+    font-style: oblique;
+    font-stretch: 125%;
+    font-size: clamp(40px, 5vw, 80px);
+}
+
+header>.title {
+    margin-top: .5vw;
+    font-weight: 200;
+    font-size: clamp(20px, 2.5vw, 35px);
+}
+
+main {
+    margin: var(--standard-gap) 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--standard-gap);
+    padding: 0 var(--standard-gap);
+}
+
+h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--primary);
+}
+
+h2 {
+    font-size: 1.5rem;
+}
+
 a {
     color: var(--secondary);
     text-decoration: none;
@@ -81,49 +127,6 @@ a.button:hover {
     transition: .1s;
 }
 
-body {
-    font-family: 'Mona Sans', Arial, sans-serif;
-    background-color: var(--background);
-    color: var(--text);
-    font-size: 1.1rem;
-    line-height: 1.5;
-}
-
-header {
-    padding: clamp(7.5px, 2vw, 40px) clamp(15px, 4vw, 40px);
-    background-color: var(--header-background);
-    color: var(--text);
-    box-shadow: 0 0 10px var(--header-background);
-}
-
-header>.name {
-    font-weight: 900;
-    font-style: oblique;
-    font-stretch: 125%;
-    font-size: clamp(40px, 5vw, 80px);
-}
-
-header>.title {
-    margin-top: .5vw;
-    font-weight: 200;
-    font-size: clamp(20px, 2.5vw, 35px);
-}
-
-main {
-    margin: var(--standard-gap) 0;
-    display: flex;
-    flex-direction: column;
-    gap: var(--standard-gap);
-    padding: 0 var(--standard-gap);
-}
-
-section>h1 {
-    font-weight: bold;
-    font-size: 1.5rem;
-
-    color: var(--primary)
-}
-
 div.subsection {
     margin-left: 10px;
     margin-top: .5rem;
@@ -144,11 +147,7 @@ div.subsection>span.title::after {
     content: ':';
 }
 
-div.subsection>span.preferred {
-    font-weight: bold;
 
-    border-bottom: 2px solid var(--secondary);
-}
 
 nav {
     display: flex;
@@ -188,4 +187,26 @@ ul {
 .timeline .date {
     font-size: .9rem;
     color: var(--text-muted);
+}
+
+.skill-cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--standard-gap);
+    max-width: 1000px;
+}
+
+.skill-card {
+    flex-basis: 100%;
+    max-width: 400px;
+}
+
+.skill-card .header {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.preferred {
+    border-bottom: 2px solid var(--secondary);
 }
