@@ -114,6 +114,7 @@ main {
     display: flex;
     flex-direction: column;
     gap: var(--standard-gap);
+    padding: 0 var(--standard-gap);
 }
 
 section>h1 {
@@ -124,7 +125,8 @@ section>h1 {
 }
 
 div.subsection {
-    margin-left: 10px
+    margin-left: 10px;
+    margin-top: .5rem;
 }
 
 div.subsection>span.title {
@@ -153,7 +155,6 @@ nav {
     flex-direction: row;
     flex-wrap: wrap;
     gap: 10px;
-    padding: 0 2vw;
 }
 
 ul {
@@ -180,7 +181,7 @@ ul {
     height: 15px;
     border: 3px solid var(--primary);
     border-radius: 50%;
-    left: calc(2vw + 5px);
+    left: calc(var(--standard-gap) + 5px);
     background-color: var(--background);
 }
 
