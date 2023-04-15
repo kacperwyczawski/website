@@ -67,7 +67,7 @@ a.button {
     gap: .2rem;
 }
 
-a.button>img {
+a.button>svg {
     width: 1.2rem;
     height: 1.2rem;
 }
