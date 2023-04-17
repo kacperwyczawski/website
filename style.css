@@ -52,13 +52,13 @@ header>.name {
     font-weight: 900;
     font-style: oblique;
     font-stretch: 125%;
-    font-size: clamp(40px, 5vw, 80px);
+    font-size: clamp(25px, 5vw, 80px);
 }
 
 header>.title {
     margin-top: .5vw;
     font-weight: 200;
-    font-size: clamp(20px, 2.5vw, 35px);
+    font-size: clamp(15px, 2.5vw, 35px);
 }
 
 main {
@@ -194,6 +194,7 @@ ul {
     flex-wrap: wrap;
     gap: var(--standard-gap);
     max-width: 1000px;
+    padding-left: 10px;
 }
 
 .skill-card {
@@ -205,6 +206,11 @@ ul {
     display: flex;
     align-items: center;
     gap: .5rem;
+}
+
+.skill-card .header svg {
+    position: relative;
+    top: -1px;
 }
 
 .preferred {
