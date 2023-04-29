@@ -1,0 +1,21 @@
+---
+export interface Props {
+    iconSvg: string;
+    text: string;
+    link: string;
+}
+
+const { iconSvg, text, link } = Astro.props;
+---
+
+<div
+id="wrapper"
+    class="flex gap-2 border rounded-lg p-2 text-neutral-700"
+>
+    <div>
+        <Fragment set:html={iconSvg} />
+    </div>
+    <a href={link} class="underline hidden sm:inline hover:decoration-2">
+        {text}
+    </a>
+</div>

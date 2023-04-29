@@ -1,0 +1,34 @@
+---
+import type { SkillGroup } from "../types/SkillGroup";
+
+export interface Props {
+    content: SkillGroup;
+}
+
+const { content } = Astro.props;
+---
+
+<div class="p-4 rounded-lg border">
+    <div class="flex gap-2 text-neutral-700 items-center">
+        <Fragment set:html={content.iconSvg}/>
+        <h3 class="text-xl font-bold">
+            {content.title}
+        </h3>
+    </div>
+    <p class="flex gap-2 flex-wrap font-mono mt-4">
+        {
+            content.preferredSkills.map((skill) => (
+                <span class="inline-block px-2 py-1 border rounded-xl text-fuchsia-700 font-semibold hover:border-fuchsia-700/20 transition">
+                    {skill}
+                </span>
+            ))
+        }
+        {
+            content.skills.map((skill) => (
+                <span class="inline-block px-2 py-1 border rounded-xl">
+                    {skill}
+                </span>
+            ))
+        }
+    </p>
+</div>
