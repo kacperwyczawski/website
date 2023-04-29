@@ -8,14 +8,11 @@ export interface Props {
 const { iconSvg, text, link } = Astro.props;
 ---
 
-<div
-id="wrapper"
-    class="flex gap-2 border rounded-lg p-2 text-neutral-700"
->
+<a href={link} class="flex gap-2 border rounded-lg p-2 text-neutral-700">
     <div>
         <Fragment set:html={iconSvg} />
     </div>
-    <a href={link} class="underline hidden sm:inline hover:decoration-2">
+    <div class="underline hidden sm:inline hover:decoration-2">
         {text}
-    </a>
-</div>
+    </div>
+</a>
