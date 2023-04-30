@@ -10,6 +10,7 @@
         "astro": "astro"
     },
     "dependencies": {
+        "@astrojs/prefetch": "^0.2.1",
         "@astrojs/tailwind": "^3.1.1",
         "@fontsource/fira-code": "^4.5.13",
         "@fontsource/inter": "^4.5.15",
