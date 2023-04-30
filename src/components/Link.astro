@@ -3,12 +3,13 @@ export interface Props {
     iconSvg: string;
     text: string;
     link: string;
+    ariaLabel: string;
 }
 
-const { iconSvg, text, link } = Astro.props;
+const { iconSvg, text, link, ariaLabel } = Astro.props;
 ---
 
-<a href={link} class="flex gap-2 border rounded-lg p-2 text-neutral-700">
+<a href={link} aria-label={ariaLabel} class="flex gap-2 border rounded-lg p-2 text-neutral-700">
     <div>
         <Fragment set:html={iconSvg} />
     </div>
