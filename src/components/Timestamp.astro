@@ -5,18 +5,31 @@ export interface Props {
     title: string;
     company: string;
     companyLink: string;
+    note: string | null;
 }
 
-const { dates, location, title, company, companyLink } = Astro.props
+const { dates, location, title, company, companyLink, note } = Astro.props;
 ---
 
-<li class="border-l last:border-none pl-6 pb-4 before:content[''] before:border before:rounded-full before:h-6 before:w-6 before:absolute before:border-fuchsia-700 before:bg-neutral-50">
+<li
+    class="border-l last:border-none pl-6 pb-4 before:content[''] before:border before:rounded-full before:h-6 before:w-6 before:absolute before:border-fuchsia-700 before:bg-neutral-50"
+>
     <div class="text-neutral-400 text-lg leading-6">
         {dates} / {location}
+        {
+            note && ( /* weird responsive breakpoints below can be replaced with container queries, when they will be available */
+                <span class="text-neutral-400 rounded-full px-1.5 py-0.5 border font-normal w-fit my-1 block text-sm sm:my-0 sm:inline-block sm:text-base md:my-1 md:block md:text-sm lg:my-0 lg:inline-block lg:text-base">
+                    {note}
+                </span>
+            )
+        }
     </div>
     <div class="text-xl font-semibold text-neutral-800">
         {title} at
-        <a href={companyLink} class="underline decoration-fuchsia-700 hover:decoration-2">
+        <a
+            href={companyLink}
+            class="underline decoration-fuchsia-700 hover:decoration-2"
+        >
             {company}
         </a>
     </div>
@@ -24,6 +37,6 @@ const { dates, location, title, company, companyLink } = Astro.props
 
 <style>
     li::before {
-        left: calc(.25rem + .5px); /* because border width = 1px */
+        left: calc(0.25rem + 0.5px); /* because border width = 1px */
     }
 </style>
