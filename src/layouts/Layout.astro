@@ -12,6 +12,10 @@ import "@fontsource/fira-code/variable.css";
     <meta name="generator" content={Astro.generator} />
     <meta name="theme-color" content="#a21caf" />
     <meta name="description" content="Kacper Wyczawski's personal website" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; img-src https://*; child-src 'none'; base-uri 'none';"
+    />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>Kacper Wyczawski</title>
   </head>
@@ -24,7 +28,8 @@ import "@fontsource/fira-code/variable.css";
       </h1>
       <nav class="text-2xl space-x-4 leading-[2.5rem]">
         <a class="hover:text-fuchsia-700 transition" href="/">Home</a>
-        <a class="hover:text-fuchsia-700 transition" href="/projects">Projects</a
+        <a class="hover:text-fuchsia-700 transition" href="/projects"
+          >Projects</a
         >
       </nav>
     </header>
