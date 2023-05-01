@@ -1,0 +1,13 @@
+---
+export interface Props {
+    emphasis: boolean;
+}
+
+const { emphasis = false } = Astro.props;
+
+const emphasisClass = emphasis ? "text-fuchsia-700 font-semibold" : "";
+---
+
+<span class:list={["inline-block px-2 py-1 border rounded-xl", emphasisClass]}>
+    <slot />
+</span>

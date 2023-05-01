@@ -1,9 +1,74 @@
 ---
+import ProjectCard from "@components/ProjectCard.astro";
 import Layout from "@layouts/Layout.astro";
 ---
 
 <Layout>
-    <div class="text-center text-xl font-thin tracking-widest">
-        Under development
+    <div class="grid place-items-center p-4">
+        <div class="max-w-4xl flex gap-4 flex-col">
+            <ProjectCard
+                title="This website"
+                technologies={[
+                    "Astro",
+                    "TailwindCSS",
+                    "CSS",
+                    "JavaScript",
+                    "TypeScript",
+                    "GitHub Actions",
+                ]}
+                sourceLink="https://github.com/kacperwyczawski/kacperwyczawski.github.io"
+            >
+                This is my personal website, where you are currently visiting!
+                Through building and maintaining this website, I have mastered
+                my skills in front-end development. I hope you enjoy exploring
+                it!
+            </ProjectCard>
+            <ProjectCard
+                title="Sigma Cars"
+                technologies={[
+                    "Docker",
+                    "C#",
+                    "ASP.NET Core",
+                    "PostgreSQL",
+                    "Entity Framework Core",
+                    "OpenAPI",
+                    "MediatR",
+                    "Next.js",
+                    "TailwindCSS",
+                    "React",
+                    "Nginx",
+                ]}
+                sourceLink="https://github.com/kacperwyczawski/sigma-cars"
+                underDevelopment="true"
+            >
+                Web app for renting cars. It's a learning project showcasing
+                full-stack web development. Built with ASP.NET Core and Next.js,
+                on Docker. Extremely easy to run locally via Docker Compose.
+                More details in the README.
+            </ProjectCard>
+            <ProjectCard
+                title="Auto Cut"
+                technologies={[
+                    "C#",
+                    "WebAssembly",
+                    "PWA",
+                    "Blazor WASM",
+                    "CSS",
+                    "Razor",
+                    "ASP.NET Core",
+                    "GitHub Actions",
+                    "Unit testing",
+                ]}
+                sourceLink="https://github.com/kacperwyczawski/autocut"
+                liveLink="https://kacperwyczawski.github.io/autocut/"
+                underDevelopment="true"
+            >
+                Panel cutting optimization software that runs seamlessly on any
+                modern browser or device using WebAssembly (WASM) and PWA
+                technologies. This innovative app utilizes efficient algorithms
+                written in C# to optimize stock cutting, saving time and
+                reducing waste.
+            </ProjectCard>
+        </div>
     </div>
 </Layout>
