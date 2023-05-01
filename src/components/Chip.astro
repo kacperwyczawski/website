@@ -8,6 +8,6 @@ const { emphasis = false } = Astro.props;
 const emphasisClass = emphasis ? "text-fuchsia-700 font-semibold" : "";
 ---
 
-<span class:list={["inline-block px-2 py-1 border rounded-xl", emphasisClass]}>
+<span class:list={["inline-block px-1.5 py-0.5 sm:px-2 sm:py-1 border rounded-xl", emphasisClass]}>
     <slot />
 </span>

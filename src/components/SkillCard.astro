@@ -16,7 +16,7 @@ const { content } = Astro.props;
             {content.title}
         </h3>
     </div>
-    <p class="flex gap-2 flex-wrap font-mono mt-4">
+    <p class="flex gap-1 md:gap-2 flex-wrap font-mono mt-4">
         {
             content.preferredSkills.map((skill) => (
                 <Chip emphasis="true">{skill}</Chip>
