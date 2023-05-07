@@ -1,5 +1,6 @@
 ---
 import Chip from "./Chip.astro";
+import LinkButton from "./LinkButton.astro";
 
 export interface Props {
     title: string;
@@ -21,13 +22,7 @@ const {
 <div class="border rounded-lg p-4 flex flex-col gap-4">
     <h1 class="text-2xl font-fancy text-fuchsia-700">
         {title}
-        {
-            status && (
-                <span class="text-sm text-neutral-700">
-                    ({status})
-                </span>
-            )
-        }
+        {status && <span class="text-sm text-neutral-700">({status})</span>}
     </h1>
     <div class="flex gap-1 sm:gap-2 flex-wrap">
         {technologies.map((tech) => <Chip>{tech}</Chip>)}
@@ -36,31 +31,7 @@ const {
         <slot />
     </p>
     <div class="flex gap-4">
-        {
-            sourceLink && (
-                <a
-                    href={sourceLink}
-                    class="block group rounded-lg border border-fuchsia-700 hover:bg-fuchsia-700/70 hover:text-white text-center py-2 px-4 grow"
-                >
-                    Source
-                    <span class="group-hover:translate-x-2 inline-block transition-transform">
-                        -&gt;
-                    </span>
-                </a>
-            )
-        }
-        {
-            liveLink && (
-                <a
-                    href={liveLink}
-                    class="block group rounded-lg border border-fuchsia-700 hover:bg-fuchsia-700/70 hover:text-white text-center py-2 px-4 grow"
-                >
-                    Live
-                    <span class="group-hover:translate-x-2 inline-block transition-transform">
-                        -&gt;
-                    </span>
-                </a>
-            )
-        }
+        {sourceLink && <LinkButton text="Source" href={sourceLink} />}
+        {liveLink && <LinkButton text="Live" href={liveLink} />}
     </div>
 </div>
