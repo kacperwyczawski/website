@@ -9,7 +9,11 @@ export interface Props {
 const { iconSvg, text, link, ariaLabel } = Astro.props;
 ---
 
-<a href={link} aria-label={ariaLabel} class="flex gap-2 border rounded-lg p-2 text-neutral-700">
+<a
+    href={link}
+    aria-label={ariaLabel}
+    class="flex gap-2 border rounded-lg p-2 text-neutral-700"
+>
     <div>
         <Fragment set:html={iconSvg} />
     </div>
