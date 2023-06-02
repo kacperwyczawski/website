@@ -8,19 +8,19 @@ module.exports = {
         extend: {
             fontFamily: {
                 sans: [
-                    "InterVariable",
+                    "Inter Variable",
                     "Inter",
                     ...defaultTheme.fontFamily.sans
                 ],
                 fancy: [
-                    "SoraVariable",
+                    "Sora Variable",
                     "Sora",
-                    "InterVariable",
+                    "Inter Variable",
                     "Inter",
                     ...defaultTheme.fontFamily.sans
                 ],
                 mono: [
-                    "Fira CodeVariable",
+                    "Fira Code Variable",
                     "Fira Code",
                     ...defaultTheme.fontFamily.mono
                 ]
