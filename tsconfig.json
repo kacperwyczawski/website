@@ -13,7 +13,10 @@
       ],
       "@pages/*": [
         "src/pages/*"
-      ]
+      ],
+      "@images/*": [
+        "src/images/*"
+      ],
     },
     "jsx": "preserve"
   }
