@@ -12,12 +12,12 @@ const { iconSvg, text, link, ariaLabel } = Astro.props;
 <a
     href={link}
     aria-label={ariaLabel}
-    class="flex gap-2 border rounded-lg p-2 text-neutral-700"
+    class="flex gap-2 border rounded-lg p-2 bg-neutral-100 text-neutral-700"
 >
     <div>
         <Fragment set:html={iconSvg} />
     </div>
-    <div class="underline hidden sm:inline hover:decoration-2">
+    <div class="hover:underline hidden sm:inline">
         {text}
     </div>
 </a>
