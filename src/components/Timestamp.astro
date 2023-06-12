@@ -12,19 +12,19 @@ const { dates, location, title, company, companyLink, note } = Astro.props;
 ---
 
 <li
-    class="border-l last:border-none pl-6 pb-4 before:content[''] before:border before:rounded-full before:h-6 before:w-6 before:absolute before:border-fuchsia-700 before:bg-neutral-50"
+    class="border-l dark:border-slate-800 last:border-none pl-6 pb-4 before:content[''] before:border before:rounded-full before:h-6 before:w-6 before:absolute before:border-fuchsia-700 before:bg-neutral-50 dark:before:bg-slate-800"
 >
-    <div class="contrast-more:text-black text-neutral-400 text-lg leading-6">
+    <div class="contrast-more:text-black text-neutral-400 dark:text-slate-600 text-lg leading-6">
         {dates} / {location}
         {
             note && ( /* weird responsive breakpoints below can be replaced with container queries, when they will be available */
-                <span class="text-neutral-400 rounded-full px-1.5 py-0.5 border font-normal w-fit my-1 block text-sm sm:my-0 sm:inline-block sm:text-base md:my-1 md:block md:text-sm lg:my-0 lg:inline-block lg:text-base">
+                <span class="text-neutral-400 dark:text-slate-600 rounded-full px-1.5 py-0.5 border dark:border-slate-800 font-normal w-fit my-1 block text-sm sm:my-0 sm:inline-block sm:text-base md:my-1 md:block md:text-sm lg:my-0 lg:inline-block lg:text-base">
                     {note}
                 </span>
             )
         }
     </div>
-    <div class="text-xl font-semibold text-neutral-800">
+    <div class="text-xl font-semibold">
         {title} at
         <a
             href={companyLink}

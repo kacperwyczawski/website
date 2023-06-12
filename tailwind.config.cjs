@@ -24,6 +24,11 @@ module.exports = {
                     "Fira Code",
                     ...defaultTheme.fontFamily.mono
                 ]
+            },
+            colors: {
+                slate: {
+                    850: "#172033",
+                }
             }
         }
     },

@@ -21,14 +21,14 @@ const {
 } = Astro.props;
 ---
 
-<div class="bg-neutral-100 border rounded-lg">
+<div class="bg-neutral-100 dark:bg-slate-850 border dark:border-slate-800 rounded-lg">
     {
         image !== null && (
-            <div class="p-4 border-b">
+            <div class="p-4 border-b dark:border-slate-800">
                 <img
                     src={image}
                     alt={title + " mockup"}
-                    class="w-full border rounded-lg aspect-video object-cover hover:drop-shadow-md hover:border-transparent transition-all duration-200 ease-in"
+                    class="w-full border dark:border-slate-800 rounded-lg aspect-video object-cover hover:drop-shadow-md hover:border-transparent transition-all duration-200 ease-in"
                 />
             </div>
         )
@@ -36,7 +36,7 @@ const {
     <div class="p-4 flex flex-col gap-4">
         <h1 class="text-2xl font-fancy text-fuchsia-700">
             {title}
-            {status && <span class="text-sm text-neutral-700">({status})</span>}
+            {status && <span class="text-sm text-neutral-700 dark:text-slate-600">({status})</span>}
         </h1>
         <div class="flex gap-1 sm:gap-2 flex-wrap">
             {technologies.map((tech) => <Chip>{tech}</Chip>)}

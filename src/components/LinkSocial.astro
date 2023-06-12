@@ -12,7 +12,7 @@ const { iconSvg, text, link, ariaLabel } = Astro.props;
 <a
     href={link}
     aria-label={ariaLabel}
-    class="flex gap-2 border rounded-lg p-2 bg-neutral-100 text-neutral-700"
+    class="flex gap-2 border rounded-lg p-2 bg-neutral-100 dark:bg-slate-900 text-neutral-700 dark:border-slate-800 dark:text-neutral-300 hover:bg-neutral-200 dark:hover:bg-slate-850 transition-colors"
 >
     <div>
         <Fragment set:html={iconSvg} />

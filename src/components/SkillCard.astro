@@ -9,8 +9,8 @@ export interface Props {
 const { content } = Astro.props;
 ---
 
-<div class="bg-neutral-100 p-4 rounded-lg border">
-    <div class="flex gap-2 text-neutral-700 items-center">
+<div class="bg-neutral-100 dark:bg-slate-850 p-4 rounded-lg border dark:border-slate-800">
+    <div class="flex gap-2 text-neutral-700 dark:text-neutral-300 items-center">
         <Fragment set:html={content.iconSvg} />
         <h3 class="text-xl font-bold">
             {content.title}
