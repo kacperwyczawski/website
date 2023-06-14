@@ -3,21 +3,21 @@ import Chip from "./Chip.astro";
 import LinkButton from "./LinkButton.astro";
 
 export interface Props {
-    title: string;
+    name: string;
     technologies: string[];
     status?: string | null;
-    sourceLink?: string | null;
-    liveLink?: string | null;
-    image?: string | null;
+    sourceUrl?: string | null;
+    liveUrl?: string | null;
+    imagePath?: string | null;
 }
 
 const {
-    title,
+    name: title,
     technologies,
-    sourceLink,
-    liveLink,
+    sourceUrl: sourceLink,
+    liveUrl: liveLink,
     status = false,
-    image = null,
+    imagePath: image = null,
 } = Astro.props;
 ---
 

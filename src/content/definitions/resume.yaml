@@ -93,3 +93,45 @@ education:
     title: IT Technician
     school: Zespół Szkół Elektronicznych w Rzeszowie
     schoolUrl: https://elektronik.rzeszow.pl
+projects:
+  - name: This Website
+    technologies:
+      - Astro
+      - Tailwind CSS
+      - TypeScript / JavaScript
+      - GitHub Actions
+    description: This is my personal website, where you are currently visiting! Through building and maintaining this website, I have mastered my skills in front-end development. I hope you enjoy exploring it!
+    sourceUrl: https://github.com/kacperwyczawski/kacperwyczawski.github.io
+  - name: Sigma Cars
+    status: beta
+    technologies:
+      - Docker
+      - C#
+      - ASP.NET Core
+      - Entity Framework Core
+      - PostgreSQL
+      - REST + OpenAPI
+      - Nuxt
+      - Vue
+      - Tailwind CSS
+      - TypeScript / JavaScript
+      - GitHub Actions
+      - Nginx
+    description: Web app for renting cars. It's a learning project showcasing full-stack web development. Built with ASP.NET Core and Vue/Nuxt, on Docker. Extremely easy to run locally via Docker Compose. More details in the source repository.
+    sourceUrl: https://github.com/kacperwyczawski/sigma-cars
+    imagePath: /sigma-cars.png
+  - name: AutoCut
+    status: beta
+    technologies:
+      - C#
+      - WebAssembly
+      - Blazor
+      - ASP.NET Core
+      - PWA
+      - CSS
+      - GitHub Actions
+      - xUnit + FluentAssertions
+    description: Panel cutting optimization software that runs seamlessly on any modern browser or device using WebAssembly (WASM) and PWA technologies. This innovative app utilizes efficient algorithms written in C# to optimize stock cutting, saving time and reducing waste.
+    sourceUrl: https://github.com/kacperwyczawski/autocut
+    liveUrl: https://kacperwyczawski.github.io/autocut/
+    imagePath: /autocut.png

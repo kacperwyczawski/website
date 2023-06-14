@@ -36,6 +36,15 @@ const definitionsCollection = defineCollection({
             school: z.string(),
             schoolUrl: z.string().url(),
         })),
+        projects: z.array(z.object({
+            name: z.string(),
+            status: z.string().optional(),
+            technologies: z.array(z.string()),
+            description: z.string(),
+            sourceUrl: z.string().url().optional(),
+            liveUrl: z.string().url().optional(),
+            imagePath: z.string().optional(),
+        })),
     })
 });
 
