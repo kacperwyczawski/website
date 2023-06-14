@@ -1,9 +1,8 @@
 ---
-import type { SkillGroup } from "../types/SkillGroup";
 import Chip from "./Chip.astro";
 
 export interface Props {
-    content: SkillGroup;
+    content: any;
 }
 
 const { content } = Astro.props;
@@ -11,17 +10,17 @@ const { content } = Astro.props;
 
 <div class="bg-neutral-100 dark:bg-slate-850 p-4 rounded-lg border dark:border-slate-800">
     <div class="flex gap-2 text-neutral-700 dark:text-neutral-300 items-center">
-        <Fragment set:html={content.iconSvg} />
+        <Fragment set:html={content.icon}/>
         <h3 class="text-xl font-bold">
             {content.title}
         </h3>
     </div>
     <p class="flex gap-1 md:gap-2 flex-wrap font-mono mt-4">
         {
-            content.preferredSkills.map((skill) => (
+            content.preferred.map((skill: any) => (
                 <Chip emphasis={true}>{skill}</Chip>
             ))
         }
-        {content.skills.map((skill) => <Chip>{skill}</Chip>)}
+        {content.other.map((skill: any) => <Chip>{skill}</Chip>)}
     </p>
 </div>

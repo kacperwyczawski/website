@@ -1,14 +1,14 @@
 ---
 export interface Props {
-    dates: string;
+    date: string;
     location: string;
     title: string;
     company: string;
-    companyLink: string;
-    note: string | null;
+    companyUrl: string;
+    type: string | null;
 }
 
-const { dates, location, title, company, companyLink, note } = Astro.props;
+const { date: dates, location, title, company, companyUrl: companyLink, type: note } = Astro.props;
 ---
 
 <li
