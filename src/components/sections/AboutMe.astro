@@ -1,0 +1,14 @@
+---
+import Section from "@components/Section.astro";
+import Container from "@components/Container.astro";
+import { getEntry } from "astro:content";
+const resume = await getEntry("definitions", "resume");
+---
+
+<Section heading="About Me">
+    <Container>
+        <p class="text-justify md:text-lg">
+            {resume.data.aboutMe}
+        </p>
+    </Container>
+</Section>

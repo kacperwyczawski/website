@@ -1,33 +1,12 @@
 ---
-import LinkArrow from "@components/LinkArrow.astro";
-import ProjectCard from "@components/ProjectCard.astro";
 import Layout from "@layouts/Layout.astro";
-import { getEntry } from "astro:content";
-
-const resume = await getEntry("definitions", "resume");
+import ProjectsList from "@sections/ProjectsList.astro"
 ---
 
 <Layout>
-    <div class="grid place-items-center p-2 md:p-4">
-        <div class="max-w-4xl flex gap-4 flex-col">
-            {
-                resume.data.projects.map((project: any) => (
-                    <ProjectCard
-                        name={project.name}
-                        technologies={project.technologies}
-                        sourceUrl={project.sourceUrl}
-                        liveUrl={project.liveUrl}
-                        status={project.status}
-                        imagePath={project.imagePath}
-                    >
-                        {project.description}
-                    </ProjectCard>
-                ))
-            }
-            <LinkArrow
-                link="https://github.com/kacperwyczawski?tab=repositories"
-                text="Find more on my GitHub"
-            />
+    <main class="p-2 md:p-4">
+        <div class="max-w-4xl mx-auto">
+            <ProjectsList/>
         </div>
-    </div>
+    </main>
 </Layout>

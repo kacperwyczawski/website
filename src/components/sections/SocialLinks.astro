@@ -1,0 +1,13 @@
+---
+import LinkSocial from "@components/LinkSocial.astro";
+import { getEntry } from "astro:content";
+
+const resume = await getEntry("definitions", "resume")
+---
+<div class="flex justify-center gap-2">
+    {
+      resume.data.socialLinks.web.map((link: any) => (
+        <LinkSocial icon={link.icon} text={link.text} link={link.url} />
+      ))
+    }
+  </div>

@@ -1,0 +1,51 @@
+---
+import Container from "@components/Container.astro";
+import Section from "@components/Section.astro";
+import Timestamp from "@components/Timestamp.astro";
+import { getEntry } from "astro:content";
+
+const resume = await getEntry("definitions", "resume");
+---
+
+<div class="md:grid md:grid-cols-2 gap-4">
+    <Section heading="Work Experience">
+        <Container>
+            <ul class="relative pl-4">
+                {
+                    resume.data.workExperience.map((experience: any) => (
+                        <Timestamp
+                            date={experience.date}
+                            location={experience.location}
+                            title={experience.title}
+                            company={experience.company}
+                            companyUrl={experience.companyUrl}
+                            type={experience.type}
+                        />
+                    ))
+                }
+            </ul>
+        </Container>
+    </Section>
+    <Section heading="Education">
+        <Container>
+            {
+                resume.data.education.map((education: any) => (
+                    <>
+                        <div class="text-neutral-400 dark:text-slate-600 text-lg text-center md:text-left">
+                            {education.date + " / " + education.location}
+                        </div>
+                        <div class="text-xl font-semibold text-center md:text-left">
+                            {education.title + " at"}
+                            <a
+                                href={education.schoolUrl}
+                                class="underline decoration-fuchsia-700 dark:decoration-fuchsia-400 hover:decoration-2"
+                            >
+                                {education.school}
+                            </a>
+                        </div>
+                    </>
+                ))
+            }
+        </Container>
+    </Section>
+</div>

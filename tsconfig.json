@@ -6,16 +6,16 @@
     "baseUrl": "./",
     "paths": {
       "@components/*": [
-        "src/components/*"
+        "src/components/shared/*"
+      ],
+      "@sections/*": [
+        "src/components/sections/*"
       ],
       "@layouts/*": [
         "src/layouts/*"
       ],
       "@pages/*": [
         "src/pages/*"
-      ],
-      "@images/*": [
-        "src/images/*"
       ],
     },
     "jsx": "preserve"

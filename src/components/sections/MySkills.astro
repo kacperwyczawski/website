@@ -1,0 +1,32 @@
+---
+import { getEntry } from "astro:content";
+import Section from "@components/Section.astro";
+import Container from "@components/Container.astro";
+import Chip from "@components/Chip.astro";
+const resume = await getEntry("definitions", "resume");
+---
+
+<Section heading="My Skills">
+    <ul class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+        {
+            resume.data.skills.map((skill: any) => (
+                <li class="[&>*]:h-full">
+                    <Container>
+                        <div class="flex gap-2 text-neutral-700 dark:text-neutral-300 items-center">
+                            <Fragment set:html={skill.icon} />
+                            <h3 class="text-xl font-bold">{skill.title}</h3>
+                        </div>
+                        <p class="flex gap-1 md:gap-2 flex-wrap font-mono mt-4">
+                            {skill.preferred.map((skill: any) => (
+                                <Chip emphasis={true}>{skill}</Chip>
+                            ))}
+                            {skill.other.map((skill: any) => (
+                                <Chip>{skill}</Chip>
+                            ))}
+                        </p>
+                    </Container>
+                </li>
+            ))
+        }
+    </ul>
+</Section>
