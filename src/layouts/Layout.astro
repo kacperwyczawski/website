@@ -2,6 +2,8 @@
 import "@fontsource-variable/inter";
 import "@fontsource-variable/sora";
 import "@fontsource-variable/fira-code";
+import { getEntry } from "astro:content";
+const resume = await getEntry("definitions", "resume");
 ---
 
 <!DOCTYPE html>
@@ -11,7 +13,7 @@ import "@fontsource-variable/fira-code";
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <meta name="theme-color" content="#a21caf" />
-    <meta name="description" content="Kacper Wyczawski's personal website" />
+    <meta name="description" content={resume.data.aboutMe} />
     <meta
       http-equiv="Content-Security-Policy"
       content="img-src https://* 'self'; child-src 'none'; base-uri 'none';"
