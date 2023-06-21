@@ -66,8 +66,9 @@ skills:
     preferred:
       - Docker
       - Git
+    other:
       - GitHub Actions
-    other: []
+      - Figma
 workExperience:
   - date: "2022.10"
     location: Rzeszów, Poland
