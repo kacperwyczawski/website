@@ -3,6 +3,7 @@ import "@fontsource-variable/inter";
 import "@fontsource-variable/sora";
 import "@fontsource-variable/fira-code";
 import { getEntry } from "astro:content";
+import { ViewTransitions } from 'astro:transitions';
 const resume = await getEntry("definitions", "resume");
 ---
 
@@ -20,6 +21,7 @@ const resume = await getEntry("definitions", "resume");
     />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>Kacper Wyczawski</title>
+    <ViewTransitions />
   </head>
   <body class="selection:bg-fuchsia-700/20">
     <header
@@ -39,7 +41,9 @@ const resume = await getEntry("definitions", "resume");
         >
       </nav>
     </header>
-    <div class="background-pattern dark:text-neutral-100">
+    <div
+      class="background-pattern dark:text-neutral-100"
+      transition:animate="fade">
       <slot />
     </div>
   </body>
