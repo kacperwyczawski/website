@@ -68,7 +68,7 @@ skills:
     preferred:
       - Docker
       - Git
-      - Linux
+      - GNU/Linux
     other:
       - GitHub Actions
       - Figma
