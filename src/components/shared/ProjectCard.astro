@@ -1,6 +1,7 @@
 ---
-import Chip from "./Chip.astro";
-import LinkButton from "./LinkButton.astro";
+import Chip from "@components/Chip.astro";
+import LinkButton from "@components/LinkButton.astro";
+import { Image } from "astro:assets"
 
 export interface Props {
     name: string;
@@ -25,7 +26,7 @@ const {
     {
         image !== null && (
             <div class="p-4 border-b dark:border-slate-800">
-                <img
+                <Image
                     src={image}
                     alt={title + " mockup"}
                     class="w-full border dark:border-slate-800 rounded-lg aspect-video object-cover hover:drop-shadow-md hover:border-transparent transition-all duration-200 ease-in"

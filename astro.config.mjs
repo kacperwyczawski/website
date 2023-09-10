@@ -1,4 +1,4 @@
-import { defineConfig } from "astro/config";
+import { defineConfig, squooshImageService } from "astro/config";
 import tailwind from "@astrojs/tailwind";
 
 import prefetch from "@astrojs/prefetch";
@@ -9,5 +9,8 @@ export default defineConfig({
     selector: "a[href^='/']", // prefetch links that start with "/"
   })],
   site: "https://kacperwyczawski.github.io",
-  base: "/"
+  base: "/",
+  image: {
+    service: squooshImageService()
+  }
 });

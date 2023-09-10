@@ -6,7 +6,8 @@
     "baseUrl": "./",
     "paths": {
       "@components/*": [
-        "src/components/shared/*"
+        "src/components/shared/*",
+        "src/components/*"
       ],
       "@sections/*": [
         "src/components/sections/*"
@@ -17,6 +18,9 @@
       "@pages/*": [
         "src/pages/*"
       ],
+      "@images/*": [
+        "src/images/*"
+      ]
     },
     "jsx": "preserve"
   }
