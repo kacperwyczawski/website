@@ -8,9 +8,8 @@ export default defineConfig({
   integrations: [tailwind(), prefetch({
     selector: "a[href^='/']", // prefetch links that start with "/"
   })],
-  site: "https://kacperwyczawski.github.io",
-  base: "/",
   image: {
     service: squooshImageService()
-  }
+  },
+  site: "https://wyczawski.dev/"
 });
