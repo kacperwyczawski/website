@@ -3,6 +3,7 @@
   "noImplicitAny": true,
   "compilerOptions": {
     "verbatimModuleSyntax": true,
+    "strictNullChecks": true,
     "baseUrl": "./",
     "paths": {
       "@components/*": [
