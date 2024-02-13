@@ -14,4 +14,4 @@ technologies:
   - Nginx
 description: Web app for renting cars. It's a learning project showcasing full-stack web development. Built with ASP.NET Core and Vue/Nuxt, on Docker. Extremely easy to run locally via Docker Compose. More details in the source repository.
 sourceUrl: https://github.com/kacperwyczawski/sigma-cars
-imagePath: /sigma-cars.png
+image: ./../../images/sigma-cars.png

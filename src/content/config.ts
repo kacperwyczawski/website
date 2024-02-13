@@ -60,14 +60,14 @@ const indexCollection = defineCollection({
 })
 const projectsCollection = defineCollection({
     type: "data",
-    schema: z.object({
+    schema: ({ image }) => z.object({
         name: z.string(),
         status: z.string().optional(),
         technologies: z.array(z.string()),
         description: z.string(),
         sourceUrl: z.string().url().optional(),
         liveUrl: z.string().url().optional(),
-        imagePath: z.string().optional(),
+        image: image().optional(),
     })
 })
 const resumeCollection = defineCollection({

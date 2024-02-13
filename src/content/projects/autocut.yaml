@@ -10,4 +10,4 @@ technologies:
 description: Panel cutting optimization software that runs seamlessly on any modern browser or device using WebAssembly (WASM) and PWA technologies. This innovative app utilizes efficient algorithms written in C# to optimize stock cutting, saving time and reducing waste.
 sourceUrl: https://github.com/kacperwyczawski/autocut
 liveUrl: https://kacperwyczawski.github.io/autocut/
-imagePath: /autocut.png
+image: ./../../images/autocut.png

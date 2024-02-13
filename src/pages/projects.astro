@@ -1,44 +1,64 @@
 ---
 import Layout from "@layouts/Layout.astro";
-import ProjectCard from "@components/ProjectCard.astro"
-import LinkArrow from "@components/LinkArrow.astro"
+import LinkArrow from "@components/LinkArrow.astro";
+import { getCollection } from "astro:content";
+import { Image } from "astro:assets";
+import Chip from "@components/Chip.astro";
+import LinkButton from "@components/LinkButton.astro";
 
-import SigmaCarsImage from "@images/sigma-cars.png"
-import AutoCutImage from "@images/autocut.png"
+const projects = await getCollection("projects");
 ---
 
 <Layout>
-    <main class="p-2 md:p-4">
-        <div class="max-w-4xl mx-auto flex gap-4 flex-col">
-            <ProjectCard
-                name="This Website"
-                technologies={["Astro", "Tailwind CSS", "TypeScript", "GitHub Actions"]}
-                sourceUrl="https://github.com/kacperwyczawski/website">
-                This is my personal website, where you are currently visiting! Through building and maintaining this website, I have mastered my skills in front-end development. I hope you enjoy exploring it!
-            </ProjectCard>
-            <ProjectCard
-                name="Sigma Cars"
-                technologies={["Docker", "C#", "ASP.NET Core", "Entity Framework Core", "PostgreSQL", "REST + OpenAPI", "Nuxt", "Vue", "Tailwind CSS", "TypeScript / JavaScript", "GitHub Actions", "Nginx"]}
-                sourceUrl="https://github.com/kacperwyczawski/sigma-cars"
-                status="beta"
-                imagePath={SigmaCarsImage}>
-                Web app for renting cars. It's a learning project showcasing full-stack web development. Built with ASP.NET Core and Vue/Nuxt, on Docker. Extremely easy to run locally via Docker Compose. More details in the source repository.
-            </ProjectCard>
-            <ProjectCard
-                name="AutoCut"
-                technologies={["C#", "WebAssembly", "Blazor", "ASP.NET Core", "PWA", "CSS", "GitHub Actions", "xUnit + FluentAssertions"]}
-                sourceUrl="https://github.com/kacperwyczawski/autocut"
-                liveUrl="https://kacperwyczawski.github.io/autocut/"
-                status="beta"
-                imagePath={AutoCutImage}>
-                Panel cutting optimization software that runs seamlessly on any modern browser or device using WebAssembly (WASM) and PWA technologies. This innovative app utilizes efficient algorithms written in C# to optimize stock cutting, saving time and reducing waste.
-                </ProjectCard>
-            <div class="flex justify-center">
-                <LinkArrow
-                    link="https://github.com/kacperwyczawski?tab=repositories"
-                    text="Find more on my GitHub"
+  <main class="p-2 md:p-4">
+    <div class="max-w-4xl mx-auto flex gap-4 flex-col">
+      {
+        projects.toReversed().map((project) => (
+          <div class="bg-neutral-100 dark:bg-slate-850 border dark:border-slate-800 rounded-lg">
+            {project.data.image && (
+              <div class="p-4 border-b dark:border-slate-800">
+                <Image
+                  src={project.data.image}
+                  alt={project.data.name + " mockup"}
+                  class="w-full border dark:border-slate-800 rounded-lg aspect-video object-cover hover:drop-shadow-md hover:border-transparent transition-all duration-200 ease-in"
                 />
+              </div>
+            )}
+            <div class="p-4 flex flex-col gap-4">
+              <h1 class="text-2xl font-fancy text-fuchsia-700 dark:text-fuchsia-400">
+                {project.data.name}
+                {project.data.status && (
+                  <span class="text-sm text-neutral-700 dark:text-slate-600">
+                    ({project.data.status})
+                  </span>
+                )}
+              </h1>
+              <div class="flex gap-1 sm:gap-2 flex-wrap">
+                {project.data.technologies.map((tech) => (
+                  <Chip>{tech}</Chip>
+                ))}
+              </div>
+              <p>
+                {project.data.description}
+              </p>
+              <div class="flex gap-4">
+                {project.data.sourceUrl && (
+                  <LinkButton text="Source" link={project.data.sourceUrl} />
+                )}
+                {project.data.liveUrl && (
+                  <LinkButton text="Live" link={project.data.liveUrl} />
+                )}
+              </div>
             </div>
-        </div>
-    </main>
+          </div>
+        ))
+      }
+      <div class="flex justify-center">
+        <LinkArrow
+          link="https://github.com/kacperwyczawski?tab=repositories"
+          text="Find more on my GitHub"
+        />
+      </div>
+    </div>
+  </main>
 </Layout>
