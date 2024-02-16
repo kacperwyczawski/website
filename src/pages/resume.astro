@@ -1,16 +1,87 @@
 ---
-import Layout from "@layouts/Layout.astro"
-import MySkills from "@sections/MySkills.astro";
-import WorkExperienceAndEducation from "@sections/WorkExperienceAndEducation.astro"
-import Footer from "@sections/Footer.astro";
+import { getEntry } from "astro:content";
+import Layout from "@layouts/Layout.astro";
+import Section from "@components/Section.astro";
+import Container from "@components/Container.astro";
+import Chip from "@components/Chip.astro";
+import LinkArrow from "@components/LinkArrow.astro";
+import Timestamp from "@components/Timestamp.astro";
+
+const resume = await getEntry("resume", "content");
 ---
 
 <Layout>
   <main class="grid place-items-center p-2 md:p-4">
     <div class="max-w-6xl mx-auto">
-      <MySkills/>
-      <WorkExperienceAndEducation/>
-      <Footer/>
+      <Section heading="My Skills">
+        <ul class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+          {
+            resume.data.skills.map((skill) => (
+              <li class="[&>*]:h-full">
+                <Container>
+                  <div class="flex gap-2 text-neutral-700 dark:text-neutral-300 items-center">
+                    <Fragment set:html={skill.icon} />
+                    <h3 class="text-xl font-bold">{skill.title}</h3>
+                  </div>
+                  <p class="flex gap-1 md:gap-2 flex-wrap font-mono mt-4">
+                    {skill.preferred.map((skill) => (
+                      <Chip emphasis={true}>{skill}</Chip>
+                    ))}
+                    {skill.other.map((skill) => (
+                      <Chip>{skill}</Chip>
+                    ))}
+                  </p>
+                </Container>
+              </li>
+            ))
+          }
+        </ul>
+      </Section>
+      <div class="md:grid md:grid-cols-2 gap-4">
+        <Section heading="Work Experience">
+          <Container>
+            <ul class="relative pl-4">
+              {
+                resume.data.workExperience.map((experience) => (
+                  <Timestamp
+                    date={experience.date}
+                    location={experience.location}
+                    title={experience.title}
+                    company={experience.companyName}
+                    companyUrl={experience.companyUrl}
+                    type={experience.type}
+                  />
+                ))
+              }
+            </ul>
+          </Container>
+        </Section>
+        <Section heading="Education">
+          <Container>
+            {
+              resume.data.education.map((education) => (
+                <>
+                  <div class="text-neutral-400 dark:text-slate-600 text-lg text-center md:text-left">
+                    {education.date + " / " + education.location}
+                  </div>
+                  <div class="text-xl font-semibold text-center md:text-left">
+                    {education.title + " at "}
+                    <a
+                      href={education.schoolUrl}
+                      class="underline decoration-fuchsia-700 dark:decoration-fuchsia-400 hover:decoration-2"
+                    >
+                      {education.schoolName}
+                    </a>
+                  </div>
+                </>
+              ))
+            }
+          </Container>
+        </Section>
+      </div>
+      <footer class="flex justify-center">
+        <LinkArrow link="/projects" text="Check out my projects" />
+      </footer>
     </div>
   </main>
 </Layout>

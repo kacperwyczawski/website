@@ -50,8 +50,8 @@ skills:
       - Docker
       - Git
       - GNU/Linux
-      - Nix
     other:
+      - Nix
       - GitHub Actions
       - Figma
 workExperience:
