@@ -1,20 +1,28 @@
 ---
+import { getEntry } from "astro:content";
+import { ViewTransitions } from "astro:transitions";
 import "@fontsource-variable/inter";
 import "@fontsource-variable/sora";
 import "@fontsource-variable/fira-code";
-import { getEntry } from "astro:content";
-import { ViewTransitions } from 'astro:transitions';
-const resume = await getEntry("definitions", "resume");
+
+const description = await getEntry("index", "index")
+  .then((s) => s.body)
+  .then((s) =>
+    s
+      .replaceAll("[", "")
+      .replaceAll("]", "")
+      .replaceAll(/\(.*\)/g, "")
+  ); // remove Markdown stuff
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <meta name="theme-color" content="#a21caf" />
-    <meta name="description" content={resume.data.aboutMe} />
+    <meta name="description" content={description} />
     <meta
       http-equiv="Content-Security-Policy"
       content="img-src https://* 'self'; child-src 'none'; base-uri 'none';"
@@ -27,7 +35,9 @@ const resume = await getEntry("definitions", "resume");
     <header
       class="flex flex-col gap-1 md:flex-row justify-between p-4 md:p-8 sticky top-0 z-50 backdrop-blur-sm bg-neutral-100/70 dark:bg-slate-900/70"
     >
-      <h1 class="font-fancy font-semibold text-3xl md:text-4xl dark:text-neutral-100">
+      <h1
+        class="font-fancy font-semibold text-3xl md:text-4xl dark:text-neutral-100"
+      >
         <a class="cursor-default" href="/">Kacper Wyczawski</a>
       </h1>
       <nav class="text-2xl space-x-4 leading-[2.5rem]">
@@ -47,34 +57,31 @@ const resume = await getEntry("definitions", "resume");
     </header>
     <div
       class="background-pattern dark:text-neutral-100"
-      transition:animate="fade">
+      transition:animate="fade"
+    >
       <slot />
     </div>
-  </body>
-</html>
-<style>
-  body {
-    --bg-color: #f5f5f5; /* tailwind: neutral-100 */
-    --grid-color: #f1f1f1;
-    background-size: 32px 32px;
-    background-color: var(--bg-color);
-    background-image:
-      linear-gradient(
-        to right, 
-        var(--grid-color) 1px, 
-        transparent 1px),
-      linear-gradient(
-        to bottom, 
-        var(--grid-color) 1px, 
-        transparent 1px);
-    background-position: 10px 10px;
-    background-attachment: fixed;
-  }
-
-  @media (prefers-color-scheme: dark) {
+  </body><style>
     body {
-      --bg-color: #0f172a; /* tailwind: slate-900 */
-      --grid-color: #141f31;
+      --bg-color: #f5f5f5; /* tailwind: neutral-100 */
+      --grid-color: #f1f1f1;
+      background-size: 32px 32px;
+      background-color: var(--bg-color);
+      background-image: linear-gradient(
+          to right,
+          var(--grid-color) 1px,
+          transparent 1px
+        ),
+        linear-gradient(to bottom, var(--grid-color) 1px, transparent 1px);
+      background-position: 10px 10px;
+      background-attachment: fixed;
     }
-  }
-</style>
+
+    @media (prefers-color-scheme: dark) {
+      body {
+        --bg-color: #0f172a; /* tailwind: slate-900 */
+        --grid-color: #141f31;
+      }
+    }
+  </style>
+</html>
