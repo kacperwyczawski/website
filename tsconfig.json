@@ -6,22 +6,11 @@
     "strictNullChecks": true,
     "baseUrl": "./",
     "paths": {
-      "@components/*": [
-        "src/components/shared/*",
-        "src/components/*"
-      ],
-      "@sections/*": [
-        "src/components/sections/*"
-      ],
-      "@layouts/*": [
-        "src/layouts/*"
-      ],
-      "@pages/*": [
-        "src/pages/*"
-      ],
-      "@images/*": [
-        "src/images/*"
-      ]
+      "@components/*": ["src/components/shared/*", "src/components/*"],
+      "@sections/*": ["src/components/sections/*"],
+      "@layouts/*": ["src/layouts/*"],
+      "@pages/*": ["src/pages/*"],
+      "@images/*": ["src/images/*"]
     },
     "jsx": "preserve"
   }
