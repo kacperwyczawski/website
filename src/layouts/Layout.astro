@@ -27,6 +27,12 @@ const description = await getEntry("index", "index")
       http-equiv="Content-Security-Policy"
       content="img-src https://* 'self'; child-src 'none'; base-uri 'none';"
     />
+    <meta property="og:title" content="Kacper Wyczawski's website">
+    <meta property="og:description" content="Kacper is a web developer, open-source enthusiast and student.">
+    <meta property="og:url" content={import.meta.env.SITE}>
+    <meta property="og:type" content="profile">
+    <meta property="og:profile:first_name" content="Kacper">
+    <meta property="og:profile:last_name" content="Wyczawski">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="sitemap" href="/sitemap-index.xml">
     <title>Kacper Wyczawski</title>
