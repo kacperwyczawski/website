@@ -3,6 +3,6 @@ technologies:
   - Astro
   - Tailwind CSS
   - TypeScript
-  - GitHub Actions
+  - Cloudflare Pages
 description: This is my personal website, where you are currently visiting! Through building and maintaining this website, I have mastered my skills in front-end development. I hope you enjoy exploring it!
 sourceUrl: https://github.com/kacperwyczawski/website
