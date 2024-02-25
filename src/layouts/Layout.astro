@@ -18,7 +18,7 @@ const description = await getEntry("index", "index")
 <!doctype html>
 <html lang="en">
   <head>
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' static.cloudflareinsights.com; connect-src cloudflareinsights.com; style-src 'self' 'unsafe-inline'">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-eval' static.cloudflareinsights.com; connect-src cloudflareinsights.com; style-src 'self' 'unsafe-inline'">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
