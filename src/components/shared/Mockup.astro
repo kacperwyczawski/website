@@ -12,7 +12,7 @@ const { image, alt, url } = Astro.props;
 
 <div class="m-4">
   <div
-    class="bg-neutral-200 p-2 rounded-t-lg border flex justify-center items-center relative"
+    class="hidden bg-neutral-200 p-2 rounded-t-lg border md:flex justify-center items-center relative"
   >
     <div class="absolute left-4 flex gap-3">
       {
@@ -52,6 +52,6 @@ const { image, alt, url } = Astro.props;
   <Image
     src={image}
     alt={alt}
-    class="aspect-video rounded-b-lg border border-t-0"
+    class="aspect-video rounded-lg md:rounded-t-none border md:border-t-0"
   />
 </div>
