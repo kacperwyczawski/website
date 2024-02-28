@@ -12,12 +12,12 @@ const { image, alt, url } = Astro.props;
 
 <div class="m-4">
   <div
-    class="hidden bg-neutral-200 p-2 rounded-t-lg border md:flex justify-center items-center relative"
+    class="hidden bg-neutral-200 dark:bg-slate-800 p-2 rounded-t-lg border dark:border-slate-800 md:flex justify-center items-center relative"
   >
     <div class="absolute left-4 flex gap-3">
       {
         Array.from({ length: 3 }).map(() => (
-          <span class="h-3.5 w-3.5 bg-neutral-300 rounded-full" />
+          <span class="h-3.5 w-3.5 bg-neutral-300 dark:bg-slate-600 rounded-full" />
         ))
       }
     </div>
@@ -25,7 +25,7 @@ const { image, alt, url } = Astro.props;
       url && (
         <a
           href={url}
-          class="bg-neutral-100 py-1 px-2 rounded-lg text-neutral-800"
+          class="bg-neutral-100 py-1 px-2 rounded-lg dark:bg-slate-700"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -37,7 +37,7 @@ const { image, alt, url } = Astro.props;
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-link text-neutral-800 inline mr-1 h-5 w-5"
+            class="lucide lucide-link inline mr-1 h-5 w-5"
           >
             <>
               <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
@@ -52,6 +52,6 @@ const { image, alt, url } = Astro.props;
   <Image
     src={image}
     alt={alt}
-    class="aspect-video rounded-lg md:rounded-t-none border md:border-t-0"
+    class="aspect-video rounded-lg md:rounded-t-none border md:border-t-0 dark:border-slate-800"
   />
 </div>
