@@ -2,9 +2,9 @@
 import Layout from "@layouts/Layout.astro";
 import LinkArrow from "@components/LinkArrow.astro";
 import { getCollection } from "astro:content";
-import { Image } from "astro:assets";
 import Chip from "@components/Chip.astro";
 import LinkButton from "@components/LinkButton.astro";
+import Mockup from "@components/Mockup.astro";
 
 const projects = await getCollection("projects");
 ---
@@ -16,13 +16,11 @@ const projects = await getCollection("projects");
         projects.toReversed().map((project) => (
           <div class="bg-neutral-100 dark:bg-slate-850 border dark:border-slate-800 rounded-lg">
             {project.data.image && (
-              <div class="p-4 border-b dark:border-slate-800">
-                <Image
-                  src={project.data.image}
-                  alt={project.data.name + " mockup"}
-                  class="w-full border dark:border-slate-800 rounded-lg aspect-video object-cover hover:drop-shadow-md hover:border-transparent transition-all duration-200 ease-in"
-                />
-              </div>
+              <Mockup
+                image={project.data.image}
+                alt={project.data.name + " mockup"}
+                url={project.data.liveUrl ?? project.data.sourceUrl} 
+              />
             )}
             <div class="p-4 flex flex-col gap-4">
               <h1 class="text-2xl font-fancy text-fuchsia-700 dark:text-fuchsia-400">
