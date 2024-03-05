@@ -1,1 +1,0 @@
-Just a personal website built using [Astro](https://astro.build), [TailwindCSS](https://tailwindcss.com) and [Bun](https://bun.sh/). Hosted on [Cloudflare Pages](https://pages.cloudflare.com/). See it live [here](https://wyczawski.dev).
