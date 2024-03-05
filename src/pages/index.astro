@@ -5,7 +5,8 @@ import Section from "@components/Section.astro";
 import Container from "@components/Container.astro";
 import LinkSocial from "@components/LinkSocial.astro";
 
-const index = await getEntry("index", "index");
+const index = await getEntry("index", "content");
+const links = await getEntry("links", "content");
 const { Content } = await index.render();
 ---
 
@@ -14,7 +15,7 @@ const { Content } = await index.render();
     <div class="max-w-6xl mx-auto">
       <div class="flex justify-center gap-2">
         {
-          index.data.links.map((link) => (
+          links.data.map((link) => (
             <LinkSocial icon={link.icon} text={link.name} link={link.url} />
           ))
         }
