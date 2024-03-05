@@ -6,7 +6,7 @@ import "@fontsource-variable/sora";
 import "@fontsource-variable/fira-code";
 
 const description = await getEntry("index", "content")
-  .then((s) => s.body)
+  .then((s) => s.data.en)
   .then((s) =>
     s
       .replaceAll("[", "")

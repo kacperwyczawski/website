@@ -1,1 +1,0 @@
-I'm a web developer working with .NET, Astro, Vue, and [some other stuff](/resume). Currently, I'm pursuing my education at [secondary technical school](https://elektronik.rzeszow.pl). During my free time, I enjoy exploring new exciting technologies and tinkering with my NixOS system.

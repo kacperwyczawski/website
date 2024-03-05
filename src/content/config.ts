@@ -1,7 +1,11 @@
 import { z, defineCollection } from "astro:content";
 
 const indexCollection = defineCollection({
-  type: "content",
+  type: "data",
+  schema: z.object({
+    pl: z.string(),
+    en: z.string(),
+  }),
 });
 const linksCollection = defineCollection({
   type: "data",

@@ -5,9 +5,23 @@ import Section from "@components/Section.astro";
 import Container from "@components/Container.astro";
 import LinkSocial from "@components/LinkSocial.astro";
 
-const index = await getEntry("index", "content");
 const links = await getEntry("links", "content");
-const { Content } = await index.render();
+
+export async function getStaticPaths() {
+  const index = await getEntry("index", "content");
+  return [
+    {
+      params: { lang: "pl" },
+      props: { text: index.data.pl },
+    },
+    {
+      params: { lang: undefined },
+      props: { text: index.data.en },
+    },
+  ];
+}
+
+const { text } = Astro.props;
 ---
 
 <Layout>
@@ -22,8 +36,7 @@ const { Content } = await index.render();
       </div>
       <Section heading="About Me">
         <Container>
-          <div class="prose dark:prose-invert prose-lg">
-            <Content />
+          <div set:html={text.replaceAll(/\((.*?)\)->\((.*?)\)/gm, "<a href=\"$2\">$1</a>")} class="prose dark:prose-invert prose-lg">
           </div>
         </Container>
       </Section>
