@@ -14,4 +14,7 @@ export default defineConfig({
     service: squooshImageService(),
   },
   site: "https://wyczawski.dev/",
+  devToolbar: {
+    enabled: false,
+  }
 });
