@@ -4,6 +4,7 @@ import Layout from "@layouts/Layout.astro";
 import Section from "@components/Section.astro";
 import Container from "@components/Container.astro";
 import LinkSocial from "@components/LinkSocial.astro";
+import { translate } from "@utils/translations.ts";
 
 const links = await getEntry("links", "content");
 
@@ -21,10 +22,11 @@ export async function getStaticPaths() {
   ];
 }
 
-const { text, sectionHeading } = Astro.props;
+const { text } = Astro.props;
+const { lang } = Astro.params;
 ---
 
-<Layout>
+<Layout lang={lang}>
   <main class="grid place-items-center p-2 md:p-4">
     <div class="max-w-6xl mx-auto">
       <div class="flex justify-center gap-2">
@@ -34,7 +36,7 @@ const { text, sectionHeading } = Astro.props;
           ))
         }
       </div>
-      <Section heading={sectionHeading}>
+      <Section heading={translate("section.about", lang)}>
         <Container>
           <div
             set:html={text.replaceAll(
