@@ -12,16 +12,16 @@ export async function getStaticPaths() {
   return [
     {
       params: { lang: "pl" },
-      props: { text: index.data.pl },
+      props: { text: index.data.pl, sectionHeading: "O mnie" },
     },
     {
       params: { lang: undefined },
-      props: { text: index.data.en },
+      props: { text: index.data.en, sectionHeading: "About Me" },
     },
   ];
 }
 
-const { text } = Astro.props;
+const { text, sectionHeading } = Astro.props;
 ---
 
 <Layout>
@@ -34,10 +34,15 @@ const { text } = Astro.props;
           ))
         }
       </div>
-      <Section heading="About Me">
+      <Section heading={sectionHeading}>
         <Container>
-          <div set:html={text.replaceAll(/\((.*?)\)->\((.*?)\)/gm, "<a href=\"$2\">$1</a>")} class="prose dark:prose-invert prose-lg">
-          </div>
+          <div
+            set:html={text.replaceAll(
+              /\((.*?)\)->\((.*?)\)/gm,
+              '<a href="$2">$1</a>'
+            )}
+            class="prose dark:prose-invert prose-lg"
+          />
         </Container>
       </Section>
     </div>
