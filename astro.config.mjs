@@ -16,5 +16,5 @@ export default defineConfig({
   site: "https://wyczawski.dev/",
   devToolbar: {
     enabled: false,
-  }
+  },
 });

@@ -6,9 +6,11 @@ export interface Props {
     company: string;
     companyUrl: string;
     type: string | null;
+    conjunction: string;
 }
 
-const { date: dates, location, title, company, companyUrl: companyLink, type: note } = Astro.props;
+const { date: dates, location, title, company, companyUrl: companyLink, type: note, conjunction } = Astro.props;
+// TODO: use slots, or maybe get rid of astro components at all (impement daisyui-like class components)
 ---
 
 <li
@@ -25,7 +27,7 @@ const { date: dates, location, title, company, companyUrl: companyLink, type: no
         }
     </div>
     <div class="text-xl font-semibold">
-        {title} at
+        {title} {conjunction}
         <a
             href={companyLink}
             class="underline decoration-fuchsia-700 dark:decoration-fuchsia-400 hover:decoration-2"

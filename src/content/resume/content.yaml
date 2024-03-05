@@ -1,6 +1,7 @@
 skills:
   - icon: <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-file-json-2"><path d="M4 22h14a2 2 0 0 0 2-2V7.5L14.5 2H6a2 2 0 0 0-2 2v4"/><polyline points="14 2 14 8 20 8"/><path d="M4 12a1 1 0 0 0-1 1v1a1 1 0 0 1-1 1 1 1 0 0 1 1 1v1a1 1 0 0 0 1 1"/><path d="M8 18a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1 1 1 0 0 1-1-1v-1a1 1 0 0 0-1-1"/></svg>
     title: Languages
+    titlePl: Języki
     preferred:
       - C#
       - HTML
@@ -20,6 +21,7 @@ skills:
       - Dapper
   - icon: <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-database"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5V19A9 3 0 0 0 21 19V5"/><path d="M3 12A9 3 0 0 0 21 12"/></svg>
     title: Databases
+    titlePl: Bazy danych
     preferred:
       - PostgreSQL
     other:
@@ -27,6 +29,7 @@ skills:
       - MySQL
   - icon: <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check-circle"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
     title: Testing
+    titlePl: Testowanie
     preferred:
       - FluentAssertions
     other:
@@ -46,6 +49,7 @@ skills:
       - Bootstrap
   - icon: <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-zap"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
     title: Other tools
+    titlePl: Inne
     preferred:
       - Docker
       - Git
@@ -57,25 +61,36 @@ skills:
 workExperience:
   - date: "2022.10"
     location: Rzeszów, Poland
+    locationPl: Rzeszów, Polska
     type: Internship
+    typePl: Praktyki
     title: .NET Backend Developer
     companyName: Ideo
     companyUrl: https://www.ideosoftware.com/
   - date: "2022.7"
     location: Rzeszów, Poland
+    locationPl: Rzeszów, Polska
     type: Internship
+    typePl: Praktyki
     title: Data Base Administrator
+    titlePl: Administrator baz danych
     companyName: Devi System
     companyUrl: https://www.devisystem.pl/
   - date: 2022.4 - 2022.5
     location: Faro, Portugal
+    locationPl: Faro, Portugalia
     type: Internship
+    typePl: Praktyki
     title: Computer Hardware Repair
+    titlePl: Serwisant sprzętu komputerowego
     companyName: Clube Do Hardware
     companyUrl: https://goo.gl/maps/cQXJcgokdJmSD1bt6
 education:
   - date: 2020.09 - Present
+    datePl: 2020.09 - Obecnie
     location: Rzeszów, Poland
+    locationPl: Rzeszów, Polska
     title: IT Technician
+    titlePl: Technik Informatyk
     schoolName: Zespół Szkół Elektronicznych w Rzeszowie
     schoolUrl: https://elektronik.rzeszow.pl

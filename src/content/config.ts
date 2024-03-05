@@ -37,6 +37,7 @@ const resumeCollection = defineCollection({
       z.object({
         icon: z.string(),
         title: z.string(),
+        titlePl: z.string().optional(),
         preferred: z.array(z.string()),
         other: z.array(z.string()),
       }),
@@ -44,9 +45,13 @@ const resumeCollection = defineCollection({
     workExperience: z.array(
       z.object({
         date: z.string(),
+        datePl: z.string().optional(),
         location: z.string(),
+        locationPl: z.string(),
         type: z.string(),
+        typePl: z.string(),
         title: z.string(),
+        titlePl: z.string().optional(),
         companyName: z.string(),
         companyUrl: z.string().url(),
       }),
@@ -54,8 +59,11 @@ const resumeCollection = defineCollection({
     education: z.array(
       z.object({
         date: z.string(),
+        datePl: z.string().optional(),
         location: z.string(),
+        locationPl: z.string(),
         title: z.string(),
+        titlePl: z.string(),
         schoolName: z.string(),
         schoolUrl: z.string().url(),
       }),

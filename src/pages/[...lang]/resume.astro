@@ -6,8 +6,20 @@ import Container from "@components/Container.astro";
 import Chip from "@components/Chip.astro";
 import LinkArrow from "@components/LinkArrow.astro";
 import Timestamp from "@components/Timestamp.astro";
+import { translate } from "@utils/translations.ts";
 
 const resume = await getEntry("resume", "content");
+export async function getStaticPaths() {
+  return [
+    {
+      params: { lang: undefined },
+    },
+    {
+      params: { lang: "pl" },
+    },
+  ];
+}
+const { lang } = Astro.params;
 ---
 
 <Layout>
@@ -21,7 +33,11 @@ const resume = await getEntry("resume", "content");
                 <Container>
                   <div class="flex gap-2 text-neutral-700 dark:text-neutral-300 items-center">
                     <Fragment set:html={skill.icon} />
-                    <h3 class="text-xl font-bold">{skill.title}</h3>
+                    <h3 class="text-xl font-bold">
+                      {lang === "pl" && skill.titlePl
+                        ? skill.titlePl
+                        : skill.title}
+                    </h3>
                   </div>
                   <p class="flex gap-1 md:gap-2 flex-wrap font-mono mt-4">
                     {skill.preferred.map((skill) => (
@@ -38,34 +54,49 @@ const resume = await getEntry("resume", "content");
         </ul>
       </Section>
       <div class="md:grid md:grid-cols-2 gap-4">
-        <Section heading="Work Experience">
+        <Section heading={translate("section.workExperience", lang)}>
           <Container>
             <ul class="relative pl-4">
               {
                 resume.data.workExperience.map((experience) => (
                   <Timestamp
-                    date={experience.date}
-                    location={experience.location}
-                    title={experience.title}
+                    date={
+                      lang === "pl" && experience.datePl
+                        ? experience.datePl
+                        : experience.date
+                    }
+                    location={
+                      lang === "pl"
+                        ? experience.locationPl
+                        : experience.location
+                    }
+                    title={
+                      lang === "pl" && experience.titlePl ? experience.titlePl : experience.title
+                    }
+                    conjunction={lang === "pl" ? "w" : "at"}
                     company={experience.companyName}
                     companyUrl={experience.companyUrl}
-                    type={experience.type}
+                    type={lang === "pl" ? experience.typePl : experience.type}
                   />
                 ))
               }
             </ul>
           </Container>
         </Section>
-        <Section heading="Education">
+        <Section heading={translate("section.education", lang)}>
           <Container>
             {
               resume.data.education.map((education) => (
                 <>
                   <div class="text-neutral-400 dark:text-slate-600 text-lg text-center md:text-left">
-                    {education.date + " / " + education.location}
+                    {lang === "pl" && education.datePl
+                      ? education.datePl
+                      : education.date}{" "}
+                    /{" "}
+                    {lang === "pl" ? education.locationPl : education.location}
                   </div>
                   <div class="text-xl font-semibold text-center md:text-left">
-                    {education.title + " at "}
+                    {lang === "pl" ? education.titlePl + " w " : education.title + " at "}
                     <a
                       href={education.schoolUrl}
                       class="underline decoration-fuchsia-700 dark:decoration-fuchsia-400 hover:decoration-2"

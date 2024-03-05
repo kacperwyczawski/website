@@ -10,7 +10,7 @@
       "@images/*": ["src/images/*"],
       "@layouts/*": ["src/layouts/*"],
       "@pages/*": ["src/pages/*"],
-      "@utils/*": ["src/utils/*"], // TODO: automatically generate this
+      "@utils/*": ["src/utils/*"] // TODO: automatically generate this
     },
     "jsx": "preserve"
   }
