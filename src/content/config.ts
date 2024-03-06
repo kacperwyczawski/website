@@ -31,7 +31,7 @@ const projectsCollection = defineCollection({
       image: image().optional(),
     }),
 });
-const resumeCollection = defineCollection({
+const cvCollection = defineCollection({
   type: "data",
   schema: z.object({
     skills: z.array(
@@ -76,5 +76,5 @@ export const collections = {
   index: indexCollection,
   links: linksCollection,
   projects: projectsCollection,
-  resume: resumeCollection,
+  cv: cvCollection,
 };

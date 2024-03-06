@@ -79,7 +79,7 @@ const { lang } = Astro.props;
         </a>
         <a
           class="transition text-fuchsia-700 dark:text-fuchsia-400 md:text-black dark:md:text-neutral-100 md:hover:text-fuchsia-700 md:hover:dark:text-fuchsia-400"
-          href={localizeUrl("/resume", lang)}
+          href={localizeUrl("/cv", lang)}
         >
           CV
         </a>
@@ -89,11 +89,11 @@ const { lang } = Astro.props;
             Astro.url.pathname.startsWith("/pl/") ? (
               <>
                 <span class="text-fuchsia-700 dark:text-fuchsia-400">PL</span>
-                <a href={Astro.url.pathname.replace("/pl", "")}>EN</a>
+                <a href={Astro.url.pathname.replace("/pl", "/en")}>EN</a>
               </>
             ) : (
               <>
-                <a href={`/pl${Astro.url.pathname}`}>PL</a>
+                <a href={Astro.url.pathname.replace("/en", "/pl")}>PL</a>
                 <span class="text-fuchsia-700 dark:text-fuchsia-400">EN</span>
               </>
             )

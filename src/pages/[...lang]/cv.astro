@@ -8,11 +8,12 @@ import LinkArrow from "@components/LinkArrow.astro";
 import Timestamp from "@components/Timestamp.astro";
 import { localizeUrl, translate } from "@utils/localization";
 
-const resume = await getEntry("resume", "content");
+const cv = await getEntry("cv", "content");
+// TODO: extract function below, because it's used in multiple places
 export async function getStaticPaths() {
   return [
     {
-      params: { lang: undefined },
+      params: { lang: "en" },
     },
     {
       params: { lang: "pl" },
@@ -28,7 +29,7 @@ const { lang } = Astro.params;
       <Section heading={translate("section.skills", lang)}>
         <ul class="grid grid-cols-1 gap-4 sm:grid-cols-2">
           {
-            resume.data.skills.map((skill) => (
+            cv.data.skills.map((skill) => (
               <li class="[&>*]:h-full">
                 <Container>
                   <div class="flex gap-2 text-neutral-700 dark:text-neutral-300 items-center">
@@ -58,7 +59,7 @@ const { lang } = Astro.params;
           <Container>
             <ul class="relative pl-4">
               {
-                resume.data.workExperience.map((experience) => (
+                cv.data.workExperience.map((experience) => (
                   <Timestamp
                     date={
                       lang === "pl" && experience.datePl
@@ -86,7 +87,7 @@ const { lang } = Astro.params;
         <Section heading={translate("section.education", lang)}>
           <Container>
             {
-              resume.data.education.map((education) => (
+              cv.data.education.map((education) => (
                 <>
                   <div class="text-neutral-400 dark:text-slate-600 text-lg text-center md:text-left">
                     {lang === "pl" && education.datePl

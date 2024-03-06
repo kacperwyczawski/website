@@ -31,13 +31,11 @@ export const translations = {
 
 export function translate(
   key: keyof typeof translations,
-  lang: string | undefined,
+  lang: string,
 ) {
-  return translations[key][(lang as "pl") ?? "en"];
+  return translations[key][lang as "pl" | "en"];
 }
 
-export function localizeUrl(url: string, lang: string | undefined) {
-  if (lang)
-    return `/${lang}${url}`;
-  return url;
+export function localizeUrl(url: string, lang: string) {
+  return `/${lang}${url}`;
 }
