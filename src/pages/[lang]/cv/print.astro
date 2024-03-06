@@ -1,0 +1,45 @@
+---
+import { getEntry } from "astro:content";
+import { localizeUrl, translate } from "@utils/localization.ts";
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/Container.astro";
+
+const cv = await getEntry("cv", "content");
+export async function getStaticPaths() {
+  return [
+    {
+      params: { lang: "en" },
+    },
+    {
+      params: { lang: "pl" },
+    },
+  ];
+}
+const { lang } = Astro.params;
+---
+
+<Layout lang={lang} wrapper={false}>
+  <div class="p-4 print:pt-0 flex flex-col items-center gap-4">
+    <aside class="print:hidden dark:text-neutral-100">
+      <Container>
+        <a href={localizeUrl("/cv", lang)} class="underline text-blue-500"
+          >[{translate("link.go-back", lang)}]</a
+        >
+        {translate("cv-print.info", lang)}
+      </Container>
+    </aside>
+    <section class="bg-white w-[21cm] h-[29.7cm]">
+      Empty for now
+    </section>
+  </div>
+</Layout>
+<style>
+  @page {
+    size: A4 portrait;
+    margin: 0;
+  }
+
+  /* body {
+    @apply bg-gray-200 flex flex-col items-center pt-8 print:pt-0 gap-8;
+  } */
+</style>
