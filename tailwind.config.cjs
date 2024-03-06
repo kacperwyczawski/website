@@ -11,8 +11,6 @@ module.exports = {
         fancy: [
           "Sora Variable",
           "Sora",
-          "Inter Variable",
-          "Inter",
           ...defaultTheme.fontFamily.sans,
         ],
         mono: [

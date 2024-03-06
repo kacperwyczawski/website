@@ -5,6 +5,7 @@ const indexCollection = defineCollection({
   schema: z.object({
     pl: z.string(),
     en: z.string(),
+    plCv: z.string(),
   }),
 });
 const linksCollection = defineCollection({
@@ -13,7 +14,9 @@ const linksCollection = defineCollection({
     z.object({
       icon: z.string(),
       name: z.string(),
+      printText: z.string().optional(),
       url: z.string().url(),
+      showOnWebsite: z.boolean(),
     }),
   ),
 });

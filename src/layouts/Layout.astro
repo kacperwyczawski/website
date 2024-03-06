@@ -14,7 +14,7 @@ const description = await getEntry("index", "content")
       .replaceAll("]", "")
       .replaceAll(/\(.*\)/g, "")
   ); // remove Markdown stuff
-const { lang, wrapper = true } = Astro.props;
+const { lang } = Astro.props;
 ---
 
 <!doctype html>
@@ -59,7 +59,7 @@ const { lang, wrapper = true } = Astro.props;
     <title>Kacper Wyczawski</title>
     <ViewTransitions />
   </head>
-  <body class="selection:bg-fuchsia-700/20">
+  <body class="selection:bg-fuchsia-700/20 dark:text-neutral-100">
     <header
       class="print:hidden flex flex-col gap-1 md:flex-row md:justify-between p-4 md:p-8 sticky top-0 z-50 backdrop-blur-sm bg-neutral-100/70 dark:bg-slate-900/70"
     >
@@ -101,18 +101,11 @@ const { lang, wrapper = true } = Astro.props;
         </div>
       </nav>
     </header>
-    {
-      wrapper ? (
-        <div
-          class="background-pattern dark:text-neutral-100"
-          transition:animate="fade"
-        >
-          <slot />
-        </div>
-      ) : (
-        <slot />
-      )
-    }
+    <div
+      transition:animate="fade"
+    >
+      <slot />
+    </div>
     <style>
       body {
         --bg-color: #f5f5f5; /* tailwind: neutral-100 */
