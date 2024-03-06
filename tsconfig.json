@@ -6,7 +6,7 @@
     "strictNullChecks": true,
     "baseUrl": "./",
     "paths": {
-      "@components/*": ["src/components/shared/*", "src/components/*"],
+      "@components/*": ["src/components/*"],
       "@images/*": ["src/images/*"],
       "@layouts/*": ["src/layouts/*"],
       "@pages/*": ["src/pages/*"],
