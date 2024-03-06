@@ -31,3 +31,9 @@ export function translate(
 ) {
   return translations[key][(lang as "pl") ?? "en"];
 }
+
+export function localizeUrl(url: string, lang: string | undefined) {
+  if (lang)
+    return `/${lang}${url}`;
+  return url;
+}
