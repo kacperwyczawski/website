@@ -4,7 +4,7 @@ import { ViewTransitions } from "astro:transitions";
 import "@fontsource-variable/inter";
 import "@fontsource-variable/sora";
 import "@fontsource-variable/fira-code";
-import { localizeUrl, translate } from "@utils/translations";
+import { localizeUrl, translate } from "@utils/localization";
 
 const description = await getEntry("index", "content")
   .then((s) => s.data.en)
