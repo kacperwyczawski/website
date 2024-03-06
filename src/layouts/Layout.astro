@@ -68,7 +68,7 @@ const { lang } = Astro.props;
       >
         <a href="/">Kacper Wyczawski</a>
       </h1>
-      <nav class="text-2xl space-x-4 leading-[2.5rem]">
+      <nav class="text-2xl leading-[2.5rem] flex gap-4">
         <a
           class="transition text-fuchsia-700 dark:text-fuchsia-400 md:text-black dark:md:text-neutral-100 md:hover:text-fuchsia-700 md:hover:dark:text-fuchsia-400"
           href="/projects">{translate("nav.projects", lang)}</a
@@ -77,6 +77,22 @@ const { lang } = Astro.props;
           class="transition text-fuchsia-700 dark:text-fuchsia-400 md:text-black dark:md:text-neutral-100 md:hover:text-fuchsia-700 md:hover:dark:text-fuchsia-400"
           href="/resume">{translate("nav.resume", lang)}</a
         >
+        <hr class="w-full h-10 border-l">
+        <div class="text-sm font-semibold flex flex-col">
+          {
+            Astro.url.pathname.startsWith("/pl/") ? (
+              <>
+                <span class="text-fuchsia-700">PL</span>
+                <a href={Astro.url.pathname.replace("/pl", "")}>EN</a>
+              </>
+            ) : (
+              <>
+                <a href={`/pl${Astro.url.pathname}`}>PL</a>
+                <span class="text-fuchsia-700">EN</span>
+              </>
+            )
+          }
+        </div>
       </nav>
     </header>
     <div
