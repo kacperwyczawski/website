@@ -3,10 +3,6 @@ export const translations = {
     pl: "Projekty",
     en: "Projects",
   },
-  "nav.resume": {
-    pl: "CV",
-    en: "Resume",
-  },
   "section.about": {
     pl: "O mnie",
     en: "About me",
