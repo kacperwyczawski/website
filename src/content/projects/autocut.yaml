@@ -6,7 +6,7 @@ technologies:
   - TypeScript
   - Cloudflare Pages
 description: Panel cutting optimization software that runs seamlessly on any modern browser or device using PWA technology. This innovative app utilizes efficient algorithms written in TypeScript to optimize stock cutting, saving time and reducing waste.
-descriptionPl: Uniwersalne oprogramowanie do optymalizacji cięcia, stworzony z myślą o piłach panelowych. Jest to progresywna aplikacja webowa, która działa na każdej nowoczesnej przeglądarce lub urządzeniu.
+descriptionPl: Uniwersalne oprogramowanie do optymalizacji cięcia, stworzone z myślą o piłach panelowych. Jest to progresywna aplikacja webowa, która działa na każdej nowoczesnej przeglądarce lub urządzeniu.
 sourceUrl: https://github.com/kacperwyczawski/autocut
 liveUrl: https://autocut.wyczawski.dev
 image: ./../../images/autocut.png
