@@ -25,7 +25,7 @@ const { lang } = Astro.params;
 <Layout>
   <main class="grid place-items-center p-2 md:p-4">
     <div class="max-w-6xl mx-auto">
-      <Section heading="My Skills">
+      <Section heading={translate("section.skills", lang)}>
         <ul class="grid grid-cols-1 gap-4 sm:grid-cols-2">
           {
             resume.data.skills.map((skill) => (
