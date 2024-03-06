@@ -23,6 +23,10 @@ export const translations = {
     pl: "Edukacja",
     en: "Education",
   },
+  "link.projects" : {
+    pl: "Zobacz moje projekty",
+    en: "Check out my projects",
+  },
 };
 
 export function translate(

@@ -6,7 +6,7 @@ import Container from "@components/Container.astro";
 import Chip from "@components/Chip.astro";
 import LinkArrow from "@components/LinkArrow.astro";
 import Timestamp from "@components/Timestamp.astro";
-import { translate } from "@utils/localization";
+import { localizeUrl, translate } from "@utils/localization";
 
 const resume = await getEntry("resume", "content");
 export async function getStaticPaths() {
@@ -111,7 +111,7 @@ const { lang } = Astro.params;
         </Section>
       </div>
       <footer class="flex justify-center">
-        <LinkArrow link="/projects" text="Check out my projects" />
+        <LinkArrow link={localizeUrl("/projects", lang)} text={translate("link.projects", lang)} />
       </footer>
     </div>
   </main>
