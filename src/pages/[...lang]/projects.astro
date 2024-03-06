@@ -5,11 +5,23 @@ import { getCollection } from "astro:content";
 import Chip from "@components/Chip.astro";
 import LinkButton from "@components/LinkButton.astro";
 import Mockup from "@components/Mockup.astro";
+import { translate } from "@utils/localization";
 
 const projects = await getCollection("projects");
+export function getStaticPaths() {
+  return [
+    {
+      params: { lang: undefined },
+    },
+    {
+      params: { lang: "pl" },
+    },
+  ];
+}
+const { lang } = Astro.params;
 ---
 
-<Layout>
+<Layout lang={lang}>
   <main class="p-2 md:p-4">
     <div class="max-w-4xl mx-auto flex gap-4 flex-col">
       {
@@ -19,7 +31,7 @@ const projects = await getCollection("projects");
               <Mockup
                 image={project.data.image}
                 alt={project.data.name + " mockup"}
-                url={project.data.liveUrl ?? project.data.sourceUrl} 
+                url={project.data.liveUrl ?? project.data.sourceUrl}
               />
             )}
             <div class="p-4 flex flex-col gap-4">
@@ -37,7 +49,9 @@ const projects = await getCollection("projects");
                 ))}
               </div>
               <p>
-                {project.data.description}
+                {lang === "pl"
+                  ? project.data.descriptionPl
+                  : project.data.description}
               </p>
               <div class="flex gap-4">
                 {project.data.sourceUrl && (
@@ -54,7 +68,7 @@ const projects = await getCollection("projects");
       <div class="flex justify-center">
         <LinkArrow
           link="https://github.com/kacperwyczawski?tab=repositories"
-          text="Find more on my GitHub"
+          text={translate("link.github-projects", lang)}
         />
       </div>
     </div>

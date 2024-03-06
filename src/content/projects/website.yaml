@@ -1,8 +1,9 @@
-name: This Website
+name: Wyczawski.dev
 technologies:
   - Astro
   - Tailwind CSS
   - TypeScript
   - Cloudflare Pages
-description: This is my personal website, where you are currently visiting! Through building and maintaining this website, I have mastered my skills in front-end development. I hope you enjoy exploring it!
+description: This is my personal website. Through building and maintaining this website, I have mastered my skills in front-end development.
+descriptionPl: Jest to moja osobista strona. Poprzez jej budowę i rozówj, doskonaliłem swoje umiejętności w zakresie frontendu.
 sourceUrl: https://github.com/kacperwyczawski/website

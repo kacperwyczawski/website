@@ -27,6 +27,10 @@ export const translations = {
     pl: "Zobacz moje projekty",
     en: "Check out my projects",
   },
+  "link.github-projects" : {
+    pl: "Zobacz więcej na moim GitHubie",
+    en: "Find more on my GitHub",
+  },
 };
 
 export function translate(
