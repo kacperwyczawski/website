@@ -71,7 +71,7 @@ workExperience:
     location: Rzeszów, Poland
     locationPl: Rzeszów, Polska
     type: Internship
-    typePl: Praktyki
+    typePl: Staż
     title: Data Base Administrator
     titlePl: Administrator baz danych
     companyName: Devi System
@@ -82,7 +82,7 @@ workExperience:
     type: Internship
     typePl: Praktyki
     title: Computer Hardware Repair
-    titlePl: Serwisant sprzętu komputerowego
+    titlePl: Serwisant komputerowy
     companyName: Clube Do Hardware
     companyUrl: https://goo.gl/maps/cQXJcgokdJmSD1bt6
 education:
@@ -94,3 +94,5 @@ education:
     titlePl: Technik Informatyk
     schoolName: Zespół Szkół Elektronicznych w Rzeszowie
     schoolUrl: https://elektronik.rzeszow.pl
+    additionalInfo: [ "INF.O2 qualification result: 100%" ]
+    additionalInfoPl: [ "Wynik z kwalifikacji INF.O2: 100%" ]

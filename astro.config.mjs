@@ -18,9 +18,9 @@ export default defineConfig({
     enabled: false,
   },
   redirects: {
-    "/": "/en/", // frequent
+    "/": "/en/", // fallback, it should be handled by cloudflare rules
     "/projects": "/en/projects", // probably not used
     "/resume": "/en/cv", // probably not used
-    "/en/resume": "/en/cv", // probably not used
+    "/en/resume": "/en/cv", // probably not used, was live for like one day or less
   }
 });

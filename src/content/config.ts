@@ -70,6 +70,8 @@ const cvCollection = defineCollection({
         titlePl: z.string(),
         schoolName: z.string(),
         schoolUrl: z.string().url(),
+        additionalInfo: z.array(z.string()).optional(),
+        additionalInfoPl: z.array(z.string()).optional(),
       }),
     ),
   }),

@@ -24,6 +24,9 @@ module.exports = {
           850: "#172033",
         },
       },
+      listStyleType: {
+        dash: "'- '",
+      },
     },
   },
   plugins: [require("@tailwindcss/typography")],

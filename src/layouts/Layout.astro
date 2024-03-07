@@ -101,9 +101,7 @@ const { lang } = Astro.props;
         </div>
       </nav>
     </header>
-    <div
-      transition:animate="fade"
-    >
+    <div transition:animate="fade">
       <slot />
     </div>
     <style>
@@ -120,6 +118,10 @@ const { lang } = Astro.props;
           linear-gradient(to bottom, var(--grid-color) 1px, transparent 1px);
         background-position: 10px 10px;
         background-attachment: fixed;
+
+        /* allow printing of background */
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
       }
 
       @media (prefers-color-scheme: dark) {

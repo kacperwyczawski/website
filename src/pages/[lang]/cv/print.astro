@@ -3,10 +3,12 @@ import { getEntry } from "astro:content";
 import { localizeUrl, translate } from "@utils/localization.ts";
 import Layout from "@layouts/Layout.astro";
 import Container from "@components/Container.astro";
+import { getCollection } from "astro:content";
 
-const index = await getEntry("index", "content");
-const cv = await getEntry("cv", "content");
 const links = await getEntry("links", "content");
+const index = await getEntry("index", "content");
+const projects = await getCollection("projects");
+const cv = await getEntry("cv", "content");
 export async function getStaticPaths() {
   return [
     {
@@ -30,13 +32,13 @@ const { lang } = Astro.params;
         {translate("cv-print.info", lang)}
       </Container>
     </aside>
-    <section class="bg-white text-black w-[21cm] h-[29.7cm] p-[1cm] relative">
+    <section class="bg-white text-black w-[21cm] h-[29.7cm] p-[0.5cm] relative">
       <h1 class="font-fancy font-semibold text-3xl text-center">
         Kacper Wyczawski
       </h1>
-      <!--SSE-->
+      <!-- SSE -->
       <p
-        class="text-sm text-center text-neutral-100 mt-4 bg-fuchsia-700 py-0.5"
+        class="text-center font-fancy text-neutral-100 mt-4 bg-fuchsia-700 py-0.5 px-1.5"
       >
         {
           links.data.map((link, i) => (
@@ -48,7 +50,7 @@ const { lang } = Astro.params;
           ))
         }
       </p>
-      <!--/SSE-->
+      <!-- /SSE -->
       <p class="mt-4">
         {index.data.plCv}
       </p>
@@ -57,8 +59,95 @@ const { lang } = Astro.params;
           Umiejętności
         </span>
       </h2>
-      // to be continued
-      <div id="footer"></div>
+      <ul class="mt-2 list-dash list-inside">
+        {
+          cv.data.skills.map((category) => (
+            <li>
+              {category.preferred.map((skill, i) => (
+                <>
+                  {i !== 0 && " | "}
+                  <span class="font-bold">{skill}</span>
+                </>
+              ))}
+              {category.other.map((skill) => " | " + skill)}
+            </li>
+          ))
+        }
+      </ul>
+      <h2 class="mt-4 shadow-[inset_0_-0.875rem_theme(colors.fuchsia.700)]">
+        <span class="text-neutral-100 font-fancy px-1.5 py-0.5 bg-fuchsia-700">
+          Doświadczenie zawodowe
+        </span>
+      </h2>
+      <ul class="mt-2 list-dash list-inside">
+        {
+          cv.data.workExperience.map((entry) => (
+            <li>
+              <span class="font-bold">{entry.titlePl ?? entry.title}</span> w
+              {/* prettier-ignore */}
+              <a href={entry.companyUrl} class="underline">{entry.companyName}</a>
+              <span class="text-gray-400 -ml-1">
+                {/* interpolation and negative margin, because prettier is fucking stupid */}
+                {`, ${entry.datePl ?? entry.date}, ${entry.locationPl} (${entry.typePl})`}
+              </span>
+            </li>
+          ))
+        }
+      </ul>
+      <h2 class="mt-4 shadow-[inset_0_-0.875rem_theme(colors.fuchsia.700)]">
+        <span class="text-neutral-100 font-fancy px-1.5 py-0.5 bg-fuchsia-700">
+          Edukacja
+        </span>
+      </h2>
+      <ul class="mt-2 list-dash list-inside">
+        {
+          cv.data.education.map((entry) => (
+            <li>
+              <span class="font-bold">{entry.titlePl}</span> w
+              {/* prettier-ignore */}
+              <a href={entry.schoolUrl} class="underline">{entry.schoolName}</a>
+              <span class="text-gray-400 -ml-1">
+                {/* interpolation and negative margin, because prettier is fucking stupid */}
+                {`, ${entry.datePl ?? entry.date}`}
+              </span>
+            </li>
+          ))
+        }
+      </ul>
+      <h2 class="mt-4 shadow-[inset_0_-0.875rem_theme(colors.fuchsia.700)]">
+        <span class="text-neutral-100 font-fancy px-1.5 py-0.5 bg-fuchsia-700">
+          Projekty
+        </span>
+      </h2>
+      <p class="mt-2 text-gray-400 italic text-sm">
+        Poniższe, oraz inne moje projekty są dostępne na <a
+          href="https://github.com/kacperwyczawski"
+          class="underline">GitHubie</a
+        >. Poza nimi udzielam się również przy innych projektach open source,
+        m.in. Astro, NixOS czy Monkeytype
+      </p>
+      <ul class="mt-2 list-dash list-inside">
+        {
+          projects.toReversed().map((project) => (
+            <li class="mt-2">
+              <span class="font-bold font-fancy">{project.data.name}</span>
+              <a
+                href={project.data.liveUrl ?? project.data.sourceUrl}
+                class="underline text-sm"
+              >
+                {"(" +
+                  (project.data.liveUrl ?? project.data.sourceUrl)?.substring(
+                    8
+                  ) +
+                  ")"}
+              </a>
+              <p class="ml-4 text-gray-400 text-sm italic">({project.data.technologies.join(", ")})</p>
+              <p class="ml-4 indent-8">{project.data.descriptionPl}</p>
+            </li>
+          ))
+        }
+      </ul>
+      <div id="footer" class="text-[0.5rem] absolute bottom-[0.5cm] text-gray-400 mt-4"></div>
     </section>
     <div class="print:hidden">
       <Container>

@@ -4,15 +4,15 @@ technologies:
   - Docker
   - C#
   - ASP.NET Core
-  - Entity Framework Core
+  - EF Core
   - PostgreSQL
   - Nuxt
   - Vue
   - Tailwind CSS
   - TypeScript
-  - GitHub Actions
+  - CI/CD
   - Nginx
 description: Web app for renting cars. It's a learning project showcasing full-stack web development, containerization, and microservices architecture. More details and documentation can be found in the repository.
-descriptionPl: Jest to aplikacja do wynajmu samochodów, pełniąca funkcję demonstracyjną pełnego stosu technologicznego aplikacji webowej, opartej na konteneryzacji oraz architekturze microservices. Więcej szczegółów i dokumentacji znajduje się w repozytorium.
+descriptionPl: Aplikacja do wynajmu samochodów, pełniąca funkcję demonstracyjną pełnego stosu technologicznego aplikacji webowej, opartej na konteneryzacji oraz architekturze microservices. Więcej szczegółów i dokumentacja znajduje się w repozytorium.
 sourceUrl: https://github.com/kacperwyczawski/sigma-cars
 image: ./../../images/sigma-cars.png
