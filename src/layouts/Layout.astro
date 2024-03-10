@@ -58,6 +58,33 @@ const { lang } = Astro.props;
     <link rel="sitemap" href="/sitemap-index.xml" />
     <title>Kacper Wyczawski</title>
     <ViewTransitions />
+    <style>
+      body {
+        --bg-color: #f5f5f5; /* tailwind: neutral-100 */
+        --grid-color: #f1f1f1;
+        background-size: 32px 32px;
+        background-color: var(--bg-color);
+        background-image: linear-gradient(
+            to right,
+            var(--grid-color) 1px,
+            transparent 1px
+          ),
+          linear-gradient(to bottom, var(--grid-color) 1px, transparent 1px);
+        background-position: 10px 10px;
+        background-attachment: fixed;
+
+        /* allow printing of background */
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        body {
+          --bg-color: #0f172a; /* tailwind: slate-900 */
+          --grid-color: #141f31;
+        }
+      }
+    </style>
   </head>
   <body class="selection:bg-fuchsia-700/20 dark:text-neutral-100">
     <header
@@ -104,32 +131,5 @@ const { lang } = Astro.props;
     <div transition:animate="fade">
       <slot />
     </div>
-    <style>
-      body {
-        --bg-color: #f5f5f5; /* tailwind: neutral-100 */
-        --grid-color: #f1f1f1;
-        background-size: 32px 32px;
-        background-color: var(--bg-color);
-        background-image: linear-gradient(
-            to right,
-            var(--grid-color) 1px,
-            transparent 1px
-          ),
-          linear-gradient(to bottom, var(--grid-color) 1px, transparent 1px);
-        background-position: 10px 10px;
-        background-attachment: fixed;
-
-        /* allow printing of background */
-        -webkit-print-color-adjust: exact;
-        print-color-adjust: exact;
-      }
-
-      @media (prefers-color-scheme: dark) {
-        body {
-          --bg-color: #0f172a; /* tailwind: slate-900 */
-          --grid-color: #141f31;
-        }
-      }
-    </style>
   </body>
 </html>
