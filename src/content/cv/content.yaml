@@ -1,83 +1,108 @@
+# info for dates: day will be ignored, only month and year are important. It is recomended to use 01 as day
+
 skills:
   - icon: <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-file-json-2"><path d="M4 22h14a2 2 0 0 0 2-2V7.5L14.5 2H6a2 2 0 0 0-2 2v4"/><polyline points="14 2 14 8 20 8"/><path d="M4 12a1 1 0 0 0-1 1v1a1 1 0 0 1-1 1 1 1 0 0 1 1 1v1a1 1 0 0 0 1 1"/><path d="M8 18a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1 1 1 0 0 1-1-1v-1a1 1 0 0 0-1-1"/></svg>
-    title: Languages
-    titlePl: Języki
-    preferred:
-      - C#
-      - HTML
-      - CSS
-    other:
-      - F#
-      - SQL
-      - JavaScript
-      - TypeScript
+    name: Languages
+    namePolish: Języki
+    items:
+      - name: C#
+        preferred: true
+      - name: HTML
+        preferred: true
+      - name: CSS
+        preferred: true
+      - name: F#
+        preferred: false
+      - name: SQL
+        preferred: false
+      - name: JavaScript
+        preferred: false
+      - name: TypeScript
+        preferred: false
   - icon: <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-server"><rect width="20" height="8" x="2" y="2" rx="2" ry="2"/><rect width="20" height="8" x="2" y="14" rx="2" ry="2"/><line x1="6" x2="6.01" y1="6" y2="6"/><line x1="6" x2="6.01" y1="18" y2="18"/></svg>
-    title: Backend
-    preferred:
-      - ASP.NET Core
-      - Entity Framework Core
-      - PostgreSQL
-    other:
-      - SQLite
-      - MySQL
+    name: Backend
+    items:
+      - name: ASP.NET Core
+        preferred: true
+      - name: Entity Framework Core
+        preferred: true
+      - name: PostgreSQL
+        preferred: true
+      - name: SQLite
+        preferred: false
+      - name: MySQL
+        preferred: false
   - icon: <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-monitor"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg>
-    title: Frontend
-    preferred:
-      - Blazor
-      - Tailwind CSS
-      - Astro
-      - Vue
-      - Nuxt
-    other:
-      - WebAssembly
-      - Bootstrap
+    name: Frontend
+    items:
+      - name: Blazor
+        preferred: true
+      - name: Tailwind CSS
+        preferred: true
+      - name: Astro
+        preferred: true
+      - name: Vue
+        preferred: true
+      - name: Nuxt
+        preferred: true
+      - name: WebAssembly
+        preferred: false
+      - name: Bootstrap
+        preferred: false
   - icon: <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-zap"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-    title: Other
-    titlePl: Inne
-    preferred:
-      - Docker
-      - Git
-      - Linux
-      - Unit Testing
-    other:
-      - Nix
-      - CI/CD
-      - Figma
+    name: Other
+    namePolish: Inne
+    items:
+      - name: Docker
+        preferred: true
+      - name: Git
+        preferred: true
+      - name: Linux
+        preferred: true
+      - name: Unit Testing
+        preferred: true
+      - name: Nix
+        preferred: false
+      - name: CI/CD
+        preferred: false
+      - name: Figma
+        preferred: false
 workExperience:
-  - date: "2022.10"
+  - dateStart: 2022-10-01
+    dateEnd: 2022-10-01
     location: Rzeszów, Poland
-    locationPl: Rzeszów, Polska
-    type: Internship
-    typePl: Praktyki
+    locationPolish: Rzeszów, Polska
+    type: internship
     title: .NET Backend Developer
     companyName: Ideo
     companyUrl: https://www.ideosoftware.com/
-  - date: "2022.7"
+  - dateStart: 2022-07-01
+    dateEnd: 2022-07-01
     location: Rzeszów, Poland
-    locationPl: Rzeszów, Polska
-    type: Internship
-    typePl: Staż
+    locationPolish: Rzeszów, Polska
+    type: paid-internship
     title: Data Base Administrator
-    titlePl: Administrator baz danych
+    titlePolish: Administrator baz danych
     companyName: Devi System
     companyUrl: https://www.devisystem.pl/
-  - date: 2022.4 - 2022.5
+  - dateStart: 2022-04-01
+    dateEnd: 2022-05-01
     location: Faro, Portugal
-    locationPl: Faro, Portugalia
-    type: Internship
-    typePl: Praktyki
+    locationPolish: Faro, Portugalia
+    type: internship
     title: Computer Hardware Repair
-    titlePl: Serwisant komputerowy
+    titlePolish: Serwisant komputerowy
     companyName: Clube Do Hardware
     companyUrl: https://goo.gl/maps/cQXJcgokdJmSD1bt6
 education:
-  - date: 2020.09 - Present
-    datePl: 2020.09 - Obecnie
+  - dateStart: 2020-09-01
     location: Rzeszów, Poland
-    locationPl: Rzeszów, Polska
+    locationPolish: Rzeszów, Polska
     title: IT Technician
-    titlePl: Technik Informatyk
+    titlePolish: Technik Informatyk
     schoolName: Zespół Szkół Elektronicznych w Rzeszowie
     schoolUrl: https://elektronik.rzeszow.pl
-    additionalInfo: [ "INF.O2 qualification result: 100%" ]
-    additionalInfoPl: [ "Wynik z kwalifikacji INF.O2: 100%" ]
+    accomplishments:
+      - name: INF.02 qualification result
+        namePolish: Wynik z kwalifikacji INF.02
+        value: 100%

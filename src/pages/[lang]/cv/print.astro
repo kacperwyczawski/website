@@ -4,6 +4,7 @@ import { localizeUrl, translate } from "@utils/localization.ts";
 import Layout from "@layouts/Layout.astro";
 import Container from "@components/Container.astro";
 import { getCollection } from "astro:content";
+import { dates } from "@utils/dates";
 
 const links = await getEntry("links", "content");
 const index = await getEntry("index", "content");
@@ -54,48 +55,61 @@ const { lang } = Astro.params;
       <p class="mt-4">
         {index.data.plCv}
       </p>
-      <h2 class="mt-4 bg-gradient-to-b from-white from-50% to-fuchsia-700 to-50%">
-        <span class="text-neutral-100 font-fancy px-1.5 py-0.5 bg-fuchsia-700 inline-block">
+      <h2
+        class="mt-4 bg-gradient-to-b from-white from-50% to-fuchsia-700 to-50%"
+      >
+        <span
+          class="text-neutral-100 font-fancy px-1.5 py-0.5 bg-fuchsia-700 inline-block"
+        >
           Umiejętności
         </span>
       </h2>
       <ul class="mt-2 list-dash list-inside">
         {
-          cv.data.skills.map((category) => (
+          cv.data.skills.map((skill) => (
             <li>
-              {category.preferred.map((skill, i) => (
+              {skill.items.map((item, i) => (
                 <>
                   {i !== 0 && " | "}
-                  <span class="font-bold">{skill}</span>
+                  <span class={item.preferred ? "font-bold" : ""}>
+                    {item.name}
+                  </span>
                 </>
               ))}
-              {category.other.map((skill) => " | " + skill)}
             </li>
           ))
         }
       </ul>
-      <h2 class="mt-4 bg-gradient-to-b from-white from-50% to-fuchsia-700 to-50%">
-        <span class="text-neutral-100 font-fancy px-1.5 py-0.5 bg-fuchsia-700 inline-block">
+      <h2
+        class="mt-4 bg-gradient-to-b from-white from-50% to-fuchsia-700 to-50%"
+      >
+        <span
+          class="text-neutral-100 font-fancy px-1.5 py-0.5 bg-fuchsia-700 inline-block"
+        >
           Doświadczenie zawodowe
         </span>
       </h2>
       <ul class="mt-2 list-dash list-inside">
         {
-          cv.data.workExperience.map((entry) => (
+          cv.data.workExperience.map((item) => (
             <li>
-              <span class="font-bold">{entry.titlePl ?? entry.title}</span> w
+              <span class="font-bold">{item.titlePolish ?? item.title}</span> w
               {/* prettier-ignore */}
-              <a href={entry.companyUrl} class="underline">{entry.companyName}</a>
+              <a href={item.companyUrl} class="underline">{item.companyName}</a>
               <span class="text-gray-400 -ml-1">
                 {/* interpolation and negative margin, because prettier is fucking stupid */}
-                {`, ${entry.datePl ?? entry.date}, ${entry.locationPl} (${entry.typePl})`}
+                {`, ${dates("pl", item.dateStart, item.dateEnd)}, ${item.locationPolish} (${translate(`cv.${item.type}`, "pl")})`}
               </span>
             </li>
           ))
         }
       </ul>
-      <h2 class="mt-4 bg-gradient-to-b from-white from-50% to-fuchsia-700 to-50%">
-        <span class="text-neutral-100 font-fancy px-1.5 py-0.5 bg-fuchsia-700 inline-block">
+      <h2
+        class="mt-4 bg-gradient-to-b from-white from-50% to-fuchsia-700 to-50%"
+      >
+        <span
+          class="text-neutral-100 font-fancy px-1.5 py-0.5 bg-fuchsia-700 inline-block"
+        >
           Edukacja
         </span>
       </h2>
@@ -103,19 +117,23 @@ const { lang } = Astro.params;
         {
           cv.data.education.map((entry) => (
             <li>
-              <span class="font-bold">{entry.titlePl}</span> w
+              <span class="font-bold">{entry.titlePolish}</span> w
               {/* prettier-ignore */}
               <a href={entry.schoolUrl} class="underline">{entry.schoolName}</a>
               <span class="text-gray-400 -ml-1">
                 {/* interpolation and negative margin, because prettier is fucking stupid */}
-                {`, ${entry.datePl ?? entry.date}`}
+                {`, ${dates("pl", entry.dateStart, entry.dateEnd)}`}
               </span>
             </li>
           ))
         }
       </ul>
-      <h2 class="mt-4 bg-gradient-to-b from-white from-50% to-fuchsia-700 to-50%">
-        <span class="text-neutral-100 font-fancy px-1.5 py-0.5 bg-fuchsia-700 inline-block">
+      <h2
+        class="mt-4 bg-gradient-to-b from-white from-50% to-fuchsia-700 to-50%"
+      >
+        <span
+          class="text-neutral-100 font-fancy px-1.5 py-0.5 bg-fuchsia-700 inline-block"
+        >
           Projekty
         </span>
       </h2>
@@ -141,13 +159,19 @@ const { lang } = Astro.params;
                   ) +
                   ")"}
               </a>
-              <p class="ml-4 text-gray-400 text-sm italic">({project.data.technologies.join(", ")})</p>
+              <p class="ml-4 text-gray-400 text-sm italic">
+                ({project.data.technologies.join(", ")})
+              </p>
               <p class="ml-4 indent-8">{project.data.descriptionPl}</p>
             </li>
           ))
         }
       </ul>
-      <div id="footer" class="text-[0.5rem] absolute bottom-[0.5cm] text-gray-400 mt-4"></div>
+      <div
+        id="footer"
+        class="text-[0.5rem] absolute bottom-[0.5cm] text-gray-400 mt-4"
+      >
+      </div>
     </section>
     <div class="print:hidden">
       <Container>

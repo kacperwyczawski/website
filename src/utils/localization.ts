@@ -39,6 +39,22 @@ export const translations = {
     pl: "Aby uzyskać PDF, skorzystaj z opcji drukowania w przeglądarce. Wybierz format A4 i drukuj jako PDF.",
     en: "In order to get PDF, please use the print option in your browser. Select A4 paper size and print as PDF. Currently available only in Polish."
   },
+  "cv.internship": {
+    pl: "Praktyka",
+    en: "Internship",
+  },
+  "cv.paid-internship": {
+    pl: "Staż",
+    en: "Paid internship",
+  },
+  "cv.present": {
+    pl: "Obecnie",
+    en: "Present",
+  },
+  "cv.conjunction": {
+    pl: "w",
+    en: "at",
+  },
 };
 
 export function translate(
