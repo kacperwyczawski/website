@@ -124,6 +124,14 @@ const { lang } = Astro.params;
                 {/* interpolation and negative margin, because prettier is fucking stupid */}
                 {`, ${dates("pl", entry.dateStart, entry.dateEnd)}`}
               </span>
+              <ul class="ml-4 flex gap-2 text-gray-400">
+                {entry.accomplishments.map((accomplishment) => (
+                  <li>
+                    {accomplishment.namePolish}:
+                    <span class="font-bold">{accomplishment.value}</span>
+                  </li>
+                ))}
+              </ul>
             </li>
           ))
         }
