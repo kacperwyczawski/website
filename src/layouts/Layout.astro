@@ -12,7 +12,7 @@ const description = await getEntry("index", "content")
     s
       .replaceAll("[", "")
       .replaceAll("]", "")
-      .replaceAll(/\(.*\)/g, ""),
+      .replaceAll(/\(.*\)/g, "")
   ); // remove Markdown stuff
 const { lang } = Astro.props;
 ---
@@ -47,7 +47,9 @@ const { lang } = Astro.props;
           "@type": "Person",
           "name": "Kacper Wyczawski",
           "description": "Kacper is a web developer, open-source enthusiast and student.",
-          "sameAs": ["https://github.com/kacperwyczawski"]
+          "sameAs": [
+            "https://github.com/kacperwyczawski",
+          ]
         }
       }
     </script>
