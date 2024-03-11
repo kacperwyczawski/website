@@ -23,6 +23,7 @@ export async function getStaticPaths() {
 }
 const { lang } = Astro.params;
 ---
+
 <Layout lang={lang}>
   <main class="grid place-items-center p-2 md:p-4">
     <div class="max-w-6xl mx-auto">
@@ -43,7 +44,7 @@ const { lang } = Astro.params;
                   <p class="flex gap-1 md:gap-2 flex-wrap font-mono mt-4">
                     {skill.items.map((item) => (
                       <Chip emphasis={item.preferred}>{item.name}</Chip>
-                    ))}  
+                    ))}
                   </p>
                 </Container>
               </li>
@@ -86,8 +87,10 @@ const { lang } = Astro.params;
               cv.data.education.map((education) => (
                 <>
                   <div class="text-neutral-400 dark:text-slate-600 text-lg text-center md:text-left">
-                    {dates(lang, education.dateStart, education.dateEnd)}{" "}/{" "}
-                    {lang === "pl" ? education.locationPolish : education.location}
+                    {dates(lang, education.dateStart, education.dateEnd)} /{" "}
+                    {lang === "pl"
+                      ? education.locationPolish
+                      : education.location}
                   </div>
                   <div class="text-xl font-semibold text-center md:text-left">
                     {lang === "pl"

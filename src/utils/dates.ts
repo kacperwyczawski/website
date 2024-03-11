@@ -10,7 +10,6 @@ export function dates(lang: string, dateStart: Date, dateEnd?: Date) {
   const formattedDateEnd = dateEnd
     ? formatDate(dateEnd)
     : translate("cv.present", lang);
-  if (formattedDateStart === formattedDateEnd)
-    return formattedDateStart;
+  if (formattedDateStart === formattedDateEnd) return formattedDateStart;
   return formattedDateStart + " - " + formattedDateEnd;
 }

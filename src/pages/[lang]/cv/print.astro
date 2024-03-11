@@ -163,7 +163,7 @@ const { lang } = Astro.params;
               >
                 {"(" +
                   (project.data.liveUrl ?? project.data.sourceUrl)?.substring(
-                    8
+                    8,
                   ) +
                   ")"}
               </a>
@@ -197,7 +197,7 @@ const { lang } = Astro.params;
 <script>
   const footer = document.getElementById("footer") as HTMLDivElement;
   const footerText = document.getElementById(
-    "footer-text"
+    "footer-text",
   ) as HTMLTextAreaElement;
   footerText.addEventListener("input", () => {
     footer.innerHTML = footerText.value;

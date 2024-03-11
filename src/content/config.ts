@@ -42,10 +42,12 @@ const cvCollection = defineCollection({
         icon: z.string(),
         name: z.string(),
         namePolish: z.string().optional(),
-        items: z.array(z.object({
-          name: z.string(),
-          preferred: z.boolean(),
-        })),
+        items: z.array(
+          z.object({
+            name: z.string(),
+            preferred: z.boolean(),
+          }),
+        ),
       }),
     ),
     workExperience: z.array(
@@ -71,11 +73,13 @@ const cvCollection = defineCollection({
         titlePolish: z.string(),
         schoolName: z.string(),
         schoolUrl: z.string().url(),
-        accomplishments: z.array(z.object({
-          name: z.string(),
-          namePolish: z.string(),
-          value: z.string(),
-        })),
+        accomplishments: z.array(
+          z.object({
+            name: z.string(),
+            namePolish: z.string(),
+            value: z.string(),
+          }),
+        ),
       }),
     ),
   }),

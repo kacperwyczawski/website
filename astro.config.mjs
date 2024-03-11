@@ -22,5 +22,5 @@ export default defineConfig({
     "/projects": "/en/projects", // probably not used
     "/resume": "/en/cv", // probably not used
     "/en/resume": "/en/cv", // probably not used, was live for like one day or less
-  }
+  },
 });

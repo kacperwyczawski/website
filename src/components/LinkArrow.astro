@@ -1,15 +1,18 @@
 ---
 export interface Props {
-    text: string;
-    link: string;
+  text: string;
+  link: string;
 }
 
-const { link, text } = Astro.props
+const { link, text } = Astro.props;
 ---
 
-<a href={link} class="group contrast-more:text-black text-neutral-400 text-center mt-6 transition-color hover:text-neutral-600 dark:hover:text-neutral-100">
-    {text}
-    <span class="group-hover:translate-x-2 inline-block transition-transform">
-        -&gt;
-    </span>
+<a
+  href={link}
+  class="group contrast-more:text-black text-neutral-400 text-center mt-6 transition-color hover:text-neutral-600 dark:hover:text-neutral-100"
+>
+  {text}
+  <span class="group-hover:translate-x-2 inline-block transition-transform">
+    -&gt;
+  </span>
 </a>
