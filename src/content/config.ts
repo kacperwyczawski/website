@@ -1,89 +1,93 @@
-import { z, defineCollection } from "astro:content";
+import { defineCollection, z } from "astro:content";
 
 const indexCollection = defineCollection({
-  type: "data",
-  schema: z.object({
-    pl: z.string(),
-    en: z.string(),
-    plCv: z.string(),
-  }),
+	type: "data",
+	schema: z.object({
+		pl: z.string(),
+		en: z.string(),
+		plCv: z.string(),
+	}),
 });
 const linksCollection = defineCollection({
-  type: "data",
-  schema: z.array(
-    z.object({
-      icon: z.string(),
-      name: z.string(),
-      printText: z.string().optional(),
-      url: z.string().url(),
-      showOnWebsite: z.boolean(),
-    }),
-  ),
+	type: "data",
+	schema: z.array(
+		z.object({
+			icon: z.string(),
+			name: z.string(),
+			printText: z.string().optional(),
+			url: z.string().url(),
+			showOnWebsite: z.boolean(),
+		}),
+	),
 });
 const projectsCollection = defineCollection({
-  type: "data",
-  schema: ({ image }) =>
-    z.object({
-      name: z.string(),
-      status: z.string().optional(),
-      technologies: z.array(z.string()),
-      description: z.string(),
-      descriptionPl: z.string(),
-      sourceUrl: z.string().url().optional(),
-      liveUrl: z.string().url().optional(),
-      image: image().optional(),
-    }),
+	type: "data",
+	schema: ({ image }) =>
+		z.object({
+			name: z.string(),
+			status: z.string().optional(),
+			technologies: z.array(z.string()),
+			description: z.string(),
+			descriptionPl: z.string(),
+			sourceUrl: z.string().url().optional(),
+			liveUrl: z.string().url().optional(),
+			image: image().optional(),
+		}),
 });
 const cvCollection = defineCollection({
-  type: "data",
-  schema: z.object({
-    skills: z.array(
-      z.object({
-        icon: z.string(),
-        name: z.string(),
-        namePolish: z.string().optional(),
-        items: z.array(z.object({
-          name: z.string(),
-          preferred: z.boolean(),
-        })),
-      }),
-    ),
-    workExperience: z.array(
-      z.object({
-        dateStart: z.date(),
-        dateEnd: z.date().optional(),
-        location: z.string(),
-        locationPolish: z.string(),
-        type: z.enum(["internship", "paid-internship"]),
-        title: z.string(),
-        titlePolish: z.string().optional(),
-        companyName: z.string(),
-        companyUrl: z.string().url(),
-      }),
-    ),
-    education: z.array(
-      z.object({
-        dateStart: z.date(),
-        dateEnd: z.date().optional(),
-        location: z.string(),
-        locationPolish: z.string(),
-        title: z.string(),
-        titlePolish: z.string(),
-        schoolName: z.string(),
-        schoolUrl: z.string().url(),
-        accomplishments: z.array(z.object({
-          name: z.string(),
-          namePolish: z.string(),
-          value: z.string(),
-        })),
-      }),
-    ),
-  }),
+	type: "data",
+	schema: z.object({
+		skills: z.array(
+			z.object({
+				icon: z.string(),
+				name: z.string(),
+				namePolish: z.string().optional(),
+				items: z.array(
+					z.object({
+						name: z.string(),
+						preferred: z.boolean(),
+					}),
+				),
+			}),
+		),
+		workExperience: z.array(
+			z.object({
+				dateStart: z.date(),
+				dateEnd: z.date().optional(),
+				location: z.string(),
+				locationPolish: z.string(),
+				type: z.enum(["internship", "paid-internship"]),
+				title: z.string(),
+				titlePolish: z.string().optional(),
+				companyName: z.string(),
+				companyUrl: z.string().url(),
+			}),
+		),
+		education: z.array(
+			z.object({
+				dateStart: z.date(),
+				dateEnd: z.date().optional(),
+				location: z.string(),
+				locationPolish: z.string(),
+				title: z.string(),
+				titlePolish: z.string(),
+				schoolName: z.string(),
+				schoolUrl: z.string().url(),
+				accomplishments: z.array(
+					z.object({
+						name: z.string(),
+						namePolish: z.string(),
+						value: z.string(),
+					}),
+				),
+			}),
+		),
+	}),
 });
 
 export const collections = {
-  index: indexCollection,
-  links: linksCollection,
-  projects: projectsCollection,
-  cv: cvCollection,
+	index: indexCollection,
+	links: linksCollection,
+	projects: projectsCollection,
+	cv: cvCollection,
 };
