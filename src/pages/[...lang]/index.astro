@@ -25,13 +25,17 @@ export async function getStaticPaths() {
 
 const { text } = Astro.props;
 const { lang } = Astro.params;
-
-if (navigator.language.startsWith("pl") && sessionStorage.getItem("redirected") === null) {
-  sessionStorage.setItem("redirected", "true");
-  Astro.redirect("/pl");
-}
 ---
 
+<script>
+  if (
+    navigator.language.startsWith("pl") &&
+    sessionStorage.getItem("redirected") === null
+  ) {
+    sessionStorage.setItem("redirected", "true");
+    Astro.redirect("/pl");
+  }
+</script>
 <Layout lang={lang}>
   <main class="grid place-items-center p-2 md:p-4">
     <div class="max-w-6xl mx-auto">
