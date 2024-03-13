@@ -55,6 +55,10 @@ export const translations = {
 		pl: "w",
 		en: "at",
 	},
+	"index.last-updated": {
+		pl: "Ostatnio zaktualizowano",
+		en: "Last updated",
+	},
 };
 
 export function translate(key: keyof typeof translations, lang: string) {

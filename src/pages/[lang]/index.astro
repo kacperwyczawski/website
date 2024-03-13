@@ -32,9 +32,11 @@ const { lang } = Astro.params;
     <div class="max-w-6xl mx-auto">
       <div class="flex justify-center gap-2">
         {
-          links.data.filter((link) => link.showOnWebsite).map((link) => (
-            <LinkSocial icon={link.icon} text={link.name} link={link.url} />
-          ))
+          links.data
+            .filter((link) => link.showOnWebsite)
+            .map((link) => (
+              <LinkSocial icon={link.icon} text={link.name} link={link.url} />
+            ))
         }
       </div>
       <Section heading={translate("section.about", lang)}>
@@ -50,9 +52,11 @@ const { lang } = Astro.params;
       </Section>
     </div>
   </main>
-  <aside class="flex justify-center absolute bottom-2 inset-x-2 text-sm tracking-wide">
+  <aside
+    class="flex justify-center absolute bottom-2 inset-x-2 text-sm tracking-wide"
+  >
     <Chip class="bg-neutral-100">
-      Last build:
+      {translate("index.last-updated", lang)}:
       <time datetime={new Date().toISOString()}>
         {new Date().toISOString().split("T")[0]}
       </time>
