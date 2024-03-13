@@ -4,6 +4,7 @@ import Layout from "@layouts/Layout.astro";
 import Section from "@components/Section.astro";
 import Container from "@components/Container.astro";
 import LinkSocial from "@components/LinkSocial.astro";
+import Chip from "@components/Chip.astro";
 import { translate } from "@utils/localization";
 
 const links = await getEntry("links", "content");
@@ -49,4 +50,12 @@ const { lang } = Astro.params;
       </Section>
     </div>
   </main>
+  <aside class="flex justify-center absolute bottom-2 inset-x-2 text-sm tracking-wide">
+    <Chip class="bg-neutral-100">
+      Last build:
+      <time datetime={new Date().toISOString()}>
+        {new Date().toISOString().split("T")[0]}
+      </time>
+    </Chip>
+  </aside>
 </Layout>
