@@ -25,6 +25,11 @@ export async function getStaticPaths() {
 
 const { text } = Astro.props;
 const { lang } = Astro.params;
+
+if (navigator.language.startsWith("pl") && sessionStorage.getItem("redirected") === null) {
+  sessionStorage.setItem("redirected", "true");
+  Astro.redirect("/pl");
+}
 ---
 
 <Layout lang={lang}>
