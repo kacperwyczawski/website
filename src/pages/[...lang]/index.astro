@@ -13,7 +13,7 @@ export async function getStaticPaths() {
   const index = await getEntry("index", "content");
   return [
     {
-      params: { lang: "en" },
+      params: { lang: undefined },
       props: { text: index.data.en },
     },
     {

@@ -120,11 +120,11 @@ const { lang } = Astro.props;
             Astro.url.pathname.startsWith("/pl/") ? (
               <>
                 <span class="text-fuchsia-700 dark:text-fuchsia-400">PL</span>
-                <a href={Astro.url.pathname.replace("/pl", "/en")}>EN</a>
+                <a href={Astro.url.pathname.replace("/pl", "")}>EN</a>
               </>
             ) : (
               <>
-                <a href={Astro.url.pathname.replace("/en", "/pl")}>PL</a>
+                <a href={Astro.url.pathname.replace(/^/, "/pl")}>PL</a>
                 <span class="text-fuchsia-700 dark:text-fuchsia-400">EN</span>
               </>
             )

@@ -10,7 +10,7 @@ export interface Props {
   company: string;
   companyUrl: string;
   type: string;
-  lang: string;
+  lang: string | undefined;
 }
 
 const {
@@ -32,7 +32,7 @@ const {
   <div
     class="contrast-more:text-black text-neutral-400 dark:text-slate-600 text-lg leading-6"
   >
-    {dates(lang, dateStart, dateEnd)} / {location}
+    {dates(dateStart, dateEnd, lang)} / {location}
 
     <!-- TODO: weird responsive breakpoints below can be replaced with container queries, when they will be available -->
     <span

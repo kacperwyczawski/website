@@ -11,7 +11,7 @@ const projects = await getCollection("projects");
 export function getStaticPaths() {
   return [
     {
-      params: { lang: "en" },
+      params: { lang: undefined },
     },
     {
       params: { lang: "pl" },

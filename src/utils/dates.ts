@@ -1,6 +1,6 @@
 import { translate } from "@utils/localization";
 
-export function dates(lang: string, dateStart: Date, dateEnd?: Date) {
+export function dates(dateStart: Date, dateEnd?: Date, lang?: string) {
 	function formatDate(date: Date) {
 		const year = date.getFullYear();
 		const month = (date.getMonth() + 1).toString().padStart(2, "0");

@@ -13,7 +13,7 @@ const cv = await getEntry("cv", "content");
 export async function getStaticPaths() {
   return [
     {
-      params: { lang: "en" },
+      params: { lang: undefined },
     },
     {
       params: { lang: "pl" },
@@ -98,7 +98,7 @@ const { lang } = Astro.params;
               <a href={item.companyUrl} class="underline">{item.companyName}</a>
               <span class="text-gray-400 -ml-1">
                 {/* interpolation and negative margin, because prettier is fucking stupid */}
-                {`, ${dates("pl", item.dateStart, item.dateEnd)}, ${item.locationPolish} (${translate(`cv.${item.type}`, "pl")})`}
+                {`, ${dates(item.dateStart, item.dateEnd, "pl")}, ${item.locationPolish} (${translate(`cv.${item.type}`, "pl")})`}
               </span>
             </li>
           ))
@@ -122,7 +122,7 @@ const { lang } = Astro.params;
               <a href={entry.schoolUrl} class="underline">{entry.schoolName}</a>
               <span class="text-gray-400 -ml-1">
                 {/* interpolation and negative margin, because prettier is fucking stupid */}
-                {`, ${dates("pl", entry.dateStart, entry.dateEnd)}`}
+                {`, ${dates(entry.dateStart, entry.dateEnd, "pl")}`}
               </span>
               <ul class="ml-4 flex gap-2 text-gray-400">
                 {entry.accomplishments.map((accomplishment) => (

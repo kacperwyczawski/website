@@ -14,7 +14,7 @@ const cv = await getEntry("cv", "content");
 export async function getStaticPaths() {
   return [
     {
-      params: { lang: "en" },
+      params: { lang: undefined },
     },
     {
       params: { lang: "pl" },
@@ -86,7 +86,7 @@ const { lang } = Astro.params;
               cv.data.education.map((education) => (
                 <>
                   <div class="text-neutral-400 dark:text-slate-600 text-lg text-center md:text-left">
-                    {dates(lang, education.dateStart, education.dateEnd)}{" "}/{" "}
+                    {dates(education.dateStart, education.dateEnd, lang)}{" "}/{" "}
                     {lang === "pl" ? education.locationPolish : education.location}
                   </div>
                   <div class="text-xl font-semibold text-center md:text-left">
