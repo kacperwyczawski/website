@@ -17,9 +17,4 @@ export default defineConfig({
 	devToolbar: {
 		enabled: false,
 	},
-	redirects: {
-		"/projects": "/en/projects", // probably not used
-		"/resume": "/en/cv", // probably not used
-		"/en/resume": "/en/cv", // probably not used, was live for less than a day
-	},
 });
