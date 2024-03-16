@@ -6,17 +6,11 @@ import Chip from "@components/Chip.astro";
 import LinkButton from "@components/LinkButton.astro";
 import Mockup from "@components/Mockup.astro";
 import { translate } from "@utils/localization";
+import { staticPaths } from "@utils/staticPaths";
 
 const projects = await getCollection("projects");
 export function getStaticPaths() {
-  return [
-    {
-      params: { lang: undefined },
-    },
-    {
-      params: { lang: "pl" },
-    },
-  ];
+  return staticPaths;
 }
 const { lang } = Astro.params;
 ---

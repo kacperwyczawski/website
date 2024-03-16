@@ -5,20 +5,14 @@ import Layout from "@layouts/Layout.astro";
 import Container from "@components/Container.astro";
 import { getCollection } from "astro:content";
 import { dates } from "@utils/dates";
+import { staticPaths } from "@utils/staticPaths";
 
 const links = await getEntry("links", "content");
 const about = await getEntry("about", "content");
 const projects = await getCollection("projects");
 const cv = await getEntry("cv", "content");
 export async function getStaticPaths() {
-  return [
-    {
-      params: { lang: undefined },
-    },
-    {
-      params: { lang: "pl" },
-    },
-  ];
+  return staticPaths;
 }
 const { lang } = Astro.params;
 ---

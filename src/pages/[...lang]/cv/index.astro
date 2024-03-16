@@ -8,18 +8,11 @@ import LinkArrow from "@components/LinkArrow.astro";
 import Timestamp from "@components/Timestamp.astro";
 import { localizeUrl, translate } from "@utils/localization";
 import { dates } from "@utils/dates";
+import { staticPaths } from "@utils/staticPaths";
 
 const cv = await getEntry("cv", "content");
-// TODO: extract function below, because it's used in multiple places
 export async function getStaticPaths() {
-  return [
-    {
-      params: { lang: undefined },
-    },
-    {
-      params: { lang: "pl" },
-    },
-  ];
+  return staticPaths;
 }
 const { lang } = Astro.params;
 ---
