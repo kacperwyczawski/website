@@ -6,10 +6,10 @@ import "@fontsource-variable/sora";
 import "@fontsource-variable/fira-code";
 import { localizeUrl, translate } from "@utils/localization";
 
-const description = await getEntry("index", "content")
-  .then((s) => s.data.en)
-  .then((s) =>
-    s
+const description = await getEntry("about", "content")
+  .then((x) => x.data.en)
+  .then((x) =>
+    x
       .replaceAll("[", "")
       .replaceAll("]", "")
       .replaceAll(/\(.*\)/g, "")

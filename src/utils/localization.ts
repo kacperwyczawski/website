@@ -55,7 +55,7 @@ export const translations = {
 		pl: "w",
 		en: "at",
 	},
-	"index.last-updated": {
+	"misc.last-updated": {
 		pl: "Ostatnio zaktualizowano",
 		en: "Last updated",
 	},

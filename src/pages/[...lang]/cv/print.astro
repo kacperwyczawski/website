@@ -7,7 +7,7 @@ import { getCollection } from "astro:content";
 import { dates } from "@utils/dates";
 
 const links = await getEntry("links", "content");
-const index = await getEntry("index", "content");
+const about = await getEntry("about", "content");
 const projects = await getCollection("projects");
 const cv = await getEntry("cv", "content");
 export async function getStaticPaths() {
@@ -53,7 +53,7 @@ const { lang } = Astro.params;
       </p>
       <!-- /SSE -->
       <p class="mt-4">
-        {index.data.plCv}
+        {about.data.plCv}
       </p>
       <h2
         class="mt-4 bg-gradient-to-b from-white from-50% to-fuchsia-700 to-50%"

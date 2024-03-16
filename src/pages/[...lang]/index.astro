@@ -10,15 +10,15 @@ import { translate } from "@utils/localization";
 const links = await getEntry("links", "content");
 
 export async function getStaticPaths() {
-  const index = await getEntry("index", "content");
+  const about = await getEntry("about", "content");
   return [
     {
       params: { lang: undefined },
-      props: { text: index.data.en },
+      props: { text: about.data.en },
     },
     {
       params: { lang: "pl" },
-      props: { text: index.data.pl },
+      props: { text: about.data.pl },
     },
   ];
 }
@@ -65,7 +65,7 @@ const { lang } = Astro.params;
     class="flex justify-center absolute bottom-2 inset-x-2 text-sm tracking-wide"
   >
     <Chip class="bg-neutral-100">
-      {translate("index.last-updated", lang)}:
+      {translate("misc.last-updated", lang)}:
       <time datetime={new Date().toISOString()}>
         {new Date().toISOString().split("T")[0]}
       </time>
