@@ -16,7 +16,6 @@
         biome
         nushell
       ];
-
       shellHook = ''
         exec nu -e 'bun dev'
       '';
