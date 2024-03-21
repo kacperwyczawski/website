@@ -33,7 +33,7 @@ const { lang } = Astro.params;
     sessionStorage.getItem("redirected") === null
   ) {
     sessionStorage.setItem("redirected", "true");
-    Astro.redirect("/pl");
+    window.location.href = "/pl";
   }
 </script>
 <Layout lang={lang}>
