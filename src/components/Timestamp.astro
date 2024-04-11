@@ -13,45 +13,36 @@ export interface Props {
   lang: string | undefined;
 }
 
-const {
-  dateStart,
-  dateEnd,
-  location,
-  title,
-  company,
-  companyUrl,
-  type,
-  lang,
-} = Astro.props;
+const { dateStart, dateEnd, location, title, company, companyUrl, type, lang } =
+  Astro.props;
 ---
 
-<li
-  class="border-l dark:border-slate-800 last:border-none pl-6 pb-4 before:content[''] before:border before:rounded-full before:h-6 before:w-6 before:absolute before:border-fuchsia-700 dark:before:border-fuchsia-400 before:bg-neutral-100 dark:before:bg-slate-800"
->
-  <div
-    class="contrast-more:text-black text-neutral-400 dark:text-slate-600 text-lg leading-6"
+<li>
+  <span
+    class="text-neutral-400 border border-fuchsia-700 rounded-lg px-1.5 py-0.5"
   >
-    {dates(dateStart, dateEnd, lang)} / {location}
-    <span
-      class="text-neutral-400 dark:text-slate-600 rounded-full px-1.5 py-0.5 border dark:border-slate-800 my-1 text-sm whitespace-nowrap inline-block"
+    {dates(dateStart, dateEnd, lang)}
+  </span>
+  <div class="border-l pl-2 ml-4 pb-6 pt-2">
+    <div
+      class="contrast-more:text-black text-neutral-400 dark:text-slate-600 leading-none"
     >
-      {translate(`cv.${type}` as keyof typeof translations, lang)}
-    </span>
-  </div>
-  <div class="text-xl font-semibold">
-    {title}
-    {translate("cv.conjunction", lang)}
-    <a
-      href={companyUrl}
-      class="underline decoration-fuchsia-700 dark:decoration-fuchsia-400 hover:decoration-2"
-    >
-      {company}
-    </a>
+      {location} - {translate(`cv.${type}` as keyof typeof translations, lang)}
+    </div>
+    <div class="text-xl font-semibold mt-1">
+      {title}
+      {translate("cv.conjunction", lang)}
+      <a
+        href={companyUrl}
+        class="underline decoration-fuchsia-700 dark:decoration-fuchsia-400 hover:decoration-2"
+      >
+        {company}
+      </a>
+    </div>
   </div>
 </li>
-
 <style>
-  li::before {
-    left: calc(0.25rem + 0.5px); /* because border width = 1px */
+  li:last-child > div {
+    padding-bottom: 0.5rem;
   }
 </style>

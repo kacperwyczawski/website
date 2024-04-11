@@ -47,7 +47,7 @@ const { lang } = Astro.params;
       <div class="md:grid md:grid-cols-2 gap-4">
         <Section heading={translate("section.workExperience", lang)}>
           <Container>
-            <ul class="relative pl-4">
+            <ul>
               {
                 cv.data.workExperience.map((experience) => (
                   <Timestamp
