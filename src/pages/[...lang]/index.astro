@@ -64,7 +64,7 @@ const { lang } = Astro.params;
   <aside
     class="flex justify-center absolute bottom-2 inset-x-2 text-sm tracking-wide"
   >
-    <Chip class="bg-neutral-100">
+    <Chip class="bg-neutral-100 dark:bg-slate-850">
       {translate("misc.last-updated", lang)}:
       <time datetime={new Date().toISOString()}>
         {new Date().toISOString().split("T")[0]}
