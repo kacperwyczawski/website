@@ -7,7 +7,6 @@ import Chip from "@components/Chip.astro";
 import LinkArrow from "@components/LinkArrow.astro";
 import Timestamp from "@components/Timestamp.astro";
 import { localizeUrl, translate } from "@utils/localization";
-import { dates } from "@utils/dates";
 import { staticPaths } from "@utils/staticPaths";
 
 const cv = await getEntry("cv", "content");
@@ -16,6 +15,7 @@ export async function getStaticPaths() {
 }
 const { lang } = Astro.params;
 ---
+
 <Layout lang={lang}>
   <main class="grid place-items-center p-2 md:p-4">
     <div class="max-w-6xl mx-auto">
@@ -36,7 +36,7 @@ const { lang } = Astro.params;
                   <p class="flex gap-1 md:gap-2 flex-wrap font-mono mt-4">
                     {skill.items.map((item) => (
                       <Chip emphasis={item.preferred}>{item.name}</Chip>
-                    ))}  
+                    ))}
                   </p>
                 </Container>
               </li>
@@ -75,27 +75,29 @@ const { lang } = Astro.params;
         </Section>
         <Section heading={translate("section.education", lang)}>
           <Container>
-            {
-              cv.data.education.map((education) => (
-                <>
-                  <div class="text-neutral-400 dark:text-slate-600 text-lg text-center md:text-left">
-                    {dates(education.dateStart, education.dateEnd, lang)}{" "}/{" "}
-                    {lang === "pl" ? education.locationPolish : education.location}
-                  </div>
-                  <div class="text-xl font-semibold text-center md:text-left">
-                    {lang === "pl"
-                      ? education.titlePolish + " w "
-                      : education.title + " at "}
-                    <a
-                      href={education.schoolUrl}
-                      class="underline decoration-fuchsia-700 dark:decoration-fuchsia-400 hover:decoration-2"
-                    >
-                      {education.schoolName}
-                    </a>
-                  </div>
-                </>
-              ))
-            }
+            <ul>
+              {
+                cv.data.education.map((education) => (
+                  <Timestamp
+                    dateStart={education.dateStart}
+                    dateEnd={education.dateEnd}
+                    location={
+                      lang === "pl"
+                        ? education.locationPolish
+                        : education.location
+                    }
+                    title={
+                      lang === "pl" && education.titlePolish
+                        ? education.titlePolish
+                        : education.title
+                    }
+                    company={education.schoolName}
+                    companyUrl={education.schoolUrl}
+                    lang={lang}
+                  />
+                ))
+              }
+            </ul>
           </Container>
         </Section>
       </div>

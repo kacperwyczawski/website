@@ -4,13 +4,13 @@ import { translate, translations } from "@utils/localization";
 
 export interface Props {
   dateStart: Date;
-  dateEnd: Date | undefined;
+  dateEnd?: Date | undefined;
   location: string;
   title: string;
   company: string;
   companyUrl: string;
-  type: string;
-  lang: string | undefined;
+  type?: string | undefined;
+  lang?: string | undefined;
 }
 
 const { dateStart, dateEnd, location, title, company, companyUrl, type, lang } =
@@ -27,7 +27,10 @@ const { dateStart, dateEnd, location, title, company, companyUrl, type, lang } =
     <div
       class="contrast-more:text-black text-neutral-400 text-lg dark:text-slate-500 leading-none"
     >
-      {location} - {translate(`cv.${type}` as keyof typeof translations, lang)}
+      {location}
+      {
+        type && `- ${translate(`cv.${type}` as keyof typeof translations, lang)}`
+      }
     </div>
     <div class="text-xl font-semibold mt-1">
       {title}
