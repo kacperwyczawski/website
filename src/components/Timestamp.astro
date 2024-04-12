@@ -19,13 +19,13 @@ const { dateStart, dateEnd, location, title, company, companyUrl, type, lang } =
 
 <li>
   <span
-    class="text-neutral-400 dark:text-slate-600 border border-fuchsia-700 dark:border-fuchsia-400 rounded-lg px-1.5 py-0.5"
+    class="text-neutral-400 text-sm font-semibold dark:text-slate-500 border border-fuchsia-700 dark:border-fuchsia-400 rounded-lg px-1.5 py-0.5"
   >
     {dates(dateStart, dateEnd, lang)}
   </span>
   <div class="border-l pl-2 ml-4 pb-6 pt-2">
     <div
-      class="contrast-more:text-black text-neutral-400 dark:text-slate-600 leading-none"
+      class="contrast-more:text-black text-neutral-400 text-lg dark:text-slate-500 leading-none"
     >
       {location} - {translate(`cv.${type}` as keyof typeof translations, lang)}
     </div>
