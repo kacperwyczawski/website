@@ -23,13 +23,14 @@ const { dateStart, dateEnd, location, title, company, companyUrl, type, lang } =
   >
     {dates(dateStart, dateEnd, lang)}
   </span>
-  <div class="border-l pl-2 ml-4 pb-6 pt-2">
+  <div class="border-l pl-2 ml-4 pb-6 pt-2 dark:border-slate-800">
     <div
       class="contrast-more:text-black text-neutral-400 text-lg dark:text-slate-500 leading-none"
     >
       {location}
       {
-        type && `- ${translate(`cv.${type}` as keyof typeof translations, lang)}`
+        type &&
+          `- ${translate(`cv.${type}` as keyof typeof translations, lang)}`
       }
     </div>
     <div class="text-xl font-semibold mt-1">
@@ -42,6 +43,9 @@ const { dateStart, dateEnd, location, title, company, companyUrl, type, lang } =
         {company}
       </a>
     </div>
+    <ul>
+      <slot />
+    </ul>
   </div>
 </li>
 <style>

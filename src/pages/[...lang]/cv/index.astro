@@ -8,6 +8,7 @@ import LinkArrow from "@components/LinkArrow.astro";
 import Timestamp from "@components/Timestamp.astro";
 import { localizeUrl, translate } from "@utils/localization";
 import { staticPaths } from "@utils/staticPaths";
+import TimestampDetail from "@components/TimestampDetail.astro";
 
 const cv = await getEntry("cv", "content");
 export async function getStaticPaths() {
@@ -94,7 +95,20 @@ const { lang } = Astro.params;
                     company={education.schoolName}
                     companyUrl={education.schoolUrl}
                     lang={lang}
-                  />
+                  >
+                    {education.accomplishments.map((accomplishment) => (
+                      <TimestampDetail>
+                        <span class="text-neutral-400 dark:text-slate-500">
+                          {lang === "pl"
+                            ? accomplishment.namePolish + ":"
+                            : accomplishment.name + ":"}
+                        </span>
+                        <span class="tracking-tight">
+                          {accomplishment.value}
+                        </span>
+                      </TimestampDetail>
+                    ))}
+                  </Timestamp>
                 ))
               }
             </ul>
