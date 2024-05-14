@@ -42,7 +42,6 @@ const { lang } = Astro.params;
       <div class="flex justify-center gap-2">
         {
           links.data
-            .filter((link) => link.showOnWebsite)
             .map((link) => (
               <LinkSocial icon={link.icon} text={link.name} link={link.url} />
             ))
