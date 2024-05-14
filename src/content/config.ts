@@ -16,7 +16,6 @@ const linksCollection = defineCollection({
 			name: z.string(),
 			printText: z.string().optional(),
 			url: z.string().url(),
-			showOnWebsite: z.boolean(),
 		}),
 	),
 });
