@@ -44,7 +44,7 @@ export const translations = {
 		en: "Internship",
 	},
 	"cv.paid-internship": {
-		pl: "Staż",
+		pl: "Płatny staż",
 		en: "Paid internship",
 	},
 	"cv.present": {
