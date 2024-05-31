@@ -68,6 +68,14 @@ skills:
       - name: Figma
         preferred: false
 workExperience:
+  - dateStart: 2024-04-01
+    dateEnd: 2024-04-01
+    location: Rzeszów, Poland
+    locationPolish: Rzeszów, Polska
+    type: internship
+    title: Frontend Developer
+    companyName: Devi System
+    companyUrl: https://www.devisystem.pl/
   - dateStart: 2022-10-01
     dateEnd: 2022-10-01
     location: Rzeszów, Poland
