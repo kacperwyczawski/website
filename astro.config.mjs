@@ -13,7 +13,6 @@ export default defineConfig({
 	image: {
 		service: squooshImageService(),
 	},
-	site: "https://wyczawski.dev/",
 	devToolbar: {
 		enabled: false,
 	},
