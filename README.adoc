@@ -1,4 +1,4 @@
-Just a personal website built using https://astro.build[Astro], https://tailwindcss.com[TailwindCSS], https://bun.sh[Bun] and https://nixos.org/[Nix]. Hosted on https://pages.cloudflare.com[Cloudflare Pages].
+Just a personal website built using https://astro.build[Astro], https://tailwindcss.com[TailwindCSS], https://bun.sh[Bun] and https://nixos.org/[Nix].
 
 See it live https://wyczawski.dev[here].
 
