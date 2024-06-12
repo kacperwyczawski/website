@@ -9,7 +9,7 @@ import { staticPaths } from "@utils/staticPaths";
 
 const links = await getEntry("links", "content");
 const about = await getEntry("about", "content");
-const projects = await getCollection("projects");
+const projects = await getCollection("projects").then((x) => x.reverse());
 const cv = await getEntry("cv", "content");
 export async function getStaticPaths() {
   return staticPaths;
@@ -146,7 +146,7 @@ const { lang } = Astro.params;
       </p>
       <ul class="mt-2 list-dash list-inside">
         {
-          projects.toReversed().map((project) => (
+          projects.map((project) => (
             <li class="mt-2">
               <span class="font-bold font-fancy">{project.data.name}</span>
               <a
