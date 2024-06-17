@@ -8,7 +8,8 @@ import Mockup from "@components/Mockup.astro";
 import { translate } from "@utils/localization";
 import { staticPaths } from "@utils/staticPaths";
 
-const projects = await getCollection("projects").then((x) => x.reverse());
+const projects = await getCollection("projects");
+projects.reverse();
 export function getStaticPaths() {
   return staticPaths;
 }

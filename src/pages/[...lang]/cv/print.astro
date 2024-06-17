@@ -9,7 +9,8 @@ import { staticPaths } from "@utils/staticPaths";
 
 const links = await getEntry("links", "content");
 const about = await getEntry("about", "content");
-const projects = await getCollection("projects").then((x) => x.reverse());
+const projects = await getCollection("projects");
+projects.reverse();
 const cv = await getEntry("cv", "content");
 export async function getStaticPaths() {
   return staticPaths;
