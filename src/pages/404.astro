@@ -1,0 +1,21 @@
+---
+import Container from "@components/Container.astro";
+import LinkArrow from "@components/LinkArrow.astro";
+import Layout from "@layouts/Layout.astro";
+import { Image } from "astro:assets";
+import yoda from "@images/yoda.png";
+---
+
+<Layout>
+  <div class="max-w-3xl mx-auto mt-4">
+    <Container>
+        <Image
+            class="w-32 float-start mr-4"
+          src={yoda}
+          alt="Yoda"/>
+      <h1 class="font-mono text-6xl">404</h1>
+      <p class="my-2">The page you are looking for, not found it is</p>
+      <LinkArrow link="/" text="Back home, you must go" />
+    </Container>
+  </div>
+</Layout>
