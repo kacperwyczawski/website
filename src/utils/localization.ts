@@ -3,6 +3,10 @@ export const translations = {
 		pl: "Projekty",
 		en: "Projects",
 	},
+	"section.contact": {
+		pl: "Kontakt",
+		en: "Contact",
+	},
 	"section.about": {
 		pl: "O mnie",
 		en: "About me",
@@ -59,6 +63,14 @@ export const translations = {
 		pl: "Ostatnio zaktualizowano",
 		en: "Last updated",
 	},
+	"contact.linkedin": {
+		pl: "Tymczasowo wyłączyłem swoje konto na LinkedIn, ale jeśli jest ci do czegoś potrzebne, skontaktuj się ze mną przez email.",
+		en: "I temporarily disabled my LinkedIn account, but if you really need it, please contact me via email."
+	},
+	"contact.signal": {
+		pl: "Chętnie połączę się przez Signal, ale najpierw wyślij mi email ze swoim numerem lub nazwą użytkownika.",
+		en: "I'd be happy to connect via Signal, but please, email me your number or username first."
+	},
 };
 
 export function translate(key: keyof typeof translations, lang?: string) {
@@ -66,7 +78,6 @@ export function translate(key: keyof typeof translations, lang?: string) {
 }
 
 export function localizeUrl(url: string, lang?: string) {
-	// return `/${lang}${url}`;
 	if (lang) return `/${lang}${url}`;
 	return url;
 }

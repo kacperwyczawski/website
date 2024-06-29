@@ -3,11 +3,8 @@ import { getEntry } from "astro:content";
 import Layout from "@layouts/Layout.astro";
 import Section from "@components/Section.astro";
 import Container from "@components/Container.astro";
-import LinkSocial from "@components/LinkSocial.astro";
 import Chip from "@components/Chip.astro";
 import { translate } from "@utils/localization";
-
-const links = await getEntry("links", "content");
 
 export async function getStaticPaths() {
   const about = await getEntry("about", "content");
@@ -37,38 +34,52 @@ const { lang } = Astro.params;
   }
 </script>
 <Layout lang={lang}>
-  <main class="grid place-items-center p-2 md:p-4">
-    <div class="max-w-6xl mx-auto">
-      <div class="flex justify-center gap-2">
-        {
-          links.data
-            .map((link) => (
-              <LinkSocial icon={link.icon} text={link.name} link={link.url} />
-            ))
-        }
+  <div class="h-full flex flex-col">
+    <main class="grid place-items-center p-2 md:p-4">
+      <div class="max-w-6xl mx-auto">
+        <Section heading={translate("section.about", lang)}>
+          <Container>
+            <div
+              set:html={text.replaceAll(
+                /\((.*?)\)->\((.*?)\)/gm,
+                '<a href="$2">$1</a>'
+              )}
+              class="prose dark:prose-invert prose-lg"
+            />
+          </Container>
+        </Section>
+        <Section heading={translate("section.contact", lang)}>
+          <Container>
+            <ul class="prose dark:prose-invert prose-lg list-dash ml-4">
+              <li>
+                Email: <a href="mailto:kacper@wyczawski.dev"
+                  >kacper@wyczawski.dev</a
+                >
+              </li>
+              <li>
+                GitHub: <a href="https://github.com/kacperwyczawski"
+                  >kacperwyczawski</a
+                >
+              </li>
+              <li>
+                LinkedIn: {translate("contact.linkedin", lang)}
+              </li>
+              <li>
+                Signal: {translate("contact.signal", lang)}
+              </li>
+            </ul>
+          </Container>
+        </Section>
       </div>
-      <Section heading={translate("section.about", lang)}>
-        <Container>
-          <div
-            set:html={text.replaceAll(
-              /\((.*?)\)->\((.*?)\)/gm,
-              '<a href="$2">$1</a>'
-            )}
-            class="prose dark:prose-invert prose-lg"
-          />
-        </Container>
-      </Section>
-    </div>
-  </main>
-  <aside
-    class="flex justify-center absolute bottom-2 inset-x-2 text-sm tracking-wide"
-  >
-    <Chip class="bg-neutral-100 dark:bg-slate-850">
-      {translate("misc.last-updated", lang)}:
-      <time datetime={new Date().toISOString()}>
-        {new Date().toISOString().split("T")[0]}
-      </time>
-      <!-- <span class="mx-1 text-neutral-200 dark:text-slate-800"> | </span>
+    </main>
+    <div class="grow"></div>
+    <aside class="flex justify-center text-sm tracking-wide mb-2 mx-2">
+      <Chip class="bg-neutral-100 dark:bg-slate-850">
+        {translate("misc.last-updated", lang)}:
+        <time datetime={new Date().toISOString()}>
+          {new Date().toISOString().split("T")[0]}
+        </time>
+        <!-- <span class="mx-1 text-neutral-200 dark:text-slate-800"> | </span>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="24"
@@ -85,6 +96,7 @@ const { lang } = Astro.params;
         ></path><path d="m9 12 2 2 4-4"></path></svg
       >
       HTTP/3 -->
-    </Chip>
-  </aside>
+      </Chip>
+    </aside>
+  </div>
 </Layout>

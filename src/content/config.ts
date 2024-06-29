@@ -8,17 +8,6 @@ const aboutCollection = defineCollection({
 		plCv: z.string(),
 	}),
 });
-const linksCollection = defineCollection({
-	type: "data",
-	schema: z.array(
-		z.object({
-			icon: z.string(),
-			name: z.string(),
-			printText: z.string().optional(),
-			url: z.string().url(),
-		}),
-	),
-});
 const projectsCollection = defineCollection({
 	type: "data",
 	schema: ({ image }) =>
@@ -36,6 +25,12 @@ const projectsCollection = defineCollection({
 const cvCollection = defineCollection({
 	type: "data",
 	schema: z.object({
+		contact: z.array(
+			z.object({
+				url: z.string().url(),
+				display: z.string(),
+			})
+		),
 		skills: z.array(
 			z.object({
 				icon: z.string(),
@@ -86,7 +81,6 @@ const cvCollection = defineCollection({
 
 export const collections = {
 	about: aboutCollection,
-	links: linksCollection,
 	projects: projectsCollection,
 	cv: cvCollection,
 };

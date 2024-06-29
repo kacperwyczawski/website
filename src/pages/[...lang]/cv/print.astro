@@ -7,7 +7,6 @@ import { getCollection } from "astro:content";
 import { dates } from "@utils/dates";
 import { staticPaths } from "@utils/staticPaths";
 
-const links = await getEntry("links", "content");
 const about = await getEntry("about", "content");
 const projects = await getCollection("projects");
 projects.reverse();
@@ -36,11 +35,11 @@ const { lang } = Astro.params;
         class="text-center font-fancy text-neutral-100 mt-4 bg-fuchsia-700 py-0.5 px-1.5"
       >
         {
-          links.data.map((link, i) => (
+          cv.data.contact.map((link, i) => (
             <>
               {i !== 0 && " | "}
               {/* prettier-ignore */}
-              <a href={link.url} class="underline">{link.printText ?? link.name}</a>
+              <a href={link.url} class="underline">{link.display}</a>
             </>
           ))
         }
