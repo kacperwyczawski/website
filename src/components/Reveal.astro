@@ -1,0 +1,26 @@
+---
+import { translate } from "@utils/localization";
+
+const { content, lang } = Astro.props;
+---
+<button data-content={content} class="inline-block px-2 border dark:border-slate-800 rounded-lg tracking-tight">
+    {translate("misc.reveal", lang)}
+</button>
+<script>
+    const button = document.querySelector('button');
+    if (!button) {
+        throw new Error("button not found");
+    }
+    const content = button.dataset.content!;
+    let revealed = false;
+    button.addEventListener("click", () => {
+        if (!revealed) {
+            button.textContent = content ?? "nothing here";
+            revealed = true;
+            button.classList.add("select-auto");
+        } else {
+            navigator.clipboard.writeText(content);
+            alert("Copied to clipboard!");
+        }
+    });
+</script>

@@ -63,13 +63,13 @@ export const translations = {
 		pl: "Ostatnio zaktualizowano",
 		en: "Last updated",
 	},
+	"misc.reveal": {
+		pl: "Kliknij, aby zobaczyć",
+		en: "Click to reveal",
+	},
 	"contact.linkedin": {
 		pl: "Tymczasowo wyłączyłem swoje konto na LinkedIn, ale jeśli jest ci do czegoś potrzebne, skontaktuj się ze mną przez email.",
 		en: "I temporarily disabled my LinkedIn account, but if you really need it, please contact me via email."
-	},
-	"contact.signal": {
-		pl: "Chętnie połączę się przez Signal, ale najpierw wyślij mi email ze swoim numerem lub nazwą użytkownika.",
-		en: "I'd be happy to connect via Signal, but please, email me your number or username first."
 	},
 };
 
