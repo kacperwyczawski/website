@@ -48,7 +48,7 @@ const { lang } = Astro.params;
                   ? project.data.descriptionPl
                   : project.data.description}
               </p>
-              <div class="flex gap-4">
+              <div class="grid grid-flow-col auto-cols-fr gap-4">
                 {project.data.sourceUrl && (
                   <LinkButton text="Source" link={project.data.sourceUrl} />
                 )}
