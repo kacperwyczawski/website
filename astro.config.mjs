@@ -26,4 +26,10 @@ export default defineConfig({
 	devToolbar: {
 		enabled: false,
 	},
+	// it's enabled by default when using ViewTransitions anyway, see below:
+	// https://docs.astro.build/en/guides/prefetch/#using-with-view-transitions
+	prefetch: {
+		prefetchAll: true,
+		defaultStrategy: "load",
+	}
 });
