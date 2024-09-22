@@ -59,8 +59,8 @@ const { lang } = Astro.props;
       }
 
       body {
-        --bg-color: theme(colors.neutral.50);
-        --grid-color: theme(colors.neutral.200 / 50%);
+        --bg-color: light-dark(theme(colors.neutral.50), theme(colors.slate.900));
+        --grid-color: light-dark(theme(colors.neutral.200 / 50%), theme(colors.slate.800 / 70%));
         background-size: 32px 32px;
         background-color: var(--bg-color);
         background-image: linear-gradient(
@@ -75,14 +75,6 @@ const { lang } = Astro.props;
         /* allow printing of background */
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
-      }
-
-      /* TODO: replace with https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/light-dark when it's supported */
-      @media (prefers-color-scheme: dark) {
-        body {
-          --bg-color: theme(colors.slate.900);
-          --grid-color: theme(colors.slate.800 / 70%);
-        }
       }
     </style>
   </head>
