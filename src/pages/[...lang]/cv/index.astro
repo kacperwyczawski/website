@@ -1,18 +1,18 @@
 ---
 import { getEntry } from "astro:content";
-import Layout from "@layouts/Layout.astro";
-import Section from "@components/Section.astro";
-import Container from "@components/Container.astro";
 import Chip from "@components/Chip.astro";
+import Container from "@components/Container.astro";
 import LinkArrow from "@components/LinkArrow.astro";
+import Section from "@components/Section.astro";
 import Timestamp from "@components/Timestamp.astro";
+import TimestampDetail from "@components/TimestampDetail.astro";
+import Layout from "@layouts/Layout.astro";
 import { localizeUrl, translate } from "@utils/localization";
 import { staticPaths } from "@utils/staticPaths";
-import TimestampDetail from "@components/TimestampDetail.astro";
 
 const cv = await getEntry("cv", "content");
 export async function getStaticPaths() {
-  return staticPaths;
+	return staticPaths;
 }
 const { lang } = Astro.params;
 ---

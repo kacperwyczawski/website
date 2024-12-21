@@ -1,10 +1,10 @@
 ---
 import { getEntry } from "astro:content";
-import { localizeUrl, translate } from "@utils/localization.ts";
-import Layout from "@layouts/Layout.astro";
-import Container from "@components/Container.astro";
 import { getCollection } from "astro:content";
+import Container from "@components/Container.astro";
+import Layout from "@layouts/Layout.astro";
 import { dates } from "@utils/dates";
+import { localizeUrl, translate } from "@utils/localization.ts";
 import { staticPaths } from "@utils/staticPaths";
 
 const about = await getEntry("about", "content");
@@ -12,7 +12,7 @@ const projects = await getCollection("projects");
 projects.reverse();
 const cv = await getEntry("cv", "content");
 export async function getStaticPaths() {
-  return staticPaths;
+	return staticPaths;
 }
 const { lang } = Astro.params;
 ---

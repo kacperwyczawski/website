@@ -1,17 +1,17 @@
 ---
-import Layout from "@layouts/Layout.astro";
-import LinkArrow from "@components/LinkArrow.astro";
 import { getCollection } from "astro:content";
 import Chip from "@components/Chip.astro";
+import LinkArrow from "@components/LinkArrow.astro";
 import LinkButton from "@components/LinkButton.astro";
 import Mockup from "@components/Mockup.astro";
+import Layout from "@layouts/Layout.astro";
 import { translate } from "@utils/localization";
 import { staticPaths } from "@utils/staticPaths";
 
 const projects = await getCollection("projects");
 projects.reverse();
 export function getStaticPaths() {
-  return staticPaths;
+	return staticPaths;
 }
 const { lang } = Astro.params;
 ---

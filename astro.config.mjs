@@ -16,8 +16,8 @@ export default defineConfig({
 				defaultLocale: "en",
 				locales: {
 					pl: "pl-PL",
-				}
-			}
+				},
+			},
 		}),
 	],
 	image: {
@@ -31,5 +31,5 @@ export default defineConfig({
 	prefetch: {
 		prefetchAll: true,
 		defaultStrategy: "load",
-	}
+	},
 });

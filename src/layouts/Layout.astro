@@ -1,19 +1,18 @@
 ---
 import { getEntry } from "astro:content";
-import { ViewTransitions } from "astro:transitions";
 import "@fontsource-variable/inter";
 import "@fontsource-variable/sora";
 import "@fontsource-variable/fira-code";
 import { localizeUrl, translate } from "@utils/localization";
 
 const description = await getEntry("about", "content")
-  .then((x) => x.data.en)
-  .then((x) =>
-    x
-      .replaceAll("[", "")
-      .replaceAll("]", "")
-      .replaceAll(/\(.*\)/g, "")
-  ); // remove Markdown stuff
+	.then((x) => x.data.en)
+	.then((x) =>
+		x
+			.replaceAll("[", "")
+			.replaceAll("]", "")
+			.replaceAll(/\(.*\)/g, ""),
+	); // remove Markdown stuff
 const { lang } = Astro.props;
 ---
 
@@ -52,7 +51,6 @@ const { lang } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="sitemap" href="/sitemap-index.xml" />
     <title>Kacper Wyczawski</title>
-    <ViewTransitions />
     <style>
       :root {
         color-scheme: light dark;
@@ -120,7 +118,7 @@ const { lang } = Astro.props;
         </div>
       </nav>
     </header>
-    <div transition:animate="fade" class="grow">
+    <div class="grow">
       <slot />
     </div>
   </body>

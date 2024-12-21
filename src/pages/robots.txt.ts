@@ -8,7 +8,7 @@ Sitemap: ${sitemapURL.href}
 `;
 
 export const GET: APIRoute = ({ site }) => {
-	return new Response(getRobotsTxt(new URL('sitemap-index.xml', site)), {
+	return new Response(getRobotsTxt(new URL("sitemap-index.xml", site)), {
 		headers: {
 			"Content-Type": "text/plain; charset=utf-8",
 		},

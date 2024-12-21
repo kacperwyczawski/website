@@ -69,7 +69,7 @@ export const translations = {
 	},
 	"contact.linkedin": {
 		pl: "Tymczasowo wyłączyłem swoje konto na LinkedIn, ale jeśli jest ci do czegoś potrzebne, skontaktuj się ze mną przez email.",
-		en: "I temporarily disabled my LinkedIn account, but if you really need it, please contact me via email."
+		en: "I temporarily disabled my LinkedIn account, but if you really need it, please contact me via email.",
 	},
 };
 

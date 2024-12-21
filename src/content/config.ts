@@ -29,7 +29,7 @@ const cvCollection = defineCollection({
 			z.object({
 				url: z.string().url(),
 				display: z.string(),
-			})
+			}),
 		),
 		skills: z.array(
 			z.object({

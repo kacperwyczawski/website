@@ -3,18 +3,18 @@ import { dates } from "@utils/dates";
 import { translate, translations } from "@utils/localization";
 
 export interface Props {
-  dateStart: Date;
-  dateEnd?: Date | undefined;
-  location: string;
-  title: string;
-  company: string;
-  companyUrl: string;
-  type?: string | undefined;
-  lang?: string | undefined;
+	dateStart: Date;
+	dateEnd?: Date | undefined;
+	location: string;
+	title: string;
+	company: string;
+	companyUrl: string;
+	type?: string | undefined;
+	lang?: string | undefined;
 }
 
 const { dateStart, dateEnd, location, title, company, companyUrl, type, lang } =
-  Astro.props;
+	Astro.props;
 ---
 
 <li>

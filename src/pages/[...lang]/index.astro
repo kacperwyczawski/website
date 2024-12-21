@@ -1,24 +1,24 @@
 ---
 import { getEntry } from "astro:content";
-import Layout from "@layouts/Layout.astro";
-import Section from "@components/Section.astro";
-import Container from "@components/Container.astro";
 import Chip from "@components/Chip.astro";
-import { translate } from "@utils/localization";
+import Container from "@components/Container.astro";
 import Reveal from "@components/Reveal.astro";
+import Section from "@components/Section.astro";
+import Layout from "@layouts/Layout.astro";
+import { translate } from "@utils/localization";
 
 export async function getStaticPaths() {
-  const about = await getEntry("about", "content");
-  return [
-    {
-      params: { lang: undefined },
-      props: { text: about.data.en },
-    },
-    {
-      params: { lang: "pl" },
-      props: { text: about.data.pl },
-    },
-  ];
+	const about = await getEntry("about", "content");
+	return [
+		{
+			params: { lang: undefined },
+			props: { text: about.data.en },
+		},
+		{
+			params: { lang: "pl" },
+			props: { text: about.data.pl },
+		},
+	];
 }
 
 const { text } = Astro.props;
