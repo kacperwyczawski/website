@@ -18,7 +18,9 @@ skills:
         preferred: true
       - name: CSS
         preferred: true
-      - name: JavaScript/TypeScript
+      - name: JavaScript
+        preferred: true
+      - name: TypeScript
         preferred: true
       - name: SQL
         preferred: true
