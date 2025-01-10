@@ -67,10 +67,6 @@ export const translations = {
 		pl: "Kliknij, aby zobaczyć",
 		en: "Click to reveal",
 	},
-	"contact.linkedin": {
-		pl: "Tymczasowo wyłączyłem swoje konto na LinkedIn, ale jeśli jest ci do czegoś potrzebne, skontaktuj się ze mną przez email.",
-		en: "I temporarily disabled my LinkedIn account, but if you really need it, please contact me via email.",
-	},
 };
 
 export function translate(key: keyof typeof translations, lang?: string) {
