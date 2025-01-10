@@ -10,7 +10,7 @@ export default defineConfig({
 		sitemap({
 			customPages: [
 				"https://autocut.wyczawski.dev/",
-				"https://arx.wyczawski.dev",
+				"https://arx.wyczawski.dev/",
 			],
 			i18n: {
 				defaultLocale: "en",
