@@ -115,14 +115,10 @@ const { lang } = Astro.params;
           </Container>
         </Section>
       </div>
-      <footer class="flex md:justify-center md:gap-8 justify-evenly gap-4">
+      <footer class="flex justify-center">
         <LinkArrow
           link={localizeUrl("/projects", lang)}
           text={translate("link.projects", lang)}
-        />
-        <LinkArrow
-          link={localizeUrl("/cv/print", lang)}
-          text={translate("link.cv-print", lang)}
         />
       </footer>
     </div>

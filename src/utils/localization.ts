@@ -31,17 +31,9 @@ export const translations = {
 		pl: "Zobacz więcej na moim GitHubie",
 		en: "Find more on my GitHub",
 	},
-	"link.cv-print": {
-		pl: "Wersja PDF lub do wydruku",
-		en: "PDF or printing version",
-	},
 	"link.go-back": {
 		pl: "Wróć",
 		en: "Go back",
-	},
-	"cv-print.info": {
-		pl: "Aby uzyskać PDF, skorzystaj z opcji drukowania w przeglądarce. Wybierz format A4 i drukuj jako PDF.",
-		en: "In order to get PDF, please use the print option in your browser. Select A4 paper size and print as PDF. Currently available only in Polish.",
 	},
 	"cv.internship": {
 		pl: "Praktyka",
