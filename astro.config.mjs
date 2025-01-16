@@ -26,7 +26,6 @@ export default defineConfig({
 	},
 	image: {
 		service: passthroughImageService(),
-		// TODO: try to disable this
 	},
 	prefetch: {
 		prefetchAll: true,
