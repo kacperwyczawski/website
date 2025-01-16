@@ -1,0 +1,71 @@
+---
+import Chip from "@components/Chip.astro";
+import Container from "@components/Container.astro";
+import Reveal from "@components/Reveal.astro";
+import Section from "@components/Section.astro";
+import Layout from "@layouts/Layout.astro";
+---
+
+<Layout>
+  <div class="h-full flex flex-col">
+    <main class="grid place-items-center p-2 md:p-4">
+      <div class="max-w-6xl mx-auto">
+        <Section heading="O mnie">
+          <Container>
+            <div class="prose dark:prose-invert prose-lg">
+              Jestem web developerem z doświadczeniem w .NET, Astro, Vue, oraz <a
+                href="/pl/cv">innych technologiach</a
+              >. Obecnie uczę się w piątej klasie technikum, na proiflu technik
+              informatyk. Interesuję się programowaniem oraz Linuxem.
+            </div>
+          </Container>
+        </Section>
+        <Section heading="Kontakt">
+          <Container>
+            <ul class="prose dark:prose-invert prose-lg list-dash ml-4">
+              <li>
+                Email: <a href="mailto:kacper@wyczawski.dev"
+                  >kacper@wyczawski.dev</a
+                >
+              </li>
+              <li>
+                GitHub: <a href="https://github.com/kacperwyczawski"
+                  >kacperwyczawski</a
+                >
+              </li>
+              <li>
+                Signal: <Reveal content="order.67" lang="pl" />
+              </li>
+            </ul>
+          </Container>
+        </Section>
+      </div>
+    </main>
+    <div class="grow"></div>
+    <aside class="flex justify-center text-sm tracking-wide mb-2 mx-2">
+      <Chip class="bg-neutral-100 dark:bg-slate-850">
+        Last updated:
+        <time datetime={new Date().toISOString()}>
+          {new Date().toISOString().split("T")[0]}
+        </time>
+        <!-- <span class="mx-1 text-neutral-200 dark:text-slate-800"> | </span>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="lucide lucide-shield-check inline w-4 h-4 align-text-top"
+        ><path
+          d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"
+        ></path><path d="m9 12 2 2 4-4"></path></svg
+      >
+      HTTP/3 -->
+      </Chip>
+    </aside>
+  </div>
+</Layout>

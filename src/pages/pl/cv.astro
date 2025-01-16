@@ -1,0 +1,96 @@
+---
+import Container from "@components/Container.astro";
+import LinkArrow from "@components/LinkArrow.astro";
+import Section from "@components/Section.astro";
+import SkillsSection from "@components/SkillsSection.astro";
+import Timestamp from "@components/Timestamp.astro";
+import TimestampDetail from "@components/TimestampDetail.astro";
+import Layout from "@layouts/Layout.astro";
+---
+
+<Layout>
+  <main class="grid place-items-center p-2 md:p-4">
+    <div class="max-w-6xl mx-auto">
+      <Section heading="Umiejętności">
+        <ul class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+          <SkillsSection type="languages" name="Języki" />
+          <SkillsSection type="backend" name="Backend" />
+          <SkillsSection type="frontend" name="Frontend" />
+          <SkillsSection type="other" name="Inne" />
+        </ul>
+      </Section>
+      <div class="md:grid md:grid-cols-2 gap-4">
+        <Section heading="Doświadczenie zawodowe">
+          <Container>
+            <ul>
+              <Timestamp
+                date="2024.04"
+                location="Rzeszów, Polska"
+                type="Praktyka"
+                head="Frontend Developer w"
+                tail="Devi System"
+                tailUrl="https://www.devisystem.pl/"
+              />
+              <Timestamp
+                date="2022.10"
+                location="Rzeszów, Polska"
+                type="Praktyka"
+                head=".NET Backend Developer w"
+                tail="Ideo"
+                tailUrl="https://www.ideosoftware.com/"
+              />
+              <Timestamp
+                date="2022.07"
+                location="Rzeszów, Polska"
+                type="Płatny staż"
+                head="Administrator baz danych w"
+                tail="Devi System"
+                tailUrl="https://www.devisystem.pl/"
+              />
+              <Timestamp
+                date="2022.04 - 2022.05"
+                location="Faro, Portugalia"
+                type="Praktyka"
+                head="Serwisant komputerowy w"
+                tail="Clube Do Hardware"
+                tailUrl="https://goo.gl/maps/cQXJcgokdJmSD1bt6"
+              />
+            </ul>
+          </Container>
+        </Section>
+        <Section heading="Edukacja">
+          <Container>
+            <ul>
+              <Timestamp
+                date="2020.09 - Obecnie"
+                location="Rzeszów, Polska"
+                head="Technik Informatyk w"
+                tail="Zespole Szkół Elektronicznych w Rzeszowie"
+                tailUrl="https://elektronik.rzeszow.pl/"
+              >
+                <TimestampDetail>
+                  <span class="text-neutral-400 dark:text-slate-500">
+                    Wynik z kwalifikacji INF.02:
+                  </span>
+                  <span class="tracking-tight"> 100% </span>
+                </TimestampDetail>
+                <TimestampDetail>
+                  <span class="text-neutral-400 dark:text-slate-500">
+                    Przybliżony wynik z kwalifikacji INF.03:
+                  </span>
+                  <span class="tracking-tight"> 100% </span>
+                </TimestampDetail>
+              </Timestamp>
+            </ul>
+          </Container>
+        </Section>
+      </div>
+      <footer class="flex justify-center">
+        <LinkArrow
+          link="/pl/projects"
+          text="Zobacz moje projekty"
+        />
+      </footer>
+    </div>
+  </main>
+</Layout>

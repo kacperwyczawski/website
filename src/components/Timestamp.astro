@@ -1,46 +1,36 @@
 ---
-import { dates } from "@utils/dates";
-import { translate, translations } from "@utils/localization";
-
 export interface Props {
-	dateStart: Date;
-	dateEnd?: Date | undefined;
+	date: string;
 	location: string;
-	title: string;
-	company: string;
-	companyUrl: string;
+	head: string;
+	tail: string;
+	tailUrl: string;
 	type?: string | undefined;
-	lang?: string | undefined;
 }
 
-const { dateStart, dateEnd, location, title, company, companyUrl, type, lang } =
-	Astro.props;
+const { date, location, head, tail, tailUrl, type } = Astro.props;
 ---
 
 <li>
   <span
     class="text-neutral-400 text-sm font-semibold dark:text-slate-500 border border-fuchsia-700 dark:border-fuchsia-400 rounded-lg px-1.5 py-0.5"
   >
-    {dates(dateStart, dateEnd, lang)}
+    {date}
   </span>
   <div class="border-l pl-2 ml-4 pb-6 pt-2 dark:border-slate-800">
     <div
       class="contrast-more:text-black text-neutral-400 text-lg dark:text-slate-500 leading-none"
     >
       {location}
-      {
-        type &&
-          `- ${translate(`cv.${type}` as keyof typeof translations, lang)}`
-      }
+      {type && `- ${type}`}
     </div>
     <div class="text-xl font-semibold mt-1">
-      {title}
-      {translate("cv.conjunction", lang)}
+      {head}
       <a
-        href={companyUrl}
+        href={tailUrl}
         class="underline decoration-fuchsia-700 dark:decoration-fuchsia-400 hover:decoration-2"
       >
-        {company}
+        {tail}
       </a>
     </div>
     <ul>

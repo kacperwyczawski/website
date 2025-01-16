@@ -20,8 +20,13 @@ export default defineConfig({
 			},
 		}),
 	],
+	i18n: {
+		locales: ["pl", "en"],
+		defaultLocale: "en",
+	},
 	image: {
 		service: passthroughImageService(),
+		// TODO: try to disable this
 	},
 	prefetch: {
 		prefetchAll: true,

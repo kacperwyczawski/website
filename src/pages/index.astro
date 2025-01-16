@@ -1,55 +1,36 @@
 ---
-import { getEntry } from "astro:content";
 import Chip from "@components/Chip.astro";
 import Container from "@components/Container.astro";
 import Reveal from "@components/Reveal.astro";
 import Section from "@components/Section.astro";
 import Layout from "@layouts/Layout.astro";
-import { translate } from "@utils/localization";
-
-export async function getStaticPaths() {
-	const about = await getEntry("about", "content");
-	return [
-		{
-			params: { lang: undefined },
-			props: { text: about.data.en },
-		},
-		{
-			params: { lang: "pl" },
-			props: { text: about.data.pl },
-		},
-	];
-}
-
-const { text } = Astro.props;
-const { lang } = Astro.params;
 ---
 
 <script>
   if (
     navigator.language.startsWith("pl") &&
-    sessionStorage.getItem("redirected") === null
+    localStorage.getItem("redirected") === null
   ) {
-    sessionStorage.setItem("redirected", "true");
+    localStorage.setItem("redirected", "true");
     window.location.href = "/pl";
   }
 </script>
-<Layout lang={lang}>
+<Layout en>
   <div class="h-full flex flex-col">
     <main class="grid place-items-center p-2 md:p-4">
       <div class="max-w-6xl mx-auto">
-        <Section heading={translate("section.about", lang)}>
+        <Section heading="About me">
           <Container>
-            <div
-              set:html={text.replaceAll(
-                /\((.*?)\)->\((.*?)\)/gm,
-                '<a href="$2">$1</a>'
-              )}
-              class="prose dark:prose-invert prose-lg"
-            />
+            <div class="prose dark:prose-invert prose-lg">
+              I'm a web developer working with .NET, Astro, Vue, and <a
+                href="/cv">some other stuff</a
+              >. Currently, I'm pursuing my education at secondary technical
+              school. I'm interested in programming, Linux and open source
+              software.
+            </div>
           </Container>
         </Section>
-        <Section heading={translate("section.contact", lang)}>
+        <Section heading="Contact">
           <Container>
             <ul class="prose dark:prose-invert prose-lg list-dash ml-4">
               <li>
@@ -63,7 +44,7 @@ const { lang } = Astro.params;
                 >
               </li>
               <li>
-                Signal: <Reveal content="order.67", lang={lang} />
+                Signal: <Reveal content="order.67" lang="en" />
               </li>
             </ul>
           </Container>
@@ -73,7 +54,7 @@ const { lang } = Astro.params;
     <div class="grow"></div>
     <aside class="flex justify-center text-sm tracking-wide mb-2 mx-2">
       <Chip class="bg-neutral-100 dark:bg-slate-850">
-        {translate("misc.last-updated", lang)}:
+        Last updated:
         <time datetime={new Date().toISOString()}>
           {new Date().toISOString().split("T")[0]}
         </time>

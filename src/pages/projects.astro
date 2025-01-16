@@ -1,0 +1,37 @@
+---
+import LinkArrow from "@components/LinkArrow.astro";
+import Project from "@components/Project.astro";
+import Layout from "@layouts/Layout.astro";
+---
+
+<Layout en>
+  <main class="p-2 md:p-4">
+    <div class="max-w-4xl mx-auto flex gap-4 flex-col">
+      <Project name="website">
+        This is my personal website. Through building and maintaining this
+        website, I have mastered my skills in front-end development.
+      </Project>
+      <Project name="arxchess">
+        Arx is a chess-based strategy game with fairy pieces and resource
+        management.
+      </Project>
+      <Project name="autocut">
+        Panel cutting optimization software that runs seamlessly on any modern
+        browser or device using PWA technology. This app utilizes algorithms
+        written in TypeScript to optimize stock cutting, saving time and
+        reducing waste.
+      </Project>
+      <Project name="sigmacars">
+        Web app for renting cars. It's a learning project showcasing full-stack
+        web development, containerization, and microservices architecture. More
+        details and documentation can be found in the repository.
+      </Project>
+      <div class="flex justify-center">
+        <LinkArrow
+          link="https://github.com/kacperwyczawski?tab=repositories"
+          text="Find more on my GitHub"
+        />
+      </div>
+    </div>
+  </main>
+</Layout>

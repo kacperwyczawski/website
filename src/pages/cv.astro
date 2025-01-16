@@ -1,0 +1,93 @@
+---
+import Container from "@components/Container.astro";
+import LinkArrow from "@components/LinkArrow.astro";
+import Section from "@components/Section.astro";
+import SkillsSection from "@components/SkillsSection.astro";
+import Timestamp from "@components/Timestamp.astro";
+import TimestampDetail from "@components/TimestampDetail.astro";
+import Layout from "@layouts/Layout.astro";
+---
+
+<Layout en>
+  <main class="grid place-items-center p-2 md:p-4">
+    <div class="max-w-6xl mx-auto">
+      <Section heading="My skills">
+        <ul class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+          <SkillsSection type="languages" name="Languages" />
+          <SkillsSection type="backend" name="Backend" />
+          <SkillsSection type="frontend" name="Frontend" />
+          <SkillsSection type="other" name="Other" />
+        </ul>
+      </Section>
+      <div class="md:grid md:grid-cols-2 gap-4">
+        <Section heading="Work experience">
+          <Container>
+            <ul>
+              <Timestamp
+                date="2024.04"
+                location="Rzeszów, Poland"
+                type="Internship"
+                head="Frontend Developer at"
+                tail="Devi System"
+                tailUrl="https://www.devisystem.pl/"
+              />
+              <Timestamp
+                date="2022.10"
+                location="Rzeszów, Poland"
+                type="Internship"
+                head=".NET Backend Developer at"
+                tail="Ideo"
+                tailUrl="https://www.ideosoftware.com/"
+              />
+              <Timestamp
+                date="2022.07"
+                location="Rzeszów, Poland"
+                type="Paid internship"
+                head="Data Base Administrator at"
+                tail="Devi System"
+                tailUrl="https://www.devisystem.pl/"
+              />
+              <Timestamp
+                date="2022.04 - 2022.05"
+                location="Faro, Portugal"
+                type="Internship"
+                head="Computer Hardware Repair at"
+                tail="Clube Do Hardware"
+                tailUrl="https://goo.gl/maps/cQXJcgokdJmSD1bt6"
+              />
+            </ul>
+          </Container>
+        </Section>
+        <Section heading="Education">
+          <Container>
+            <ul>
+              <Timestamp
+                date="2020.09 - Present"
+                location="Rzeszów, Poland"
+                head="IT Technician at"
+                tail="Zespół Szkół Elektronicznych w Rzeszowie"
+                tailUrl="https://elektronik.rzeszow.pl/"
+              >
+                <TimestampDetail>
+                  <span class="text-neutral-400 dark:text-slate-500">
+                    INF.02 qualification result:
+                  </span>
+                  <span class="tracking-tight"> 100% </span>
+                </TimestampDetail>
+                <TimestampDetail>
+                  <span class="text-neutral-400 dark:text-slate-500">
+                    INF.03 approximate result:
+                  </span>
+                  <span class="tracking-tight"> 100% </span>
+                </TimestampDetail>
+              </Timestamp>
+            </ul>
+          </Container>
+        </Section>
+      </div>
+      <footer class="flex justify-center">
+        <LinkArrow link="/projects" text="Check out my projects" />
+      </footer>
+    </div>
+  </main>
+</Layout>
