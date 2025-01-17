@@ -30,7 +30,16 @@ import Layout from "@layouts/Layout.astro";
                 head="Frontend Developer w"
                 tail="Devi System"
                 tailUrl="https://www.devisystem.pl/"
-              />
+              >
+                <TimestampDetail>
+                  Byłem odpowiedzialny za stworzenie strony internetowej dla
+                  firmy <a href="https://eko-luk.pl/">EKOLUK</a>.
+                </TimestampDetail>
+                <TimestampDetail>
+                  Miałem okazję rozwinąć swoje umiejętności związane z Vue oraz
+                  TypeScript.
+                </TimestampDetail>
+              </Timestamp>
               <Timestamp
                 date="2022.10"
                 location="Rzeszów, Polska"
@@ -69,16 +78,16 @@ import Layout from "@layouts/Layout.astro";
                 tailUrl="https://elektronik.rzeszow.pl/"
               >
                 <TimestampDetail>
-                  <span class="text-neutral-400 dark:text-slate-500">
-                    Wynik z kwalifikacji INF.02:
-                  </span>
-                  <span class="tracking-tight"> 100% </span>
+                  Wynik z kwalifikacji INF.02:
+                  <strong>
+                    100%
+                  </strong>
                 </TimestampDetail>
                 <TimestampDetail>
-                  <span class="text-neutral-400 dark:text-slate-500">
-                    Przybliżony wynik z kwalifikacji INF.03:
-                  </span>
-                  <span class="tracking-tight"> 100% </span>
+                  Przybliżony wynik z kwalifikacji INF.03:
+                  <strong>
+                    100%
+                  </strong>
                 </TimestampDetail>
               </Timestamp>
             </ul>
@@ -86,10 +95,7 @@ import Layout from "@layouts/Layout.astro";
         </Section>
       </div>
       <footer class="flex justify-center">
-        <LinkArrow
-          link="/pl/projects"
-          text="Zobacz moje projekty"
-        />
+        <LinkArrow link="/pl/projects" text="Zobacz moje projekty" />
       </footer>
     </div>
   </main>
