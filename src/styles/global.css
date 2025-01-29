@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+/* TODO: when new version of this plugin is released, it will use another import method probably */
+@plugin "@tailwindcss/typography";
+
+@theme {
+    --font-sans: "Inter Variable", "Inter";
+    --font-fancy: "Sora Variable", "Sora";
+    --font-mono: "FIra Code Variable", "Fira Code";
+    --color-slate-850: #172033;
+}
+
+@utility list-dash {
+    list-style-type: "- ";
+}

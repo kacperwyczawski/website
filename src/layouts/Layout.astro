@@ -1,4 +1,5 @@
 ---
+import "../styles/global.css";
 import "@fontsource-variable/inter";
 import "@fontsource-variable/sora";
 import "@fontsource-variable/fira-code";
@@ -45,18 +46,14 @@ const lang = en ? "en" : "pl";
     <link rel="sitemap" href="/sitemap-index.xml" />
     <title>Kacper Wyczawski</title>
     <style>
-      :root {
-        color-scheme: light dark;
-      }
-
       body {
         --bg-color: light-dark(
-          theme(colors.neutral.50),
-          theme(colors.slate.900)
+          var(--color-neutral-50),
+          var(--color-slate-900)
         );
         --grid-color: light-dark(
-          theme(colors.neutral.200 / 50%),
-          theme(colors.slate.800 / 70%)
+            color-mix(in oklch, var(--color-neutral-200) 50%, transparent),
+            color-mix(in oklch, var(--color-slate-800) 70%, transparent)
         );
         background-size: 32px 32px;
         background-color: var(--bg-color);
@@ -72,7 +69,7 @@ const lang = en ? "en" : "pl";
     </style>
   </head>
   <body
-    class="selection:bg-fuchsia-700/20 dark:text-neutral-100 h-full flex flex-col"
+    class="selection:bg-fuchsia-700/20 dark:text-neutral-100 h-full flex flex-col scheme-light-dark"
   >
     <header
       class="flex flex-col gap-1 md:flex-row md:justify-between p-4 md:p-8 sticky top-0 z-50 backdrop-blur-sm bg-neutral-50/70 dark:bg-slate-900/70"
@@ -97,7 +94,7 @@ const lang = en ? "en" : "pl";
         >
           CV
         </a>
-        <hr class="w-0 h-10 border-l" />
+        <hr class="w-0 h-10 border-l border-neutral-200" />
         <div class="text-sm font-semibold flex flex-col dark:text-neutral-100">
           <a
             href={"/pl" + Astro.url.pathname}

@@ -11,7 +11,7 @@ const { image, alt, url } = Astro.props;
 ---
 <div class="m-4">
   <div
-    class="hidden bg-neutral-200 dark:bg-slate-800 p-2 rounded-t-lg border dark:border-slate-800 md:flex justify-center items-center relative"
+    class="hidden bg-neutral-200 dark:bg-slate-800 p-2 rounded-t-lg border border-neutral-200 dark:border-slate-800 md:flex justify-center items-center relative"
   >
     <div class="absolute left-4 flex gap-3">
       <span onclick="this.parentNode.parentNode.parentNode.remove()" class="h-3.5 w-3.5 bg-neutral-300 dark:bg-slate-600 rounded-full hover:bg-red-400 transition-colors" />
@@ -49,6 +49,6 @@ const { image, alt, url } = Astro.props;
   <Image
     src={image}
     alt={alt}
-    class="w-full rounded-lg md:rounded-t-none border md:border-t-0 dark:border-slate-800"
+    class="w-full rounded-lg md:rounded-t-none border border-neutral-200 md:border-t-0 dark:border-slate-800"
   />
 </div>
