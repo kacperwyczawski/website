@@ -7,7 +7,8 @@ const { heading } = Astro.props;
 ---
 
 <section>
-    <h2 class="font-fancy text-2xl contrast-more:text-black text-neutral-400 text-center mb-4 mt-8">
+    <!-- the negative margin and bigger padding is for scrolling to the anchor, taking the sticky header into account -->
+    <h2 class="font-fancy text-2xl contrast-more:text-black text-neutral-400 text-center mb-4 -mt-16 pt-32 target:animate-pulse ![animation-iteration-count:2]" id={heading}>
         {heading}
     </h2>
     <slot />

@@ -4,12 +4,12 @@
 @plugin "@tailwindcss/typography";
 
 @theme {
-    --font-sans: "Inter Variable", "Inter";
-    --font-fancy: "Sora Variable", "Sora";
-    --font-mono: "FIra Code Variable", "Fira Code";
-    --color-slate-850: #172033;
+	--font-sans: "Inter Variable", "Inter";
+	--font-fancy: "Sora Variable", "Sora";
+	--font-mono: "FIra Code Variable", "Fira Code";
+	--color-slate-850: #172033;
 }
 
 @utility list-dash {
-    list-style-type: "- ";
+	list-style-type: "- ";
 }

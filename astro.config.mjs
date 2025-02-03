@@ -6,9 +6,7 @@ import { defineConfig, passthroughImageService } from "astro/config";
 export default defineConfig({
 	site: "https://wyczawski.dev",
 	vite: {
-		plugins: [
-			tailwindcss()
-		],
+		plugins: [tailwindcss()],
 	},
 	integrations: [
 		sitemap({
@@ -31,8 +29,7 @@ export default defineConfig({
 	image: {
 		service: passthroughImageService(),
 	},
-	prefetch: {
-		prefetchAll: true,
-		defaultStrategy: "load",
+	devToolbar: {
+		enabled: false,
 	},
 });

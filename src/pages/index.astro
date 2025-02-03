@@ -1,8 +1,13 @@
 ---
 import Chip from "@components/Chip.astro";
 import Container from "@components/Container.astro";
+import LinkArrow from "@components/LinkArrow.astro";
+import Project from "@components/Project.astro";
 import Reveal from "@components/Reveal.astro";
 import Section from "@components/Section.astro";
+import SkillsSection from "@components/SkillsSection.astro";
+import Timestamp from "@components/Timestamp.astro";
+import TimestampDetail from "@components/TimestampDetail.astro";
 import Layout from "@layouts/Layout.astro";
 ---
 
@@ -16,49 +21,218 @@ import Layout from "@layouts/Layout.astro";
   }
 </script>
 <Layout en>
-  <div class="h-full flex flex-col">
-    <main class="grid place-items-center p-2 md:p-4">
-      <div class="max-w-6xl mx-auto">
-        <Section heading="About me">
-          <Container>
-            <div class="prose dark:prose-invert prose-lg">
-              I'm a web developer working with .NET, Astro, Vue, and <a
-                href="/cv">some other stuff</a
-              >. Currently, I'm pursuing my education at secondary technical
-              school. I'm interested in programming, Linux and open source
-              software.
-            </div>
-          </Container>
-        </Section>
-        <Section heading="Contact">
-          <Container>
-            <ul class="prose dark:prose-invert prose-lg list-dash ml-4">
-              <li>
-                Email: <a href="mailto:kacper@wyczawski.dev"
-                  >kacper@wyczawski.dev</a
-                >
-              </li>
-              <li>
-                GitHub: <a href="https://github.com/kacperwyczawski"
-                  >kacperwyczawski</a
-                >
-              </li>
-              <li>
-                Signal: <Reveal content="order.67" lang="en" />
-              </li>
-            </ul>
-          </Container>
-        </Section>
+  <main class="p-2">
+    <div class="max-w-4xl mx-auto">
+      <Section heading="About me">
+        <Container>
+          <div class="prose dark:prose-invert prose-lg max-w-none">
+            I'm a web developer working with .NET, Astro, Vue, and <a href="#My skills"
+              >some other stuff</a
+            >. Currently, I'm pursuing my education at secondary technical
+            school. I'm interested in programming, Linux and open source
+            software.
+          </div>
+        </Container>
+      </Section>
+      <Section heading="Contact">
+        <!-- TODO: chips without container -->
+        <Container>
+          <ul class="prose dark:prose-invert prose-lg list-dash ml-4">
+            <li>
+              Email: <a href="mailto:kacper@wyczawski.dev"
+                >kacper@wyczawski.dev</a
+              >
+            </li>
+            <li>
+              GitHub: <a href="https://github.com/kacperwyczawski"
+                >kacperwyczawski</a
+              >
+            </li>
+            <li>
+              Signal: <Reveal content="order.67" lang="en" />
+            </li>
+          </ul>
+        </Container>
+      </Section>
+      <Section heading="My skills">
+        <ul class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+          <SkillsSection type="languages" name="Languages" />
+          <SkillsSection type="backend" name="Backend" />
+          <SkillsSection type="frontend" name="Frontend" />
+          <SkillsSection type="other" name="Other" />
+        </ul>
+      </Section>
+      <Section heading="Work experience">
+        <!-- TODO: try bigger font -->
+        <Container>
+          <ul>
+            <Timestamp
+              date="2024.04"
+              location="Rzeszów, Poland"
+              type="Internship"
+              head="Frontend Developer at"
+              tail="Devi System"
+              tailUrl="https://www.devisystem.pl/"
+            >
+              <TimestampDetail>
+                I was responsible for creating the website for the company <a
+                  href="https://eko-luk.pl/">EKOLUK</a
+                >.
+              </TimestampDetail>
+              <TimestampDetail>
+                I had the opportunity to develop my skills related to Vue and
+                TypeScript.
+              </TimestampDetail>
+            </Timestamp>
+            <Timestamp
+              date="2022.10"
+              location="Rzeszów, Poland"
+              type="Internship"
+              head=".NET Backend Developer at"
+              tail="Ideo"
+              tailUrl="https://www.ideosoftware.com/"
+            >
+              <TimestampDetail>
+                I created a full-stack application displaying a recursive data
+                set, including the implementation of basic CRUD operations on a
+                tree stored in a SQLite database. <a
+                  href="https://github.com/kacperwyczawski/TreeStructure"
+                  >Repository link</a
+                >.
+              </TimestampDetail>
+              <TimestampDetail>
+                I developed the frontend and API for a MySQL database containing
+                employee data using .NET Core. <a
+                  href="https://github.com/kacperwyczawski/EmployeeManager"
+                  >Repository link</a
+                >.
+              </TimestampDetail>
+              <TimestampDetail>
+                I was responsible for creating a background service running on
+                ASP.NET Core, collecting data from an API and saving it to an
+                SQLite database, and a web application to display this data. <a
+                  href="https://github.com/kacperwyczawski/WeatherTracker"
+                  >Repository link</a
+                >.
+              </TimestampDetail>
+            </Timestamp>
+            <Timestamp
+              date="2022.07"
+              location="Rzeszów, Poland"
+              type="Paid internship"
+              head="Data Base Administrator at"
+              tail="Devi System"
+              tailUrl="https://www.devisystem.pl/"
+            >
+              <TimestampDetail>
+                My main task was managing the customer database for Devi System.
+                In my spare time, I had the opportunity to learn ASP.NET Core,
+                EF Core, and SQLite technologies.
+              </TimestampDetail>
+            </Timestamp>
+            <Timestamp
+              date="2022.04 - 2022.05"
+              location="Faro, Portugal"
+              type="Internship"
+              head="Participant in IT internship at"
+              tail="Erasmus+ project"
+              tailUrl="https://faro.zse.rzeszow.pl/"
+            >
+              <TimestampDetail>
+                I participated in an IT internship at one of the Portuguese IT
+                companies. The scope of the topics I learned included:
+              </TimestampDetail>
+              <TimestampDetail>
+                Programming in high-level languages (Python, C++, C#, Java).
+              </TimestampDetail>
+              <TimestampDetail>
+                Creating web applications (HTML, CSS, JS, JQuery, PHP, MySQL,
+                Wordpress).
+              </TimestampDetail>
+              <TimestampDetail>
+                Administration of relational databases.
+              </TimestampDetail>
+              <TimestampDetail>
+                Installation and management of local computer networks and
+                operating systems.
+              </TimestampDetail>
+            </Timestamp>
+          </ul>
+        </Container>
+      </Section>
+      <Section heading="Education">
+        <Container>
+          <ul>
+            <Timestamp
+              date="2020.09 - Present"
+              location="Rzeszów, Poland"
+              head="IT Technician at"
+              tail="Zespół Szkół Elektronicznych w Rzeszowie"
+              tailUrl="https://elektronik.rzeszow.pl/"
+            >
+              <TimestampDetail>
+                INF.02 qualification result:
+                <strong> 100% </strong>
+                <br />
+                <i class="text-neutral-400 dark:text-slate-500">
+                  (Administration and management of operating systems,
+                  peripheral devices, and local computer networks)
+                </i>
+              </TimestampDetail>
+              <TimestampDetail>
+                Preliminary INF.03 qualification result:
+                <strong> 100% </strong>
+                <br />
+                <i class="text-neutral-400 dark:text-slate-500">
+                  (Development and management of websites, web applications, and
+                  databases)
+                </i>
+              </TimestampDetail>
+            </Timestamp>
+          </ul>
+        </Container>
+      </Section>
+      <Section heading="Projects">
+        <div class="max-w-4xl mx-auto flex gap-4 flex-col">
+          <Project name="website">
+            This is my personal website. Through building and maintaining this
+            website, I have mastered my skills in front-end development.
+          </Project>
+          <Project name="arxchess">
+            Arx is a chess-based strategy game with fairy pieces and resource
+            management. Thanks to this project, I have learned TypeScript and
+            development of more complex web applications.
+          </Project>
+          <Project name="autocut">
+            Panel cutting optimization software that runs seamlessly on any
+            modern browser or device using PWA technology. This app utilizes
+            algorithms written in TypeScript to optimize stock cutting, saving
+            time and reducing waste. This project won a special prize at the
+            "Circular Business Transformation" hackathon.
+          </Project>
+          <Project name="sigmacars">
+            Web app for renting cars. It's a learning project showcasing
+            full-stack web development, containerization, and microservices
+            architecture. More details and documentation can be found in the
+            repository.
+          </Project>
+        </div>
+      </Section>
+      <div class="flex justify-center">
+        <LinkArrow
+          link="https://github.com/kacperwyczawski?tab=repositories"
+          text="Check out more projects on my GitHub"
+        />
       </div>
-    </main>
-    <div class="grow"></div>
-    <aside class="flex justify-center text-sm tracking-wide mb-2 mx-2">
-      <Chip class="bg-neutral-100 dark:bg-slate-850">
-        Last updated:
-        <time datetime={new Date().toISOString()}>
-          {new Date().toISOString().split("T")[0]}
-        </time>
-        <!-- <span class="mx-1 text-neutral-200 dark:text-slate-800"> | </span>
+    </div>
+  </main>
+  <aside class="flex justify-center text-sm tracking-wide mb-2 mt-12 mx-2">
+    <Chip class="bg-neutral-100 dark:bg-slate-850">
+      Last updated:
+      <time datetime={new Date().toISOString()}>
+        {new Date().toISOString().split("T")[0]}
+      </time>
+      <!-- <span class="mx-1 text-neutral-200 dark:text-slate-800"> | </span>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="24"
@@ -75,7 +249,6 @@ import Layout from "@layouts/Layout.astro";
         ></path><path d="m9 12 2 2 4-4"></path></svg
       >
       HTTP/3 -->
-      </Chip>
-    </aside>
-  </div>
+    </Chip>
+  </aside>
 </Layout>
