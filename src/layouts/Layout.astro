@@ -4,6 +4,7 @@ import "@fontsource-variable/inter";
 import "@fontsource-variable/sora";
 import "@fontsource-variable/fira-code";
 import { getRelativeLocaleUrl } from "astro:i18n";
+import Analytics from "@vercel/analytics/astro";
 
 interface Props {
 	en?: boolean;
@@ -66,6 +67,7 @@ const lang = en ? "en" : "pl";
         background-attachment: fixed;
       }
     </style>
+    <Analytics />
   </head>
   <body
     class="selection:bg-fuchsia-700/20 dark:text-neutral-100 flex flex-col bg-neutral-50 dark:bg-slate-900"
