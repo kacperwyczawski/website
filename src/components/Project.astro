@@ -2,6 +2,7 @@
 import arxChessImage from "@images/arx-chess.png";
 import autoCutImage from "@images/autocut.png";
 import sigmaCarsImage from "@images/sigma-cars.png";
+import nixosImage from "@images/nixos.png";
 import Chip from "./Chip.astro";
 import LinkButton from "./LinkButton.astro";
 import Mockup from "./Mockup.astro";
@@ -13,6 +14,14 @@ interface Props {
 const { name } = Astro.props;
 
 const projects = {
+	nixos: {
+		name: "NixOS.org",
+		status: null,
+		technologies: ["Astro", "Tailwind CSS", "TypeScript", "Nix", "DaisyUI", "MDX"],
+		sourceUrl: "https://github.com/NixOS/nixos-homepage",
+		liveUrl: "https://nixos.org",
+		image: nixosImage,
+	},
 	arxchess: {
 		name: "Arx Chess",
 		status: "beta",
