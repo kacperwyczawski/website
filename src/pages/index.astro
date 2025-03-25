@@ -25,12 +25,14 @@ import Layout from "@layouts/Layout.astro";
       <Section heading="About me">
         <Container>
           <div class="prose dark:prose-invert prose-lg max-w-none">
-            I'm a web developer working with .NET, Astro, Vue, and <a
-              href="#My skills">some other stuff</a
-            >. I'm pursuing my education at a secondary technical school as an
-            IT Technician. Currently I'm preparing for my final exam and several
-            competitions/olympiads. I'm interested in IT, especially programming
-            and Linux.
+            I'm a web developer with experience in .NET, Astro, Vue, and <a
+              href="#My skills">other technologies</a
+            >. In April, I will complete my studies as an IT Technician, during
+            which I was honored as a laureate of the national <a
+              href="https://oowee.agh.edu.pl">OOWEE</a
+            > computer science olympiad, and gained professional experience through
+            multiple internships, traineeships, and various projects. I'm passionate
+            about IT, especially programming.
           </div>
         </Container>
       </Section>
@@ -199,24 +201,38 @@ import Layout from "@layouts/Layout.astro";
                 My grade point average in vocational subjects in my final year
                 was <strong>6.0</strong> (on a 1.0 - 6.0 scale)
               </TimestampDetail>
+              <TimestampDetail>
+                I achieved the title of laureate at the national <a
+                  href="https://oowee.agh.edu.pl">OOWEE</a
+                > olympiad in the field of computer science, which granted me access
+                to all technical universities in Poland.
+              </TimestampDetail>
             </Timestamp>
           </ul>
         </Container>
       </Section>
       <Section heading="Projects">
         <div class="max-w-4xl mx-auto flex gap-4 flex-col">
-          <Project name="website">
-            This is my personal website. Through building and maintaining this
-            website, I have mastered my skills in front-end development.
+          <Project name="elektronet">
+            <p>
+              I created an internal administrative system used by about 100
+              employees of <a href="https://elektronik.rzeszow.pl/">ZSE</a>.
+              This system allows for managing employees, students, contests,
+              achievements, scholarships, applications, malfunctions, and room
+              reservations. This project was a great opportunity for me to learn
+              new technologies (Laravel and FilamentPHP) and to deploy a real
+              system on a physical server ("bare-metal"). I also had to ensure
+              proper security and authorization for different employee access
+              levels, as well as the overall reliability of the application.
+            </p>
           </Project>
           <Project name="nixos">
             In this project, I created several pages on the official NixOS
-            website using Astro and implemented advanced CSS and JavaScript
-            techniques to create an animated diagram. I worked with an
-            international team, learning front-end development in the process.
-            It is also worth mentioning that NixOS is a widely recognized
-            project with over 20k stars on GitHub, attracting significant
-            traffic to the pages I helped develop.
+            distribution website. I worked with an international team, improving
+            my front-end development skills in the process. It is also worth
+            mentioning that NixOS is a widely recognized project with over 20k
+            stars on GitHub, attracting significant traffic to the pages I
+            helped develop.
           </Project>
           <Project name="arxchess">
             Arx is a chess-based strategy game with fairy pieces and resource
@@ -235,6 +251,10 @@ import Layout from "@layouts/Layout.astro";
             full-stack web development, containerization, and microservices
             architecture. More details and documentation can be found in the
             repository.
+          </Project>
+          <Project name="website">
+            This is my personal website. Through building and maintaining this
+            website, I have mastered my skills in front-end development.
           </Project>
         </div>
       </Section>

@@ -18,10 +18,12 @@ import Layout from "@layouts/Layout.astro";
           <div class="prose dark:prose-invert prose-lg max-w-none">
             Jestem web developerem z doświadczeniem w .NET, Astro, Vue, oraz <a
               href="#Umiejętności">innych technologiach</a
-            >. Uczę się w piątej klasie technikum, na proiflu technik
-            informatyk. Obecnie przygotowuje się do matury oraz kilku konkursów
-            i olimpiad. Interesuje się informatyką, szczególnie programowaniem i
-            Linuxem.
+            >. W kwietniu kończę naukę na profilu technik informatyk, podczas
+            której zdobyłem tytuł laureata ogólnopolskiej olimpiady <a
+              href="https://oowee.agh.edu.pl">OOWEE</a
+            > z informatyki, oraz miałem okazję zdobyć doświadczenie zawodowe na
+            licznych praktykach, stażach, oraz przy różnych projektach. Interesuję
+            się szeroko pojętą informatyką, a w szczególności programowaniem.
           </div>
         </Container>
       </Section>
@@ -192,25 +194,37 @@ import Layout from "@layouts/Layout.astro";
                 Moja średnia ocen z przedmiotów zawodowych w ostatniej klasie
                 wyniosła <strong>6.0</strong>
               </TimestampDetail>
+              <TimestampDetail>
+                Zdobyłem tytuł laureata ogólnopolskiej olimpiady <a
+                  href="https://oowee.agh.edu.pl">OOWEE</a
+                > z informatyki. Dzięki temu uzyskałem "indeks" na wszystkie uczelnie
+                techniczne w Polsce.
+              </TimestampDetail>
             </Timestamp>
           </ul>
         </Container>
       </Section>
       <Section heading="Projekty">
         <div class="max-w-4xl mx-auto flex gap-4 flex-col">
-          <Project name="website">
-            Jest to moja osobista strona internetowa. Poprzez jej budowę i
-            rozwój, doskonaliłem swoje umiejętności w zakresie frontendu.
+          <Project name="elektronet">
+            Stworzyłem wewnętrzny system aministracyjny używany przez około 100
+            pracowników <a href="https://elektronik.rzeszow.pl/">ZSE</a>. System
+            ten pozwala na zarządzanie pracownikami, uczniami, konkursami,
+            osiągnięciami, stypendiami, zgłoszeniami, usterkami i rezerwacjami
+            sal. Ten projekt był dla mnie świetną okazją do poznania nowych
+            technologii (Laravel i FilamentPHP) oraz do nauczenia się wdrażania
+            prawdziwego systemu na fizycznym serwerze ("bare-metal"). Musiałem
+            również zadbać o odpowiednie zabezpieczenia i autoryzację przy
+            różnych poziomach dostępu różnych pracowników, oraz o niezawodność
+            całej aplikacji.
           </Project>
           <Project name="nixos">
             W tym projekcie stworzyłem kilka podstron na oficjalnej stronie
-            NixOS, używając frameworka Astro, oraz wdrożyłem zaawansowane
-            techniki CSS i JavaScript, aby stworzyć animowany diagram.
-            Pracowałem w międzynarodowym zespole, ucząc się jednocześnie
-            tworzenia front-endu. Warto również wspomnieć, że NixOS jest szeroko
-            rozpoznawalnym projektem, posiadającym ponad 20 tys. gwiazdek na
-            GitHubie i przyciągającym znaczący ruch do strony, którą pomogłem
-            stworzyć.
+            dystrybucji NixOS. Pracowałem w międzynarodowym zespole,
+            jednocześnie rozwijając moje umiejętności z front-endu. Warto
+            również wspomnieć, że NixOS jest szeroko rozpoznawalnym projektem,
+            posiadającym ponad 20 tys. gwiazdek na GitHubie i przyciągającym
+            znaczący ruch do strony, którą pomogłem stworzyć.
           </Project>
           <Project name="arxchess">
             Arx Chess to gra strategiczna, oparta na szachach. Znajdują się w
@@ -230,6 +244,10 @@ import Layout from "@layouts/Layout.astro";
             pełnego stosu technologicznego aplikacji webowej, opartej na
             konteneryzacji oraz architekturze microservices. Więcej szczegółów i
             dokumentacja znajduje się w repozytorium.
+          </Project>
+          <Project name="website">
+            Jest to moja osobista strona internetowa. Poprzez jej budowę i
+            rozwój, doskonaliłem swoje umiejętności w zakresie frontendu.
           </Project>
         </div>
       </Section>

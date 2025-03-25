@@ -3,6 +3,7 @@ import arxChessImage from "@images/arx-chess.png";
 import autoCutImage from "@images/autocut.png";
 import sigmaCarsImage from "@images/sigma-cars.png";
 import nixosImage from "@images/nixos.png";
+import elektronetImage from "@images/elektronet.png";
 import Chip from "./Chip.astro";
 import LinkButton from "./LinkButton.astro";
 import Mockup from "./Mockup.astro";
@@ -21,6 +22,14 @@ const projects = {
 		sourceUrl: "https://github.com/NixOS/nixos-homepage",
 		liveUrl: "https://nixos.org",
 		image: nixosImage,
+	},
+	elektronet: {
+		name: "Elektronet",
+		status: null,
+		technologies: ["PHP", "Laravel", "FilamentPHP", "Tailwind CSS", "SQLite"],
+		sourceUrl: "https://github.com/kacperwyczawski/elektronet",
+		liveUrl: null,
+		image: elektronetImage,
 	},
 	arxchess: {
 		name: "Arx Chess",
