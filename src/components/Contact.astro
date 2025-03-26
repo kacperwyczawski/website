@@ -1,0 +1,29 @@
+---
+const contacts = [
+    {
+        name: "Email",
+        url: "mailto:kacper@wyczawski.dev",
+        text: "kacper@wyczawski.dev",
+    },
+    {
+        name: "GitHub",
+        url: "https://github.com/kacperwyczawski",
+        text: "kacperwyczawski",
+    },
+    {
+        name: "Signal",
+        url: "https://signal.me/#eu/HCHPaKlKDbZJC0wZ9wXbj0w0YziEZ1ArlKr0i-hz4SnyrpPXKFJIFZkpITkrmVM3",
+        text: "order.67",
+    },
+];
+---
+
+<ul class="flex flex-col gap-4 md:flex-row justify-center">
+    {
+        contacts.map((x) => (
+            <li class="px-4 py-2 border border-neutral-200 dark:border-slate-800 rounded-lg bg-neutral-100 dark:bg-slate-850 prose prose-lg text-center">
+                {x.name}: <a href={x.url}>{x.text}</a>
+            </li>
+        ))
+    }
+</ul>

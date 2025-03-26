@@ -1,5 +1,6 @@
 ---
 import Chip from "@components/Chip.astro";
+import Contact from "@components/Contact.astro";
 import Container from "@components/Container.astro";
 import LinkArrow from "@components/LinkArrow.astro";
 import Project from "@components/Project.astro";
@@ -28,26 +29,7 @@ import Layout from "@layouts/Layout.astro";
         </Container>
       </Section>
       <Section heading="Kontakt">
-        <Container>
-          <ul class="prose dark:prose-invert prose-lg list-dash ml-4">
-            <li>
-              Email: <a href="mailto:kacper@wyczawski.dev"
-                >kacper@wyczawski.dev</a
-              >
-            </li>
-            <li>
-              GitHub: <a href="https://github.com/kacperwyczawski"
-                >kacperwyczawski</a
-              >
-            </li>
-            <li>
-              Signal: <a
-                href="https://signal.me/#eu/HCHPaKlKDbZJC0wZ9wXbj0w0YziEZ1ArlKr0i-hz4SnyrpPXKFJIFZkpITkrmVM3"
-                >order.67</a
-              >
-            </li>
-          </ul>
-        </Container>
+        <Contact />
       </Section>
       <Section heading="Umiejętności">
         <ul class="grid grid-cols-1 gap-4 sm:grid-cols-2">
