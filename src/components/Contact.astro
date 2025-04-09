@@ -21,8 +21,8 @@ const contacts = [
 <ul class="flex flex-col gap-4 md:flex-row justify-center">
     {
         contacts.map((x) => (
-            <li class="px-4 py-2 border border-neutral-200 dark:border-slate-800 rounded-lg bg-neutral-100 dark:bg-slate-850 prose prose-lg text-center">
-                {x.name}: <a href={x.url}>{x.text}</a>
+            <li class="px-4 py-2 border border-neutral-200 dark:border-slate-800 rounded-lg bg-neutral-100 dark:bg-slate-850 prose dark:prose-invert prose-lg text-center">
+                {x.name}: <a href={x.url} class="">{x.text}</a>
             </li>
         ))
     }
