@@ -1,9 +1,9 @@
 ---
 import arxChessImage from "@images/arx-chess.png";
 import autoCutImage from "@images/autocut.png";
-import sigmaCarsImage from "@images/sigma-cars.png";
-import nixosImage from "@images/nixos.png";
 import elektronetImage from "@images/elektronet.png";
+import nixosImage from "@images/nixos.png";
+import sigmaCarsImage from "@images/sigma-cars.png";
 import Chip from "./Chip.astro";
 import LinkButton from "./LinkButton.astro";
 import Mockup from "./Mockup.astro";
@@ -18,7 +18,14 @@ const projects = {
 	nixos: {
 		name: "NixOS.org",
 		status: null,
-		technologies: ["Astro", "Tailwind CSS", "TypeScript", "Nix", "DaisyUI", "MDX"],
+		technologies: [
+			"Astro",
+			"Tailwind CSS",
+			"TypeScript",
+			"Nix",
+			"DaisyUI",
+			"MDX",
+		],
 		sourceUrl: "https://github.com/NixOS/nixos-homepage",
 		liveUrl: "https://nixos.org",
 		image: nixosImage,
@@ -35,7 +42,7 @@ const projects = {
 			"Docker",
 			"Portainer",
 			"Caddy",
-			"Traefik"
+			"Traefik",
 		],
 		sourceUrl: "https://github.com/kacperwyczawski/elektronet",
 		liveUrl: null,
