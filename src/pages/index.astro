@@ -12,250 +12,273 @@ import Layout from "@layouts/Layout.astro";
 ---
 
 <script>
-  if (
-    navigator.language.startsWith("pl") &&
-    localStorage.getItem("redirected") === null
-  ) {
-    localStorage.setItem("redirected", "true");
-    window.location.href = "/pl";
-  }
+    if (
+        navigator.language.startsWith("pl") &&
+        localStorage.getItem("redirected") === null
+    ) {
+        localStorage.setItem("redirected", "true");
+        window.location.href = "/pl";
+    }
 </script>
 <Layout en>
-  <main class="p-2">
-    <div class="max-w-4xl mx-auto">
-      <Section heading="About me">
-        <Container>
-          <div class="prose dark:prose-invert prose-lg max-w-none">
-            I'm a web developer with experience in .NET, Astro, Vue, and <a
-              href="#My skills">other technologies</a
-            >. I have completed my studies as an IT Technician, during which I
-            was honored as a laureate of the national <a
-              href="https://oowee.agh.edu.pl">OOWEE</a
-            > computer science olympiad, and gained professional experience through
-            multiple internships and various projects. I'm passionate about IT, especially
-            programming.
-          </div>
-        </Container>
-      </Section>
-      <Section heading="Contact">
-        <Contact />
-      </Section>
-      <Section heading="My skills">
-        <ul class="grid grid-cols-1 gap-4 sm:grid-cols-2">
-          <SkillsSection type="languages" name="Languages" />
-          <SkillsSection type="backend" name="Backend" />
-          <SkillsSection type="frontend" name="Frontend" />
-          <SkillsSection type="other" name="Other" />
-        </ul>
-      </Section>
-      <Section heading="Work experience">
-        <!-- TODO: try bigger font -->
-        <Container>
-          <ul>
-            <Timestamp
-              date="2024.04"
-              location="Rzeszów, Poland"
-              type="Internship"
-              head="Frontend Developer at"
-              tail="Devi System"
-              tailUrl="https://www.devisystem.pl/"
-            >
-              <TimestampDetail>
-                I was responsible for creating the website for the company <a
-                  href="https://web.archive.org/web/20240619190309/https://eko-luk.pl/">EKOLUK</a
-                >.
-              </TimestampDetail>
-              <TimestampDetail>
-                I had the opportunity to develop my skills related to Vue and
-                TypeScript.
-              </TimestampDetail>
-            </Timestamp>
-            <Timestamp
-              date="2022.10"
-              location="Rzeszów, Poland"
-              type="Internship"
-              head=".NET Backend Developer at"
-              tail="Ideo"
-              tailUrl="https://www.ideosoftware.com/"
-            >
-              <TimestampDetail>
-                I created a full-stack application displaying a recursive data
-                set, including the implementation of basic CRUD operations on a
-                tree stored in a SQLite database. <a
-                  href="https://github.com/kacperwyczawski/TreeStructure"
-                  >Repository link</a
-                >.
-              </TimestampDetail>
-              <TimestampDetail>
-                I developed the frontend and API for a MySQL database containing
-                employee data using .NET Core. <a
-                  href="https://github.com/kacperwyczawski/EmployeeManager"
-                  >Repository link</a
-                >.
-              </TimestampDetail>
-              <TimestampDetail>
-                I was responsible for creating a background service running on
-                ASP.NET Core, collecting data from an API and saving it to an
-                SQLite database, and a web application to display this data. <a
-                  href="https://github.com/kacperwyczawski/WeatherTracker"
-                  >Repository link</a
-                >.
-              </TimestampDetail>
-            </Timestamp>
-            <Timestamp
-              date="2022.07"
-              location="Rzeszów, Poland"
-              type="Paid internship"
-              head="Data Base Administrator at"
-              tail="Devi System"
-              tailUrl="https://www.devisystem.pl/"
-            >
-              <TimestampDetail>
-                My main task was managing the customer database for Devi System.
-                In my spare time, I had the opportunity to learn ASP.NET Core,
-                EF Core, and SQLite technologies.
-              </TimestampDetail>
-            </Timestamp>
-            <Timestamp
-              date="2022.04 - 2022.05"
-              location="Faro, Portugal"
-              type="Internship"
-              head="Participant in IT internship at"
-              tail="Erasmus+ project"
-              tailUrl="https://faro.zse.rzeszow.pl/"
-            >
-              <TimestampDetail>
-                I participated in an IT internship at one of the Portuguese IT
-                companies. The scope of the topics I learned included:
-              </TimestampDetail>
-              <TimestampDetail>
-                Programming in high-level languages (Python, C++, C#, Java).
-              </TimestampDetail>
-              <TimestampDetail>
-                Creating web applications (HTML, CSS, JS, JQuery, PHP, MySQL,
-                Wordpress).
-              </TimestampDetail>
-              <TimestampDetail>
-                Administration of relational databases.
-              </TimestampDetail>
-              <TimestampDetail>
-                Installation and management of local computer networks and
-                operating systems.
-              </TimestampDetail>
-            </Timestamp>
-          </ul>
-        </Container>
-      </Section>
-      <Section heading="Education">
-        <Container>
-          <ul>
-            <Timestamp
-              date="2020.09 - 2025.04"
-              location="Rzeszów, Poland"
-              head="IT Technician at"
-              tail="Zespół Szkół Elektronicznych w Rzeszowie"
-              tailUrl="https://elektronik.rzeszow.pl/"
-            >
-              <TimestampDetail>
-                INF.02 qualification result:
-                <strong> 100% </strong>
-                <br />
-                <i class="text-neutral-400 dark:text-slate-500">
-                  (Administration and management of operating systems,
-                  peripheral devices, and local computer networks)
-                </i>
-              </TimestampDetail>
-              <TimestampDetail>
-                INF.03 qualification result:
-                <strong> 100% </strong>
-                <br />
-                <i class="text-neutral-400 dark:text-slate-500">
-                  (Development and management of websites, web applications, and
-                  databases)
-                </i>
-              </TimestampDetail>
-              <TimestampDetail>
-                I was honored with the <i>Primus Inter Pares</i> scholarship several
-                times.
-              </TimestampDetail>
-              <TimestampDetail>
-                My grade point average in my final year was <strong>6.00</strong>
-                (on a 1.00 - 6.00 scale, highest in entire school).
-              </TimestampDetail>
-              <TimestampDetail>
-                I achieved the title of laureate at the national <a
-                  href="https://oowee.agh.edu.pl">OOWEE</a
-                > olympiad in the field of computer science, which granted me access
-                to all technical universities in Poland.
-              </TimestampDetail>
-            </Timestamp>
-          </ul>
-        </Container>
-      </Section>
-      <Section heading="Projects">
-        <div class="max-w-4xl mx-auto flex gap-4 flex-col">
-          <Project name="elektronet">
-            <!-- TODO: remove underline here and add prose (also in /pl) -->
-            <p>
-              I created an internal administrative system used by about 100
-              employees of <a href="https://elektronik.rzeszow.pl/">ZSE</a>.
-              This system allows for managing employees, students, contests,
-              achievements, scholarships, applications, malfunctions, and room
-              reservations. This project was a great opportunity for me to learn
-              new technologies (Laravel and FilamentPHP) and to deploy a real
-              system on a physical server ("bare-metal"), using Portainer,
-              Traefik, and Docker among others. I also had to ensure proper
-              security and authorization for different employee access levels,
-              as well as the overall reliability of the application.
-            </p>
-          </Project>
-          <Project name="nixos">
-            In this project, I created several pages on the official NixOS
-            distribution website. I worked with an international team, improving
-            my front-end development skills in the process. It is also worth
-            mentioning that NixOS is a widely recognized project with over
-            20&nbsp;000 stars on GitHub, attracting significant traffic to the
-            pages I helped develop.
-          </Project>
-          <Project name="arxchess">
-            Arx is a chess-based strategy game with fairy pieces and resource
-            management. Thanks to this project, I have learned TypeScript and
-            development of more complex web applications.
-          </Project>
-          <Project name="autocut">
-            Panel cutting optimization software that runs seamlessly on any
-            modern browser or device using PWA technology. This app utilizes
-            algorithms written in TypeScript to optimize stock cutting, saving
-            time and reducing waste. This project won a special prize at the
-            "Circular Business Transformation" hackathon.
-          </Project>
-          <Project name="sigmacars">
-            Web app for renting cars. It's a learning project showcasing
-            full-stack web development, containerization, and microservices
-            architecture. More details and documentation can be found in the
-            repository.
-          </Project>
-          <Project name="website">
-            This is my personal website. Through building and maintaining this
-            website, I have mastered my skills in front-end development.
-          </Project>
+    <main class="p-2">
+        <div class="max-w-4xl mx-auto">
+            <Section heading="About me">
+                <Container>
+                    <div class="prose dark:prose-invert prose-lg max-w-none">
+                        I'm a web developer with experience in .NET, Astro, Vue,
+                        and <a href="#My skills">other technologies</a>. I have
+                        completed my studies as an IT Technician, during which I
+                        was honored as a laureate of the national <a
+                            href="https://oowee.agh.edu.pl">OOWEE</a
+                        > computer science olympiad, and gained professional experience
+                        through multiple internships and various projects. I'm passionate
+                        about IT, especially programming.
+                    </div>
+                </Container>
+            </Section>
+            <Section heading="Contact">
+                <Contact />
+            </Section>
+            <Section heading="My skills">
+                <ul class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                    <SkillsSection type="languages" name="Languages" />
+                    <SkillsSection type="backend" name="Backend" />
+                    <SkillsSection type="frontend" name="Frontend" />
+                    <SkillsSection type="other" name="Other" />
+                </ul>
+            </Section>
+            <Section heading="Work experience">
+                <!-- TODO: try bigger font -->
+                <Container>
+                    <ul>
+                        <Timestamp
+                            date="2024.04"
+                            location="Rzeszów, Poland"
+                            type="Internship"
+                            head="Frontend Developer at"
+                            tail="Devi System"
+                            tailUrl="https://www.devisystem.pl/"
+                        >
+                            <TimestampDetail>
+                                Created a website for the company <a
+                                    href="https://web.archive.org/web/20240619190309/https://eko-luk.pl/"
+                                    >EKOLUK</a
+                                >.
+                            </TimestampDetail>
+                            <TimestampDetail>
+                                Gained experience with Vue and TypeScript.
+                            </TimestampDetail>
+                        </Timestamp>
+                        <Timestamp
+                            date="2022.10"
+                            location="Rzeszów, Poland"
+                            type="Internship"
+                            head=".NET Backend Developer at"
+                            tail="Ideo"
+                            tailUrl="https://www.ideosoftware.com/"
+                        >
+                            <TimestampDetail>
+                                Created a full-stack application implementing
+                                CRUD operations on a recursive SQLite data set. <a
+                                    href="https://github.com/kacperwyczawski/TreeStructure"
+                                    >Repository link</a
+                                >.
+                            </TimestampDetail>
+                            <TimestampDetail>
+                                Developed frontend and API for a MySQL employee
+                                database using .NET Core. <a
+                                    href="https://github.com/kacperwyczawski/EmployeeManager"
+                                    >Repository link</a
+                                >.
+                            </TimestampDetail>
+                            <TimestampDetail>
+                                Created an ASP.NET Core background service,
+                                collecting API data and saving to SQLite, with a
+                                web application to display it. <a
+                                    href="https://github.com/kacperwyczawski/WeatherTracker"
+                                    >Repository link</a
+                                >.
+                            </TimestampDetail>
+                        </Timestamp>
+                        <Timestamp
+                            date="2022.07"
+                            location="Rzeszów, Poland"
+                            type="Paid internship"
+                            head="Data Base Administrator at"
+                            tail="Devi System"
+                            tailUrl="https://www.devisystem.pl/"
+                        >
+                            <TimestampDetail>
+                                Managed customer database for Devi System.
+                            </TimestampDetail>
+                            <TimestampDetail>
+                                Learned ASP.NET Core, EF Core, and SQLite.
+                            </TimestampDetail>
+                        </Timestamp>
+                        <Timestamp
+                            date="2022.04 - 2022.05"
+                            location="Faro, Portugal"
+                            type="Internship"
+                            head="Participant in IT internship at"
+                            tail="Erasmus+ project"
+                            tailUrl="https://faro.zse.rzeszow.pl/"
+                        >
+                            <TimestampDetail>
+                                I participated in an IT internship at one of the
+                                Portuguese IT companies. The scope of the topics
+                                I learned included:
+                            </TimestampDetail>
+                            <TimestampDetail>
+                                Programming in high-level languages (Python,
+                                C++, C#, Java).
+                            </TimestampDetail>
+                            <TimestampDetail>
+                                Creating web applications (HTML, CSS, JS,
+                                JQuery, PHP, MySQL, Wordpress).
+                            </TimestampDetail>
+                            <TimestampDetail>
+                                Administration of relational databases.
+                            </TimestampDetail>
+                            <TimestampDetail>
+                                Installation and management of local computer
+                                networks and operating systems.
+                            </TimestampDetail>
+                        </Timestamp>
+                    </ul>
+                </Container>
+                <Section heading="Education">
+                    <Container>
+                        <ul>
+                            <Timestamp
+                                date="2020.09 - 2025.04"
+                                location="Rzeszów, Poland"
+                                head="IT Technician at"
+                                tail="Zespół Szkół Elektronicznych w Rzeszowie"
+                                tailUrl="https://elektronik.rzeszow.pl/"
+                            >
+                                <TimestampDetail>
+                                    INF.02 qualification result:
+                                    <strong> 100% </strong>
+                                    <br />
+                                    <i
+                                        class="text-neutral-400 dark:text-slate-500"
+                                    >
+                                        (Administration and management of
+                                        operating systems, peripheral devices,
+                                        and local computer networks)
+                                    </i>
+                                </TimestampDetail>
+                                <TimestampDetail>
+                                    INF.03 qualification result:
+                                    <strong> 100% </strong>
+                                    <br />
+                                    <i
+                                        class="text-neutral-400 dark:text-slate-500"
+                                    >
+                                        (Development and management of websites,
+                                        web applications, and databases)
+                                    </i>
+                                </TimestampDetail>
+                                <TimestampDetail>
+                                    <i>Primus Inter Pares</i> scholarship for the
+                                    years 2022, 2023, 2024, and 2025.
+                                </TimestampDetail>
+                                <TimestampDetail>
+                                    My grade point average in my fifth year was <strong
+                                        >6.00</strong
+                                    >
+                                    (on a 1.00 - 6.00 scale, the highest in the entire
+                                    school).
+                                </TimestampDetail>
+                                <TimestampDetail>
+                                    I achieved the title of laureate at the
+                                    national <a href="https://oowee.agh.edu.pl"
+                                        >OOWEE</a
+                                    > olympiad in the field of computer science,
+                                    which granted me access to all technical universities
+                                    in Poland.
+                                </TimestampDetail>
+                            </Timestamp>
+                        </ul>
+                    </Container>
+                </Section>
+                <Section heading="Projects">
+                    <div class="max-w-4xl mx-auto flex gap-4 flex-col">
+                        <Project name="elektronet">
+                            <!-- TODO: remove underline here and add prose (also in /pl) -->
+                            <p>
+                                I created an internal administrative system used
+                                by about 100 employees of <a
+                                    href="https://elektronik.rzeszow.pl/">ZSE</a
+                                >. This system allows for managing employees,
+                                students, contests, achievements, scholarships,
+                                applications, malfunctions, and room
+                                reservations. This project was a great
+                                opportunity for me to learn new technologies
+                                (Laravel and FilamentPHP) and to deploy a real
+                                system on a physical server ("bare-metal"),
+                                using Portainer, Traefik, and Docker among
+                                others. I also had to ensure proper security and
+                                authorization for different employee access
+                                levels, as well as the overall reliability of
+                                the application.
+                            </p>
+                        </Project>
+                        <Project name="nixos">
+                            In this project, I created several pages on the
+                            official NixOS distribution website. I worked with
+                            an international team, improving my front-end
+                            development skills in the process. It is also worth
+                            mentioning that NixOS is a widely recognized project
+                            with over 20&nbsp;000 stars on GitHub, attracting
+                            significant traffic to the pages I helped develop.
+                        </Project>
+                        <Project name="arxchess">
+                            Arx is a chess-based strategy game with fairy pieces
+                            and resource management. Thanks to this project, I
+                            have learned TypeScript and development of more
+                            complex web applications.
+                        </Project>
+                        <Project name="autocut">
+                            Panel cutting optimization software that runs
+                            seamlessly on any modern browser or device using PWA
+                            technology. This app utilizes algorithms written in
+                            TypeScript to optimize stock cutting, saving time
+                            and reducing waste. This project won a special prize
+                            at the "Circular Business Transformation" hackathon.
+                        </Project>
+                        <Project name="sigmacars">
+                            Web app for renting cars. It's a learning project
+                            showcasing full-stack web development,
+                            containerization, and microservices architecture.
+                            More details and documentation can be found in the
+                            repository.
+                        </Project>
+                        <Project name="website">
+                            This is my personal website. Through building and
+                            maintaining this website, I have mastered my skills
+                            in front-end development.
+                        </Project>
+                    </div>
+                </Section>
+                <div class="flex justify-center">
+                    <LinkArrow
+                        link="https://github.com/kacperwyczawski?tab=repositories"
+                        text="Check out more projects on my GitHub"
+                    />
+                </div>
+            </Section>
         </div>
-      </Section>
-      <div class="flex justify-center">
-        <LinkArrow
-          link="https://github.com/kacperwyczawski?tab=repositories"
-          text="Check out more projects on my GitHub"
-        />
-      </div>
-    </div>
-  </main>
-  <aside class="flex justify-center text-sm tracking-wide mb-2 mt-12 mx-2">
-    <Chip class="bg-neutral-100 dark:bg-slate-850">
-      Last updated:
-      <time datetime={new Date().toISOString()}>
-        {new Date().toISOString().split("T")[0]}
-      </time>
-      <!-- <span class="mx-1 text-neutral-200 dark:text-slate-800"> | </span>
+        <aside
+            class="flex justify-center text-sm tracking-wide mb-2 mt-12 mx-2"
+        >
+            <Chip class="bg-neutral-100 dark:bg-slate-850">
+                Last updated:
+                <time datetime={new Date().toISOString()}>
+                    {new Date().toISOString().split("T")[0]}
+                </time>
+                <!-- <span class="mx-1 text-neutral-200 dark:text-slate-800"> | </span>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="24"
@@ -272,6 +295,7 @@ import Layout from "@layouts/Layout.astro";
         ></path><path d="m9 12 2 2 4-4"></path></svg
       >
       HTTP/3 -->
-    </Chip>
-  </aside>
+            </Chip>
+        </aside>
+    </main>
 </Layout>

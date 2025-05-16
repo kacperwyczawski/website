@@ -12,259 +12,267 @@ import Layout from "@layouts/Layout.astro";
 ---
 
 <Layout>
-  <main class="p-2">
-    <div class="max-w-4xl mx-auto">
-      <Section heading="O mnie">
-        <Container>
-          <div class="prose dark:prose-invert prose-lg max-w-none">
-            Jestem web developerem z doświadczeniem w .NET, Astro, Vue, oraz <a
-              href="#Umiejętności">innych technologiach</a
-            >. Ukończyłem naukę na profilu technik informatyk, podczas której
-            zdobyłem tytuł laureata ogólnopolskiej olimpiady <a
-              href="https://oowee.agh.edu.pl">OOWEE</a
-            > z informatyki, oraz miałem okazję zdobyć doświadczenie zawodowe na
-            licznych praktykach, stażach, oraz przy różnych projektach. Interesuję
-            się szeroko pojętą informatyką, a w szczególności programowaniem.
-          </div>
-        </Container>
-      </Section>
-      <Section heading="Kontakt">
-        <Contact />
-      </Section>
-      <Section heading="Umiejętności">
-        <ul class="grid grid-cols-1 gap-4 sm:grid-cols-2">
-          <SkillsSection type="languages" name="Języki" />
-          <SkillsSection type="backend" name="Backend" />
-          <SkillsSection type="frontend" name="Frontend" />
-          <SkillsSection type="other" name="Inne" />
-        </ul>
-      </Section>
-      <Section heading="Doświadczenie zawodowe">
-        <Container>
-          <ul>
-            <Timestamp
-              date="2024.04"
-              location="Rzeszów, Polska"
-              type="Praktyka"
-              head="Frontend Developer w"
-              tail="Devi System"
-              tailUrl="https://www.devisystem.pl/"
-            >
-              <TimestampDetail>
-                Byłem odpowiedzialny za stworzenie strony internetowej dla firmy <a
-                  href="https://web.archive.org/web/20240619190309/https://eko-luk.pl/">EKOLUK</a
-                >.
-              </TimestampDetail>
-              <TimestampDetail>
-                Miałem okazję rozwinąć swoje umiejętności związane z Vue oraz
-                TypeScript.
-              </TimestampDetail>
-            </Timestamp>
-            <Timestamp
-              date="2022.10"
-              location="Rzeszów, Polska"
-              type="Praktyka"
-              head=".NET Backend Developer w"
-              tail="Ideo"
-              tailUrl="https://www.ideosoftware.com/"
-            >
-              <TimestampDetail>
-                Stworzyłem aplikację fullstackową wyświetlającą rekurencyjny
-                zbiór danych, łącznie z implementacją podstawowych operacji CRUD
-                na drzewie przechowywanym w bazie SQLite. <a
-                  href="https://github.com/kacperwyczawski/TreeStructure"
-                  >Link do repozytorium</a
-                >.
-              </TimestampDetail>
-              <TimestampDetail>
-                Stworzyłem frontend oraz API dla bazy danych MySQL, zawierającej
-                dane pracowników przy użyciu .NET Core. <a
-                  href="https://github.com/kacperwyczawski/EmployeeManager"
-                  >Link do repozytorium</a
-                >.
-              </TimestampDetail>
-              <TimestampDetail>
-                Byłem odpowiedzialny za stworzenie usługi (background service),
-                działającej na platformie ASP.NET Core, zbierającej dane z API i
-                zapisującej je do bazy danych SQLite, oraz aplikacji webowej do
-                wyświetlania tych danych. <a
-                  href="https://github.com/kacperwyczawski/WeatherTracker"
-                  >Link do repozytorium</a
-                >.
-              </TimestampDetail>
-            </Timestamp>
-            <Timestamp
-              date="2022.07"
-              location="Rzeszów, Polska"
-              type="Płatny staż"
-              head="Administrator baz danych w"
-              tail="Devi System"
-              tailUrl="https://www.devisystem.pl/"
-            >
-              <TimestampDetail>
-                Moim głównym zadaniem było zarządzanie bazą danych klientów
-                firmy Devi System. W wolnym czasie miałem okazję nauczyć się
-                technologii ASP.NET Core, EF Core oraz SQLite.
-              </TimestampDetail>
-            </Timestamp>
-            <Timestamp
-              date="2022.04 - 2022.05"
-              location="Faro, Portugalia"
-              type="Praktyka"
-              head="Uczestnik praktyki zawodowej z dziedziny informatyki w"
-              tail="projekcie Erasmus+"
-              tailUrl="https://faro.zse.rzeszow.pl/"
-            >
-              <TimestampDetail>
-                Uczestniczyłem w praktykach zawodowych w jednej z portugalskich
-                firm z branży IT. Do zakresu poznanych przeze mnie zagadnień
-                należało:
-              </TimestampDetail>
-              <TimestampDetail>
-                Programowanie aplikacji w językach wysokiego poziomu (Python,
-                C++, C#, Java).
-              </TimestampDetail>
-              <TimestampDetail>
-                Tworzenie aplikacji webowych (HTML, CSS, JS, jQuery, PHP, MySQL,
-                WordPress).
-              </TimestampDetail>
-              <TimestampDetail>
-                Administracja relacyjnymi bazami danych.
-              </TimestampDetail>
-              <TimestampDetail>
-                Instalacja i zarządzanie lokalnymi sieciami komputerowymi oraz
-                systemami operacyjnymi.
-              </TimestampDetail>
-            </Timestamp>
-          </ul>
-        </Container>
-      </Section>
-      <Section heading="Edukacja">
-        <Container>
-          <ul>
-            <Timestamp
-              date="2020.09 - 2025.04"
-              location="Rzeszów, Polska"
-              head="Technik Informatyk w"
-              tail="Zespole Szkół Elektronicznych w Rzeszowie"
-              tailUrl="https://elektronik.rzeszow.pl/"
-            >
-              <TimestampDetail>
-                Wynik z kwalifikacji INF.02:
-                <strong> 100% </strong>
-                <br />
-                <i class="text-neutral-400 dark:text-slate-500">
-                  (Administracja i eksploatacja systemów operacyjnych, urządzeń
-                  peryferyjnych i lokalnych sieci komputerowych)
-                </i>
-              </TimestampDetail>
-              <TimestampDetail>
-                Wynik z kwalifikacji INF.03:
-                <strong> 100% </strong>
-                <br />
-                <i class="text-neutral-400 dark:text-slate-500">
-                  (Tworzenie i administrowanie stronami i aplikacjami
-                  internetowymi oraz bazami danych)
-                </i>
-              </TimestampDetail>
-              <TimestampDetail>
-                Zostałem wielokrotnie uhonorowany stypendium <i
-                  >Primus Inter Pares</i
-                >.
-              </TimestampDetail>
-              <TimestampDetail>
-                Moja średnia ocen w ostatniej klasie wyniosła <strong
-                  >6,00</strong
-                > (najwyższa w szkole).
-              </TimestampDetail>
-              <TimestampDetail>
-                Zdobyłem tytuł laureata ogólnopolskiej olimpiady <a
-                  href="https://oowee.agh.edu.pl">OOWEE</a
-                > z informatyki. Dzięki temu uzyskałem indeks na wszystkie uczelnie
-                techniczne w Polsce.
-              </TimestampDetail>
-            </Timestamp>
-          </ul>
-        </Container>
-      </Section>
-      <Section heading="Projekty">
-        <div class="max-w-4xl mx-auto flex gap-4 flex-col">
-          <Project name="elektronet">
-            Stworzyłem wewnętrzny system aministracyjny używany przez około 100
-            pracowników <a href="https://elektronik.rzeszow.pl/">ZSE</a>. System
-            ten pozwala na zarządzanie pracownikami, uczniami, konkursami,
-            osiągnięciami, stypendiami, zgłoszeniami, usterkami i rezerwacjami
-            sal. Ten projekt był dla mnie świetną okazją do poznania nowych
-            technologii (Laravel i FilamentPHP) oraz do nauczenia się wdrażania
-            prawdziwego systemu na fizycznym serwerze ("bare-metal"), przy
-            użyciu m.in. Portainera, Traefika i Dockera. Musiałem również zadbać
-            o odpowiednie zabezpieczenia i autoryzację przy różnych poziomach
-            dostępu różnych pracowników, oraz o niezawodność całej aplikacji.
-          </Project>
-          <Project name="nixos">
-            W tym projekcie stworzyłem kilka podstron na oficjalnej stronie
-            dystrybucji NixOS. Pracowałem w międzynarodowym zespole,
-            jednocześnie rozwijając moje umiejętności z front-endu. Warto
-            również wspomnieć, że NixOS jest szeroko rozpoznawalnym projektem,
-            posiadającym ponad 20&nbsp;000 gwiazdek na GitHubie i przyciągającym
-            znaczący ruch do strony, którą pomogłem stworzyć.
-          </Project>
-          <Project name="arxchess">
-            Arx Chess to gra strategiczna, oparta na szachach. Znajdują się w
-            niej aspekty takie jak zarządzanie zasobami oraz niestandardowe
-            figury szachowe. Dzięki temu projektowi miałem okazję nauczyć się
-            TypeScripta oraz tworzenia bardziej rozbudowanych aplikacji
-            webowych.
-          </Project>
-          <Project name="autocut">
-            Oprogramowanie do optymalizacji cięcia, stworzone z myślą o piłach
-            panelowych. Jest to progresywna aplikacja webowa, która działa na
-            każdej nowoczesnej przeglądarce lub urządzeniu. Ten projekt zdobył
-            nagrodę specjalną w hackathonie "Transformacja Cyrkularna Biznesu".
-          </Project>
-          <Project name="sigmacars">
-            Aplikacja do wynajmu samochodów, pełniąca funkcję demonstracyjną
-            pełnego stosu technologicznego aplikacji webowej, opartej na
-            konteneryzacji oraz architekturze microservices. Więcej szczegółów i
-            dokumentacja znajduje się w repozytorium.
-          </Project>
-          <Project name="website">
-            Jest to moja osobista strona internetowa. Poprzez jej budowę i
-            rozwój, doskonaliłem swoje umiejętności w zakresie frontendu.
-          </Project>
+    <main class="p-2">
+        <div class="max-w-4xl mx-auto">
+            <Section heading="O mnie">
+                <Container>
+                    <div class="prose dark:prose-invert prose-lg max-w-none">
+                        Jestem web developerem z doświadczeniem w .NET, Astro,
+                        Vue, oraz <a href="#Umiejętności"
+                            >innych technologiach</a
+                        >. Ukończyłem naukę na profilu technik informatyk,
+                        podczas której zdobyłem tytuł laureata ogólnopolskiej
+                        olimpiady <a href="https://oowee.agh.edu.pl">OOWEE</a> z
+                        informatyki, oraz miałem okazję zdobyć doświadczenie zawodowe
+                        na licznych praktykach, stażach, oraz przy różnych projektach.
+                        Interesuję się szeroko pojętą informatyką, a w szczególności
+                        programowaniem.
+                    </div>
+                </Container>
+            </Section>
+            <Section heading="Kontakt">
+                <Contact />
+            </Section>
+            <Section heading="Umiejętności">
+                <ul class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                    <SkillsSection type="languages" name="Języki" />
+                    <SkillsSection type="backend" name="Backend" />
+                    <SkillsSection type="frontend" name="Frontend" />
+                    <SkillsSection type="other" name="Inne" />
+                </ul>
+            </Section>
+            <Section heading="Doświadczenie zawodowe">
+                <Container>
+                    <ul>
+                        <Timestamp
+                            date="2024.04"
+                            location="Rzeszów, Polska"
+                            type="Praktyka"
+                            head="Frontend Developer w"
+                            tail="Devi System"
+                            tailUrl="https://www.devisystem.pl/"
+                        >
+                            <TimestampDetail>
+                                Stworzyłem stronę internetową dla firmy <a
+                                    href="https://web.archive.org/web/20240619190309/https://eko-luk.pl/"
+                                    >EKOLUK</a
+                                >.
+                            </TimestampDetail>
+                            <TimestampDetail>
+                                Zyskałem doświadczenie w Vue i TypeScript.
+                            </TimestampDetail>
+                        </Timestamp>
+                        <Timestamp
+                            date="2022.10"
+                            location="Rzeszów, Polska"
+                            type="Praktyka"
+                            head=".NET Backend Developer w"
+                            tail="Ideo"
+                            tailUrl="https://www.ideosoftware.com/"
+                        >
+                            <TimestampDetail>
+                                Stworzyłem aplikację fullstackową implementującą
+                                operacje CRUD na rekurencyjnym zbiorze danych w
+                                ASP.NET Core i SQLite <a
+                                    href="https://github.com/kacperwyczawski/TreeStructure"
+                                    >Link do repozytorium</a
+                                >.
+                            </TimestampDetail>
+                            <TimestampDetail>
+                                Stworzyłem frontend i API dla bazy danych MySQL
+                                z danymi pracowników przy użyciu .NET Core. <a
+                                    href="https://github.com/kacperwyczawski/EmployeeManager"
+                                    >Link do repozytorium</a
+                                >.
+                            </TimestampDetail>
+                            <TimestampDetail>
+                                Stworzyłem usługę (background service)
+                                działającą na platformie ASP.NET Core,
+                                zbierającą dane z API i zapisującą je do bazy
+                                danych SQLite, oraz aplikację webową do
+                                wyświetlania tych danych. <a
+                                    href="https://github.com/kacperwyczawski/WeatherTracker"
+                                    >Link do repozytorium</a
+                                >.
+                            </TimestampDetail>
+                        </Timestamp>
+                        <Timestamp
+                            date="2022.07"
+                            location="Rzeszów, Polska"
+                            type="Płatny staż"
+                            head="Administrator baz danych w"
+                            tail="Devi System"
+                            tailUrl="https://www.devisystem.pl/"
+                        >
+                            <TimestampDetail>
+                                Zarządzałem bazą danych klientów firmy Devi
+                                System.
+                            </TimestampDetail>
+                            <TimestampDetail>
+                                Nauczyłem się technologii ASP.NET Core, EF Core
+                                oraz SQLite.
+                            </TimestampDetail>
+                        </Timestamp>
+                        <Timestamp
+                            date="2022.04 - 2022.05"
+                            location="Faro, Portugalia"
+                            type="Praktyka"
+                            head="Uczestnik praktyki zawodowej z dziedziny informatyki w"
+                            tail="projekcie Erasmus+"
+                            tailUrl="https://faro.zse.rzeszow.pl/"
+                        >
+                            <TimestampDetail>
+                                Uczestniczyłem w praktykach zawodowych w jednej
+                                z portugalskich firm z branży IT. Do zakresu
+                                poznanych przeze mnie zagadnień należało:
+                            </TimestampDetail>
+                            <TimestampDetail>
+                                Programowanie aplikacji w językach wysokiego
+                                poziomu (Python, C++, C#).
+                            </TimestampDetail>
+                            <TimestampDetail>
+                                Tworzenie aplikacji webowych (HTML, CSS, JS,
+                                PHP, MySQL, WordPress).
+                            </TimestampDetail>
+                            <TimestampDetail>
+                                Administracja relacyjnymi bazami danych.
+                            </TimestampDetail>
+                            <TimestampDetail>
+                                Instalacja i zarządzanie lokalnymi sieciami
+                                komputerowymi oraz systemami operacyjnymi.
+                            </TimestampDetail>
+                        </Timestamp>
+                    </ul>
+                </Container>
+                <Section heading="Edukacja">
+                    <Container>
+                        <ul>
+                            <Timestamp
+                                date="2020.09 - 2025.04"
+                                location="Rzeszów, Polska"
+                                head="Technik Informatyk w"
+                                tail="Zespole Szkół Elektronicznych w Rzeszowie"
+                                tailUrl="https://elektronik.rzeszow.pl/"
+                            >
+                                <TimestampDetail>
+                                    Wynik z kwalifikacji INF.02:
+                                    <strong> 100% </strong>
+                                    <br />
+                                    <i
+                                        class="text-neutral-400 dark:text-slate-500"
+                                    >
+                                        (Administracja i eksploatacja systemów
+                                        operacyjnych, urządzeń peryferyjnych i
+                                        lokalnych sieci komputerowych)
+                                    </i>
+                                </TimestampDetail>
+                                <TimestampDetail>
+                                    Wynik z kwalifikacji INF.03:
+                                    <strong> 100% </strong>
+                                    <br />
+                                    <i
+                                        class="text-neutral-400 dark:text-slate-500"
+                                    >
+                                        (Tworzenie i administrowanie stronami i
+                                        aplikacjami internetowymi oraz bazami
+                                        danych)
+                                    </i>
+                                </TimestampDetail>
+                                <TimestampDetail>
+                                    Stypendium <i>Primus Inter Pares</i> w latach
+                                    2022, 2023, 2024 oraz 2025.
+                                </TimestampDetail>
+                                <TimestampDetail>
+                                    Średnia ocen w piątej klasie: <strong
+                                        >6,00</strong
+                                    > (najwyższa w szkole).
+                                </TimestampDetail>
+                                <TimestampDetail>
+                                    Zdobyłem tytuł laureata ogólnopolskiej
+                                    olimpiady <a href="https://oowee.agh.edu.pl"
+                                        >OOWEE</a
+                                    > z informatyki. Dzięki temu uzyskałem indeks
+                                    na wszystkie uczelnie techniczne w Polsce.
+                                </TimestampDetail>
+                            </Timestamp>
+                        </ul>
+                    </Container>
+                </Section>
+                <Section heading="Projekty">
+                    <div class="max-w-4xl mx-auto flex gap-4 flex-col">
+                        <Project name="elektronet">
+                            Stworzyłem wewnętrzny system aministracyjny używany
+                            przez około 100 pracowników <a
+                                href="https://elektronik.rzeszow.pl/">ZSE</a
+                            >. System ten pozwala na zarządzanie pracownikami,
+                            uczniami, konkursami, osiągnięciami, stypendiami,
+                            zgłoszeniami, usterkami i rezerwacjami sal. Ten
+                            projekt był dla mnie świetną okazją do poznania
+                            nowych technologii (Laravel i FilamentPHP) oraz do
+                            nauczenia się wdrażania prawdziwego systemu na
+                            fizycznym serwerze ("bare-metal"), przy użyciu m.in.
+                            Portainera, Traefika i Dockera. Musiałem również
+                            zadbać o odpowiednie zabezpieczenia i autoryzację
+                            przy różnych poziomach dostępu różnych pracowników,
+                            oraz o niezawodność całej aplikacji.
+                        </Project>
+                        <Project name="nixos">
+                            W tym projekcie stworzyłem kilka podstron na
+                            oficjalnej stronie dystrybucji NixOS. Pracowałem w
+                            międzynarodowym zespole, jednocześnie rozwijając
+                            moje umiejętności z front-endu. Warto również
+                            wspomnieć, że NixOS jest szeroko rozpoznawalnym
+                            projektem, posiadającym ponad 20&nbsp;000 gwiazdek
+                            na GitHubie i przyciągającym znaczący ruch do
+                            strony, którą pomogłem stworzyć.
+                        </Project>
+                        <Project name="arxchess">
+                            Arx Chess to gra strategiczna, oparta na szachach.
+                            Znajdują się w niej aspekty takie jak zarządzanie
+                            zasobami oraz niestandardowe figury szachowe. Dzięki
+                            temu projektowi miałem okazję nauczyć się
+                            TypeScripta oraz tworzenia bardziej rozbudowanych
+                            aplikacji webowych.
+                        </Project>
+                        <Project name="autocut">
+                            Oprogramowanie do optymalizacji cięcia, stworzone z
+                            myślą o piłach panelowych. Jest to progresywna
+                            aplikacja webowa, która działa na każdej nowoczesnej
+                            przeglądarce lub urządzeniu. Ten projekt zdobył
+                            nagrodę specjalną w hackathonie "Transformacja
+                            Cyrkularna Biznesu".
+                        </Project>
+                        <Project name="sigmacars">
+                            Aplikacja do wynajmu samochodów, pełniąca funkcję
+                            demonstracyjną pełnego stosu technologicznego
+                            aplikacji webowej, opartej na konteneryzacji oraz
+                            architekturze microservices. Więcej szczegółów i
+                            dokumentacja znajduje się w repozytorium.
+                        </Project>
+                        <Project name="website">
+                            Jest to moja osobista strona internetowa. Poprzez
+                            jej budowę i rozwój, doskonaliłem swoje umiejętności
+                            w zakresie frontendu.
+                        </Project>
+                    </div>
+                </Section>
+                <div class="flex justify-center">
+                    <LinkArrow
+                        link="https://github.com/kacperwyczawski?tab=repositories"
+                        text="Zobacz więcej projektów na moim GitHubie"
+                    />
+                </div>
+            </Section>
         </div>
-      </Section>
-      <div class="flex justify-center">
-        <LinkArrow
-          link="https://github.com/kacperwyczawski?tab=repositories"
-          text="Zobacz więcej projektów na moim GitHubie"
-        />
-      </div>
-    </div>
-  </main>
-  <aside class="flex justify-center text-sm tracking-wide mb-2 mt-12 mx-2">
-    <Chip class="bg-neutral-100 dark:bg-slate-850">
-      Ostatnia aktualizacja:
-      <time datetime={new Date().toISOString()}>
-        {new Date().toISOString().split("T")[0]}
-      </time>
-      <!-- <span class="mx-1 text-neutral-200 dark:text-slate-800"> | </span>
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        class="lucide lucide-shield-check inline w-4 h-4 align-text-top"
-        ><path
-          d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"
-        ></path><path d="m9 12 2 2 4-4"></path></svg
-      >
-      HTTP/3 -->
-    </Chip>
-  </aside>
+        <aside
+            class="flex justify-center text-sm tracking-wide mb-2 mt-12 mx-2"
+        >
+            <Chip class="bg-neutral-100 dark:bg-slate-850">
+                Ostatnia aktualizacja:
+                <time datetime={new Date().toISOString()}>
+                    {new Date().toISOString().split("T")[0]}
+                </time>
+            </Chip>
+        </aside>
+    </main>
 </Layout>
