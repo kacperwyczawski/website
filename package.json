@@ -22,5 +22,7 @@
 	"devDependencies": {
 		"@tailwindcss/typography": "^0.5.16"
 	},
-	"trustedDependencies": ["@parcel/watcher"]
+	"trustedDependencies": [
+		"@parcel/watcher"
+	]
 }

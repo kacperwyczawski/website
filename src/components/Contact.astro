@@ -15,14 +15,24 @@ const contacts = [
 		url: "https://signal.me/#eu/HCHPaKlKDbZJC0wZ9wXbj0w0YziEZ1ArlKr0i-hz4SnyrpPXKFJIFZkpITkrmVM3",
 		text: "order.67",
 	},
+	{
+		name: "Messenger",
+		url: "https://m.me/61556579975226",
+		text: "link",
+	},
 ];
 ---
 
-<ul class="flex flex-col gap-4 md:flex-row justify-center">
+<ul
+    class="flex flex-col gap-4 sm:flex-row justify-center flex-wrap max-w-2xl mx-auto"
+>
     {
         contacts.map((x) => (
             <li class="px-4 py-2 border border-neutral-200 dark:border-slate-800 rounded-lg bg-neutral-100 dark:bg-slate-850 prose dark:prose-invert prose-lg text-center">
-                {x.name}: <a href={x.url} class="">{x.text}</a>
+                {x.name}:
+                <a href={x.url} class="">
+                    {x.text}
+                </a>
             </li>
         ))
     }
