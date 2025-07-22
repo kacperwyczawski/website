@@ -9,7 +9,7 @@ export interface Props {
 
 const { image, alt, url } = Astro.props;
 ---
-<div class="m-4">
+<div class="m-4 shadow-xs rounded-lg">
   <div
     class="hidden bg-neutral-200 dark:bg-slate-800 p-2 rounded-t-lg border border-neutral-200 dark:border-slate-800 md:flex justify-center items-center relative"
   >
@@ -22,7 +22,7 @@ const { image, alt, url } = Astro.props;
       url && (
         <a
           href={url}
-          class="bg-neutral-100 py-1 px-2 rounded-lg dark:bg-slate-700"
+          class="bg-neutral-100 py-1 px-2 rounded-lg dark:bg-slate-700 inset-shadow-xs"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
