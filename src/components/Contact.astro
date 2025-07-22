@@ -1,31 +1,24 @@
 ---
 const contacts = [
-	{
-		name: "Email",
-		url: "mailto:kacper@wyczawski.dev",
-		text: "kacper@wyczawski.dev",
-	},
-	{
-		name: "GitHub",
-		url: "https://github.com/kacperwyczawski",
-		text: "kacperwyczawski",
-	},
-	{
-		name: "Signal",
-		url: "https://signal.me/#eu/HCHPaKlKDbZJC0wZ9wXbj0w0YziEZ1ArlKr0i-hz4SnyrpPXKFJIFZkpITkrmVM3",
-		text: "order.67",
-	},
-	{
-		name: "Messenger",
-		url: "https://m.me/61556579975226",
-		text: "link",
-	},
+    {
+        name: "Email",
+        url: "mailto:kacper@wyczawski.dev",
+        text: "kacper@wyczawski.dev",
+    },
+    {
+        name: "GitHub",
+        url: "https://github.com/kacperwyczawski",
+        text: "kacperwyczawski",
+    },
+    {
+        name: "Signal",
+        url: "https://signal.me/#eu/HCHPaKlKDbZJC0wZ9wXbj0w0YziEZ1ArlKr0i-hz4SnyrpPXKFJIFZkpITkrmVM3",
+        text: "order.67",
+    },
 ];
 ---
 
-<ul
-    class="flex flex-col gap-4 sm:flex-row justify-center flex-wrap max-w-2xl mx-auto"
->
+<ul class="flex flex-col gap-4 md:flex-row justify-center">
     {
         contacts.map((x) => (
             <li class="px-4 py-2 border border-neutral-200 dark:border-slate-800 rounded-lg bg-neutral-100 dark:bg-slate-850 shadow-xs prose dark:prose-invert prose-lg text-center">
