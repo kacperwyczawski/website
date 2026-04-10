@@ -15,8 +15,8 @@
 		"@fontsource-variable/inter": "^5.2.8",
 		"@fontsource-variable/sora": "^5.2.8",
 		"@tailwindcss/vite": "^4.1.18",
-		"astro": "^5.16.10",
-		"@vercel/analytics": "^1.6.1",
+		"astro": "^6.1.3",
+		"@vercel/analytics": "^2.0.1",
 		"tailwindcss": "^4.1.18"
 	},
 	"devDependencies": {
