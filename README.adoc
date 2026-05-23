@@ -1,5 +1,3 @@
-Just a personal website built using https://astro.build[Astro], https://tailwindcss.com[TailwindCSS], https://bun.sh[Bun] and https://nixos.org/[Nix].
+Just a personal website built using https://astro.build[Astro], https://tailwindcss.com[TailwindCSS] and https://bun.sh[Bun].
 
 See it live https://wyczawski.dev[here].
-
-To enter development environment and run dev server, using Nix with Flakes, run `nix develop`.
