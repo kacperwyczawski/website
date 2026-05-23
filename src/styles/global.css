@@ -4,9 +4,9 @@
 @plugin "@tailwindcss/typography";
 
 @theme {
-	--font-sans: "Inter Variable", "Inter";
-	--font-fancy: "Sora Variable", "Sora";
-	--font-mono: "FIra Code Variable", "Fira Code";
+	--font-sans: var(--font-inter);
+	--font-fancy: var(--font-sora);
+	--font-mono: var(--font-fira-code);
 	--color-slate-850: #172033;
 }
 
