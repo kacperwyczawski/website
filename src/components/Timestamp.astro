@@ -9,12 +9,19 @@ export interface Props {
 }
 
 const { date, location, head, tail, tailUrl, type } = Astro.props;
+const isCurrent = date.includes("present") || date.includes("obecnie");
 ---
 
 <li>
   <span
-    class="text-neutral-400 text-sm font-semibold dark:text-slate-500 border border-fuchsia-700 dark:border-fuchsia-400 rounded-lg px-1.5 py-0.5 shadow-xs"
+    class="inline-flex items-center gap-1.5 text-neutral-400 text-sm font-semibold dark:text-slate-500 border border-fuchsia-700 dark:border-fuchsia-400 rounded-lg px-1.5 py-0.5 shadow-xs"
   >
+    {isCurrent && (
+      <span class="relative flex h-2 w-2">
+        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-fuchsia-400 opacity-75" style="animation-duration: 3s"></span>
+        <span class="relative inline-flex rounded-full h-2 w-2 bg-fuchsia-500"></span>
+      </span>
+    )}
     {date}
   </span>
   <div class="border-l border-neutral-200 pl-2 ml-4 pb-6 pt-2 dark:border-slate-800">
