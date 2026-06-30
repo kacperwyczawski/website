@@ -1,5 +1,18 @@
-<div
-    class="rounded-lg p-4 border border-neutral-200 bg-neutral-100 dark:border-slate-800 dark:bg-slate-850 shadow-xs"
+---
+import type { HTMLTag, Polymorphic } from 'astro/types';
+
+type Props<Tag extends HTMLTag> = Polymorphic<{ as: Tag, padding?: boolean }>;
+
+const { as: Element = 'div', class: className, padding = true, ...props } = Astro.props;
+---
+
+<Element
+  class:list={[
+    "bg-white/80 dark:bg-slate-800/60 backdrop-blur-md rounded-lg shadow-md shadow-fuchsia-900/10 dark:shadow-black/30",
+    padding && "p-4",
+    className
+  ]}
+  {...props}
 >
-    <slot />
-</div>
+  <slot />
+</Element>

@@ -1,0 +1,103 @@
+---
+---
+<canvas id="noise-bg" class="fixed inset-0 w-full h-full -z-10 pointer-events-none" style="filter: blur(3px) saturate(1.2); transform: scale(1.02);"></canvas>
+
+<script>
+  import { createNoise3D } from 'simplex-noise';
+
+  const noise3D = createNoise3D();
+  const canvas = document.getElementById('noise-bg') as HTMLCanvasElement;
+  const ctx = canvas.getContext('2d');
+
+  const PIXEL_SIZE = 48;
+
+  let width = 0;
+  let height = 0;
+  let cols = 0;
+  let rows = 0;
+
+  function resize() {
+    width = window.innerWidth;
+    height = window.innerHeight;
+    
+    cols = Math.ceil(width / PIXEL_SIZE);
+    rows = Math.ceil(height / PIXEL_SIZE);
+    
+    canvas.width = width;
+    canvas.height = height;
+  }
+
+  window.addEventListener('resize', resize);
+  resize();
+
+  let time = 0;
+
+  const lightColors = {
+    base: { r: 250, g: 250, b: 250 }, 
+    smudgeHighlight: { r: 255, g: 228, b: 218 },
+    smudgeShadow: { r: 230, g: 210, b: 245 }
+  };
+
+  const darkColors = {
+    base: { r: 15, g: 23, b: 42 },   
+    smudgeHighlight: { r: 100, g: 50, b: 85 },
+    smudgeShadow: { r: 35, g: 22, b: 60 }
+  };
+
+  function lerpColor(a: {r:number,g:number,b:number}, b: {r:number,g:number,b:number}, t: number) {
+    return {
+      r: Math.round(a.r + (b.r - a.r) * t),
+      g: Math.round(a.g + (b.g - a.g) * t),
+      b: Math.round(a.b + (b.b - a.b) * t)
+    };
+  }
+
+  function render() {
+    if (!ctx) return;
+    
+    time += 0.0008;
+
+    const isDark = document.documentElement.classList.contains('dark') || window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const colors = isDark ? darkColors : lightColors;
+
+    ctx.fillStyle = isDark ? '#080c17' : '#e2e8f0'; 
+    ctx.fillRect(0, 0, width, height);
+
+    for (let x = 0; x < cols; x++) {
+      for (let y = 0; y < rows; y++) {
+        const distortion = noise3D(x * 0.04, y * 0.04, time);
+        const wave = Math.sin(x * 0.1 + y * 0.2 + distortion * 2.5);
+        
+        const dx = 1;
+        const dy = -1;
+        const distortionOffset = noise3D((x + dx) * 0.04, (y + dy) * 0.04, time);
+        const waveOffset = Math.sin((x + dx) * 0.1 + (y + dy) * 0.2 + distortionOffset * 2.5);
+        const slope = waveOffset - wave;
+
+        let blend = 0;
+        if (wave > 0.3) {
+          blend = (wave - 0.3) / 0.7;
+        }
+
+        blend = Math.floor(blend * 8) / 7; 
+        blend = Math.max(0, Math.min(1, blend));
+
+        let lightMix = (slope + 0.15) / 0.3;
+        lightMix = Math.max(0, Math.min(1, lightMix));
+        
+        const smudgeColor = lerpColor(colors.smudgeShadow, colors.smudgeHighlight, lightMix);
+        const color = lerpColor(colors.base, smudgeColor, blend);
+
+        const px = x * PIXEL_SIZE;
+        const py = y * PIXEL_SIZE;
+
+        ctx.fillStyle = `rgb(${color.r}, ${color.g}, ${color.b})`;
+        ctx.fillRect(px, py, PIXEL_SIZE, PIXEL_SIZE);
+      }
+    }
+
+    requestAnimationFrame(render);
+  }
+
+  render();
+</script>
