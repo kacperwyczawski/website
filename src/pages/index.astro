@@ -1,5 +1,4 @@
 ---
-import Chip from "@components/Chip.astro";
 import Contact from "@components/Contact.astro";
 import Container from "@components/Container.astro";
 import LinkArrow from "@components/LinkArrow.astro";
@@ -329,7 +328,7 @@ import Layout from "@layouts/Layout.astro";
         <aside
             class="flex justify-center text-sm tracking-wide mb-2 mt-12 mx-2"
         >
-            <Chip class="bg-neutral-100 dark:bg-slate-850">
+            <Container padding={false} class="px-4 py-2">
                 Last updated:
                 <time datetime={new Date().toISOString()}>
                     {new Date().toISOString().split("T")[0]}
@@ -351,7 +350,7 @@ import Layout from "@layouts/Layout.astro";
         ></path><path d="m9 12 2 2 4-4"></path></svg
       >
       HTTP/3 -->
-            </Chip>
+            </Container>
         </aside>
     </main>
 </Layout>
