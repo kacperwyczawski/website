@@ -32,26 +32,22 @@
 
   let time = 0;
 
+  const lightColors = {
+    primaryA: { r: 255, g: 228, b: 218 },
+    primaryB: { r: 230, g: 210, b: 245 }
+  };
+
+  const darkColors = {
+    primaryA: { r: 100, g: 50, b: 85 },
+    primaryB: { r: 35, g: 22, b: 60 }
+  };
+
   function getColors() {
-    const style = getComputedStyle(document.documentElement);
-    const parseRGB = (varName: string) => {
-      const val = style.getPropertyValue(varName);
-      if (!val) return { r: 0, g: 0, b: 0 };
-      const parts = val.trim().split(/\s+/).map(n => parseInt(n, 10));
-      return { r: parts[0] || 0, g: parts[1] || 0, b: parts[2] || 0 };
-    };
-    return {
-      primaryA: parseRGB('--primary-a-channels'),
-      primaryB: parseRGB('--primary-b-channels'),
-    };
+    const isDark = document.documentElement.classList.contains('dark') || window.matchMedia('(prefers-color-scheme: dark)').matches;
+    return isDark ? darkColors : lightColors;
   }
 
   let currentColors = getColors();
-  
-  // Need to read after initial styles apply
-  requestAnimationFrame(() => {
-    currentColors = getColors();
-  });
 
   const observer = new MutationObserver(() => {
     currentColors = getColors();

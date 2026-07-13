@@ -13,17 +13,4 @@
 	list-style-type: "- ";
 }
 
-:root {
-  --primary-a-channels: 255 228 218;
-  --primary-b-channels: 230 210 245;
-}
 
-.dark {
-  --primary-a-channels: 100 50 85;
-  --primary-b-channels: 35 22 60;
-}
-
-@theme {
-  --color-primary-a: rgb(var(--primary-a-channels));
-  --color-primary-b: rgb(var(--primary-b-channels));
-}
