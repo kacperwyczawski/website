@@ -66,10 +66,9 @@ import Layout from "@layouts/Layout.astro";
                             tail="BIT"
                             tailUrl="https://knbit.edu.pl/"
                         >
-                            <TimestampDetail>
-                                BIT is one of the largest IT student research
-                                groups at AGH University.
-                            </TimestampDetail>
+                            <Fragment slot="description">
+                                BIT is one of the largest IT student research groups at AGH University.
+                            </Fragment>
                             <TimestampDetail>
                                 I co-organized an event in collaboration with <a
                                     href="https://www.wincent.com/">Wincent</a
@@ -90,12 +89,9 @@ import Layout from "@layouts/Layout.astro";
                             tail="SatLab"
                             tailUrl="https://satlab.agh.edu.pl/"
                         >
-                            <TimestampDetail>
-                                SatLab is a student research group working under <a
-                                    href="https://spacetech.agh.edu.pl/"
-                                    >Space Technology Centre</a
-                                >. We build satellites!
-                            </TimestampDetail>
+                            <Fragment slot="description">
+                                SatLab is a student research group working under <a href="https://spacetech.agh.edu.pl/">Space Technology Centre</a>. We build satellites!
+                            </Fragment>
                             <TimestampDetail>
                                 I worked on a React & Next.js frontend for S4,
                                 our mission control software.
@@ -166,7 +162,7 @@ import Layout from "@layouts/Layout.astro";
                             date="2022.07"
                             location="Rzeszów, Poland"
                             type="Paid internship"
-                            head="Data base administrator at"
+                            head="Database administrator at"
                             tail="Devi System"
                             tailUrl="https://www.devisystem.pl/"
                         >

@@ -40,7 +40,12 @@ const isCurrent = date.includes("present") || date.includes("obecnie");
         {tail}
       </a>
     </div>
-    <ul class="max-w-none prose dark:prose-invert mt-2 leading-snug">
+    {Astro.slots.has("description") && (
+      <div class="prose dark:prose-invert mt-1 leading-snug">
+        <slot name="description" />
+      </div>
+    )}
+    <ul class="max-w-none prose dark:prose-invert mt-3 leading-snug">
       <slot />
     </ul>
   </div>
