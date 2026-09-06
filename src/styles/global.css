@@ -13,3 +13,9 @@
 @utility list-dash {
 	list-style-type: "- ";
 }
+
+.prose a {
+	color: inherit;
+	font-weight: inherit;
+}
+
