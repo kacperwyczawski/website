@@ -8,6 +8,7 @@ import Section from "@components/Section.astro";
 import SkillsSection from "@components/SkillsSection.astro";
 import Timestamp from "@components/Timestamp.astro";
 import TimestampDetail from "@components/TimestampDetail.astro";
+import posterImage from "@images/ground-testing-a-satellite.png";
 import Layout from "@layouts/Layout.astro";
 ---
 
@@ -57,7 +58,8 @@ import Layout from "@layouts/Layout.astro";
                             tailUrl="https://knbit.edu.pl/"
                         >
                             <Fragment slot="description">
-                                BIT to jedno z największych informatycznych kół naukowych na AGH.
+                                BIT to jedno z największych informatycznych kół
+                                naukowych na AGH.
                             </Fragment>
                             <TimestampDetail>
                                 Współorganizowałem wydarzenie we współpracy z
@@ -81,8 +83,21 @@ import Layout from "@layouts/Layout.astro";
                             tailUrl="https://satlab.agh.edu.pl/"
                         >
                             <Fragment slot="description">
-                                SatLab to studenckie koło naukowe działające przy <a href="https://spacetech.agh.edu.pl/">Centrum Technologii Kosmicznych</a>. Budujemy satelity!
+                                SatLab to studenckie koło naukowe działające
+                                przy <a href="https://spacetech.agh.edu.pl/"
+                                    >Centrum Technologii Kosmicznych</a
+                                >. Budujemy satelity!
                             </Fragment>
+                            <TimestampDetail>
+                                Wygłosiłem krótką prezentację (pitch) oraz
+                                zaprezentowałem poster (<a
+                                    href={posterImage.src}
+                                    >Ground-Testing a Satellite</a
+                                >) na 9. międzynarodowej konferencji <a
+                                    href="https://spaceconf.org"
+                                    >Space Resources Conference</a
+                                >.
+                            </TimestampDetail>
                             <TimestampDetail>
                                 Pracowałem przy frontendzie w React i Next.js
                                 dla S4 – naszego oprogramowania kontroli misji.

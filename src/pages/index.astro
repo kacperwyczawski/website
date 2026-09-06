@@ -8,6 +8,7 @@ import Section from "@components/Section.astro";
 import SkillsSection from "@components/SkillsSection.astro";
 import Timestamp from "@components/Timestamp.astro";
 import TimestampDetail from "@components/TimestampDetail.astro";
+import posterImage from "@images/ground-testing-a-satellite.png";
 import Layout from "@layouts/Layout.astro";
 ---
 
@@ -67,7 +68,8 @@ import Layout from "@layouts/Layout.astro";
                             tailUrl="https://knbit.edu.pl/en/"
                         >
                             <Fragment slot="description">
-                                BIT is one of the largest IT student research groups at AGH University.
+                                BIT is one of the largest IT student research
+                                groups at AGH University.
                             </Fragment>
                             <TimestampDetail>
                                 I co-organized an event in collaboration with <a
@@ -90,8 +92,20 @@ import Layout from "@layouts/Layout.astro";
                             tailUrl="https://satlab.agh.edu.pl/"
                         >
                             <Fragment slot="description">
-                                SatLab is a student research group working under <a href="https://spacetech.agh.edu.pl/">Space Technology Centre</a>. We build satellites!
+                                SatLab is a student research group working under <a
+                                    href="https://spacetech.agh.edu.pl/"
+                                    >Space Technology Centre</a
+                                >. We build satellites!
                             </Fragment>
+                            <TimestampDetail>
+                                I gave a pitch session talk and presented a
+                                poster (<a href={posterImage.src}
+                                    >Ground-Testing a Satellite</a
+                                >) at the <a href="https://spaceconf.org"
+                                    >9th International Space Resources
+                                    Conference</a
+                                >.
+                            </TimestampDetail>
                             <TimestampDetail>
                                 I worked on a React & Next.js frontend for S4,
                                 our mission control software.
