@@ -11,6 +11,7 @@ export default defineConfig({
 			cssVariable: "--font-inter",
 			provider: fontProviders.google(),
 			weights: ["100 900"],
+			styles: ["normal"],
 			fallbacks: ["sans-serif"]
 		},
 		{
@@ -18,6 +19,7 @@ export default defineConfig({
 			cssVariable: "--font-sora",
 			provider: fontProviders.google(),
 			weights: ["100 800"],
+			styles: ["normal"],
 			fallbacks: ["sans-serif"]
 		},
 		{
@@ -25,6 +27,7 @@ export default defineConfig({
 			cssVariable: "--font-fira-code",
 			provider: fontProviders.google(),
 			weights: ["300 700"],
+			styles: ["normal"],
 			fallbacks: ["monospace"]
 		}
 	],
