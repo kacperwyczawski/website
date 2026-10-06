@@ -2,49 +2,55 @@
 import { Image } from "astro:assets";
 
 export interface Props {
-	image: ImageMetadata;
-	alt: string;
-	url: string | undefined;
+  image: ImageMetadata;
+  alt: string;
+  url: string | undefined;
 }
 
 const { image, alt, url } = Astro.props;
 ---
+
 <div class="m-4 shadow-xs rounded-lg">
-  <div
-    class="hidden bg-neutral-200 dark:bg-slate-800 p-2 rounded-t-lg border border-neutral-200 dark:border-slate-800 md:flex justify-center items-center relative"
-  >
+  <div class="hidden bg-neutral-200 dark:bg-slate-800 p-2 rounded-t-lg border border-neutral-200 dark:border-slate-800 md:flex justify-center items-center relative">
     <div class="absolute left-4 flex gap-3">
-      <span onclick="this.parentNode.parentNode.parentNode.remove()" class="h-3.5 w-3.5 bg-neutral-300 dark:bg-slate-600 rounded-full hover:bg-red-400 transition-colors" />
-      <span onclick="this.parentNode.parentNode.parentNode.remove()" class="h-3.5 w-3.5 bg-neutral-300 dark:bg-slate-600 rounded-full hover:bg-yellow-400 transition-colors" />
-      <span onclick="window.open(this.parentNode.parentNode.parentNode.querySelector('img').src)" class="h-3.5 w-3.5 bg-neutral-300 dark:bg-slate-600 rounded-full hover:bg-lime-400 transition-colors" />
+      <span
+        onclick="this.parentNode.parentNode.parentNode.remove()"
+        class="h-3.5 w-3.5 bg-neutral-300 dark:bg-slate-600 rounded-full hover:bg-red-400 transition-colors"
+      />
+      <span
+        onclick="this.parentNode.parentNode.parentNode.remove()"
+        class="h-3.5 w-3.5 bg-neutral-300 dark:bg-slate-600 rounded-full hover:bg-yellow-400 transition-colors"
+      />
+      <span
+        onclick="window.open(this.parentNode.parentNode.parentNode.querySelector('img').src)"
+        class="h-3.5 w-3.5 bg-neutral-300 dark:bg-slate-600 rounded-full hover:bg-lime-400 transition-colors"
+      />
     </div>
-    {
-      url && (
-        <a
-          href={url}
-          class="bg-neutral-100 py-1 px-2 rounded-lg dark:bg-slate-700 inset-shadow-xs"
+    {url && (
+      <a
+        href={url}
+        class="bg-neutral-100 py-1 px-2 rounded-lg dark:bg-slate-700 inset-shadow-xs"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="lucide lucide-link inline mr-1 h-5 w-5"
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-link inline mr-1 h-5 w-5"
-          >
-            <>
-              <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
-              <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
-            </>
-          </svg>
-          <span class="underline">{url}</span>
-        </a>
-      )
-    }
+          <>
+            <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
+            <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
+          </>
+        </svg>
+        <span class="underline">{url}</span>
+      </a>
+    )}
   </div>
   <Image
     src={image}

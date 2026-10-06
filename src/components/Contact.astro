@@ -1,32 +1,30 @@
 ---
 const contacts = [
-    {
-        name: "Email",
-        url: "mailto:kacper@wyczawski.dev",
-        text: "kacper@wyczawski.dev",
-    },
-    {
-        name: "GitHub",
-        url: "https://github.com/kacperwyczawski",
-        text: "kacperwyczawski",
-    },
-    {
-        name: "Signal",
-        url: "https://signal.me/#eu/1Rv-2GNwOhi5isbKFI-TVbTh8aew_ZMG4kSngntXPD9VSjaGYeFNuJy3BFkAu1hv",
-        text: "ARC_55.55",
-    },
+  {
+    name: "Email",
+    url: "mailto:kacper@wyczawski.dev",
+    text: "kacper@wyczawski.dev",
+  },
+  {
+    name: "GitHub",
+    url: "https://github.com/kacperwyczawski",
+    text: "kacperwyczawski",
+  },
+  {
+    name: "Signal",
+    url: "https://signal.me/#eu/1Rv-2GNwOhi5isbKFI-TVbTh8aew_ZMG4kSngntXPD9VSjaGYeFNuJy3BFkAu1hv",
+    text: "ARC_55.55",
+  },
 ];
 ---
 
 <ul class="flex flex-col gap-4 md:flex-row justify-center">
-    {
-        contacts.map((x) => (
-            <li class="px-4 py-2 border border-neutral-200 dark:border-slate-800 rounded-lg bg-neutral-100 dark:bg-slate-850 shadow-xs prose dark:prose-invert prose-lg text-center">
-                {x.name}:{" "}
-                <a href={x.url} class="">
-                    {x.text}
-                </a>
-            </li>
-        ))
-    }
+  {contacts.map((x) => (
+    <li class="px-4 py-2 border border-neutral-200 dark:border-slate-800 rounded-lg bg-neutral-100 dark:bg-slate-850 shadow-xs prose dark:prose-invert prose-lg text-center">
+      {x.name}:{" "}
+      <a href={x.url} class="">
+        {x.text}
+      </a>
+    </li>
+  ))}
 </ul>

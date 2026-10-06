@@ -4,18 +4,17 @@
 @plugin "@tailwindcss/typography";
 
 @theme {
-	--font-sans: var(--font-inter);
-	--font-fancy: var(--font-sora);
-	--font-mono: var(--font-fira-code);
-	--color-slate-850: #172033;
+  --font-sans: var(--font-inter);
+  --font-fancy: var(--font-sora);
+  --font-mono: var(--font-fira-code);
+  --color-slate-850: #172033;
 }
 
 @utility list-dash {
-	list-style-type: "- ";
+  list-style-type: "- ";
 }
 
 .prose a {
-	color: inherit;
-	font-weight: inherit;
+  color: inherit;
+  font-weight: inherit;
 }
-
