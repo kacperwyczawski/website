@@ -18,14 +18,7 @@ const projects = {
   nixos: {
     name: "NixOS.org",
     status: null,
-    technologies: [
-      "Astro",
-      "Tailwind CSS",
-      "TypeScript",
-      "Nix",
-      "DaisyUI",
-      "MDX",
-    ],
+    technologies: ["Astro", "Tailwind CSS", "TypeScript", "Nix", "DaisyUI", "MDX"],
     sourceUrl: "https://github.com/NixOS/nixos-homepage",
     liveUrl: "https://nixos.org",
     image: nixosImage,
@@ -33,17 +26,7 @@ const projects = {
   elektronet: {
     name: "Elektronet",
     status: null,
-    technologies: [
-      "PHP",
-      "Laravel",
-      "FilamentPHP",
-      "Tailwind CSS",
-      "SQLite",
-      "Docker",
-      "Portainer",
-      "Caddy",
-      "Traefik",
-    ],
+    technologies: ["PHP", "Laravel", "FilamentPHP", "Tailwind CSS", "SQLite", "Docker", "Portainer", "Caddy", "Traefik"],
     sourceUrl: "https://github.com/kacperwyczawski/elektronet",
     liveUrl: "https://elektronet.zse.rzeszow.pl",
     image: elektronetImage,
@@ -67,19 +50,7 @@ const projects = {
   sigmacars: {
     name: "Sigma Cars",
     status: "beta",
-    technologies: [
-      "Docker",
-      "C#",
-      "ASP.NET Core",
-      "EF Core",
-      "PostgreSQL",
-      "Nuxt",
-      "Vue",
-      "Tailwind CSS",
-      "TypeScript",
-      "CI/CD",
-      "Nginx",
-    ],
+    technologies: ["Docker", "C#", "ASP.NET Core", "EF Core", "PostgreSQL", "Nuxt", "Vue", "Tailwind CSS", "TypeScript", "CI/CD", "Nginx"],
     sourceUrl: "https://github.com/kacperwyczawski/sigma-cars",
     liveUrl: null,
     image: sigmaCarsImage,
@@ -98,21 +69,11 @@ const project = projects[name];
 ---
 
 <div class="bg-neutral-100 dark:bg-slate-850 border border-neutral-200 dark:border-slate-800 rounded-lg shadow-xs">
-  {project.image && (
-    <Mockup
-      image={project.image}
-      alt={project.name + " mockup"}
-      url={project.liveUrl ?? project.sourceUrl}
-    />
-  )}
+  {project.image && <Mockup image={project.image} alt={project.name + " mockup"} url={project.liveUrl ?? project.sourceUrl} />}
   <div class="p-4 flex flex-col gap-4">
     <h1 class="text-2xl font-fancy text-fuchsia-700 dark:text-fuchsia-400">
       {project.name}
-      {project.status && (
-        <span class="text-sm text-neutral-700 dark:text-slate-600">
-          ({project.status})
-        </span>
-      )}
+      {project.status && <span class="text-sm text-neutral-700 dark:text-slate-600">({project.status})</span>}
     </h1>
     <div class="flex gap-1 sm:gap-2 flex-wrap">
       {project.technologies.map((tech) => (
@@ -123,9 +84,7 @@ const project = projects[name];
       <slot />
     </p>
     <div class="grid grid-flow-col auto-cols-fr gap-4">
-      {project.sourceUrl && (
-        <LinkButton text="Source" link={project.sourceUrl} />
-      )}
+      {project.sourceUrl && <LinkButton text="Source" link={project.sourceUrl} />}
       {project.liveUrl && <LinkButton text="Live" link={project.liveUrl} />}
     </div>
   </div>

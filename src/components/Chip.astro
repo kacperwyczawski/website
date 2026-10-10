@@ -6,9 +6,7 @@ export interface Props {
 
 const { emphasis = false, class: additionalClass = "" } = Astro.props;
 
-const emphasisClass = emphasis
-  ? "text-fuchsia-700 dark:text-fuchsia-400 font-semibold"
-  : "";
+const emphasisClass = emphasis ? "text-fuchsia-700 dark:text-fuchsia-400 font-semibold" : "";
 ---
 
 <span

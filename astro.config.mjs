@@ -1,10 +1,6 @@
 import sitemap from "@astrojs/sitemap";
 import tailwindcss from "@tailwindcss/vite";
-import {
-  defineConfig,
-  passthroughImageService,
-  fontProviders,
-} from "astro/config";
+import { defineConfig, passthroughImageService, fontProviders } from "astro/config";
 
 // https://astro.build/config
 export default defineConfig({
@@ -40,10 +36,7 @@ export default defineConfig({
   },
   integrations: [
     sitemap({
-      customPages: [
-        "https://autocut.wyczawski.dev/",
-        "https://arx.wyczawski.dev/",
-      ],
+      customPages: ["https://autocut.wyczawski.dev/", "https://arx.wyczawski.dev/"],
       i18n: {
         defaultLocale: "en",
         locales: {

@@ -13,10 +13,7 @@ import Layout from "@layouts/Layout.astro";
 ---
 
 <script>
-  if (
-    navigator.language.startsWith("pl") &&
-    localStorage.getItem("redirected") === null
-  ) {
+  if (navigator.language.startsWith("pl") && localStorage.getItem("redirected") === null) {
     localStorage.setItem("redirected", "true");
     window.location.href = "/pl";
   }
@@ -27,18 +24,12 @@ import Layout from "@layouts/Layout.astro";
       <Section heading="About me">
         <Container>
           <div class="prose dark:prose-invert prose-lg max-w-none">
-            I'm a 21-year-old software developer with experience in .NET, Astro,
-            Vue, and <a href="#My skills">other technologies</a>. I have
-            completed my studies as an IT Technician, during which I was honored
-            as a laureate of the national{" "}
-            <a href="https://oowee.agh.edu.pl">OOWEE</a> computer science
-            olympiad, and gained professional experience through multiple
-            internships and various projects. I am currently studying Computer
-            Science at{" "}
-            <a href="https://www.agh.edu.pl/">AGH University of Technology</a>{" "}
-            and working on satellites at{" "}
-            <a href="https://satlab.agh.edu.pl/">SatLab</a>. I'm passionate
-            about IT, especially programming.
+            I'm a 21-year-old software developer with experience in .NET, Astro, Vue, and <a href="#My skills">other technologies</a>. I
+            have completed my studies as an IT Technician, during which I was honored as a laureate of the national{" "}
+            <a href="https://oowee.agh.edu.pl">OOWEE</a> computer science olympiad, and gained professional experience through multiple
+            internships and various projects. I am currently studying Computer Science at{" "}
+            <a href="https://www.agh.edu.pl/">AGH University of Technology</a> and working on satellites at{" "}
+            <a href="https://satlab.agh.edu.pl/">SatLab</a>. I'm passionate about IT, especially programming.
           </div>
         </Container>
       </Section>
@@ -66,35 +57,22 @@ import Layout from "@layouts/Layout.astro";
               tailUrl="https://satlab.agh.edu.pl/"
             >
               <Fragment slot="description">
-                SatLab is a student research group working under{" "}
-                <a href="https://spacetech.agh.edu.pl/">
-                  Space Technology Centre
-                </a>
-                . We build satellites!
+                SatLab is a student research group working under <a href="https://spacetech.agh.edu.pl/">Space Technology Centre</a>. We
+                build satellites!
               </Fragment>
               <TimestampDetail>
-                Gave a pitch session talk and presented a poster (
-                <a href={posterImage.src}>Ground-Testing a Satellite</a>) at the{" "}
-                <a href="https://spaceconf.org">
-                  9th International Space Resources Conference
-                </a>
-                .
+                Gave a pitch session talk and presented a poster (<a href={posterImage.src}>Ground-Testing a Satellite</a>) at the{" "}
+                <a href="https://spaceconf.org">9th International Space Resources Conference</a>.
+              </TimestampDetail>
+              <TimestampDetail>Worked on a React & Next.js frontend for S4, our mission control software.</TimestampDetail>
+              <TimestampDetail>
+                Wrote a custom Mattermost bot in Go for managing members and keeping them in sync with official documents.
               </TimestampDetail>
               <TimestampDetail>
-                Worked on a React & Next.js frontend for S4, our mission control
-                software.
+                Improved our hardware-in-the-loop CI/CD setup, introducing parallel builds to speed up the pipeline.
               </TimestampDetail>
               <TimestampDetail>
-                Wrote a custom Mattermost bot in Go for managing members and
-                keeping them in sync with official documents.
-              </TimestampDetail>
-              <TimestampDetail>
-                Improved our hardware-in-the-loop CI/CD setup, introducing
-                parallel builds to speed up the pipeline.
-              </TimestampDetail>
-              <TimestampDetail>
-                Reworked the CMake build system in our C++ embedded codebase and
-                set up Git hooks, linters, and formatters.
+                Reworked the CMake build system in our C++ embedded codebase and set up Git hooks, linters, and formatters.
               </TimestampDetail>
             </Timestamp>
             <Timestamp
@@ -106,15 +84,9 @@ import Layout from "@layouts/Layout.astro";
               tailUrl="https://www.devisystem.pl/"
             >
               <TimestampDetail>
-                Created a website for the company{" "}
-                <a href="https://web.archive.org/web/20240619190309/https://eko-luk.pl/">
-                  EKOLUK
-                </a>
-                .
+                Created a website for the company <a href="https://web.archive.org/web/20240619190309/https://eko-luk.pl/">EKOLUK</a>.
               </TimestampDetail>
-              <TimestampDetail>
-                Gained experience with Vue and TypeScript.
-              </TimestampDetail>
+              <TimestampDetail>Gained experience with Vue and TypeScript.</TimestampDetail>
             </Timestamp>
             <Timestamp
               date="2022.10"
@@ -125,25 +97,13 @@ import Layout from "@layouts/Layout.astro";
               tailUrl="https://www.ideosoftware.com/"
             >
               <TimestampDetail>
-                Using ASP.NET Core, I created full-stack applications, APIs,
-                background services, SPA applications, etc., interacting with
-                SQLite and MySQL databases, for recursive datasets and databases
-                containing millions of records.
+                Using ASP.NET Core, I created full-stack applications, APIs, background services, SPA applications, etc., interacting with
+                SQLite and MySQL databases, for recursive datasets and databases containing millions of records.
               </TimestampDetail>
               <TimestampDetail>
-                Repositories:{" "}
-                <a href="https://github.com/kacperwyczawski/TreeStructure">
-                  TreeStructure
-                </a>
-                ,{" "}
-                <a href="https://github.com/kacperwyczawski/EmployeeManager">
-                  EmployeeManager
-                </a>
-                ,{" "}
-                <a href="https://github.com/kacperwyczawski/WeatherTracker">
-                  WeatherTracker
-                </a>
-                .
+                Repositories: <a href="https://github.com/kacperwyczawski/TreeStructure">TreeStructure</a>,&nbsp;
+                <a href="https://github.com/kacperwyczawski/EmployeeManager">EmployeeManager</a>,&nbsp;
+                <a href="https://github.com/kacperwyczawski/WeatherTracker">WeatherTracker</a>.
               </TimestampDetail>
             </Timestamp>
             <Timestamp
@@ -154,12 +114,8 @@ import Layout from "@layouts/Layout.astro";
               tail="Devi System"
               tailUrl="https://www.devisystem.pl/"
             >
-              <TimestampDetail>
-                Managed customer database for Devi System.
-              </TimestampDetail>
-              <TimestampDetail>
-                Learned ASP.NET Core, EF Core, and SQLite.
-              </TimestampDetail>
+              <TimestampDetail>Managed customer database for Devi System.</TimestampDetail>
+              <TimestampDetail>Learned ASP.NET Core, EF Core, and SQLite.</TimestampDetail>
             </Timestamp>
             <Timestamp
               date="2022.04 - 2022.05"
@@ -169,24 +125,11 @@ import Layout from "@layouts/Layout.astro";
               tail="Erasmus+ project"
               tailUrl="https://faro.zse.rzeszow.pl/"
             >
-              <TimestampDetail>
-                Participated in an IT internship at Clube do Hardware, covering
-                topics including:
-              </TimestampDetail>
-              <TimestampDetail>
-                Programming in high-level languages (Python, C++, C#).
-              </TimestampDetail>
-              <TimestampDetail>
-                Creating web applications (HTML, CSS, JS, PHP, MySQL,
-                Wordpress).
-              </TimestampDetail>
-              <TimestampDetail>
-                Administration of relational databases.
-              </TimestampDetail>
-              <TimestampDetail>
-                Installation and management of local computer networks and
-                operating systems.
-              </TimestampDetail>
+              <TimestampDetail>Participated in an IT internship at Clube do Hardware, covering topics including:</TimestampDetail>
+              <TimestampDetail>Programming in high-level languages (Python, C++, C#).</TimestampDetail>
+              <TimestampDetail>Creating web applications (HTML, CSS, JS, PHP, MySQL, Wordpress).</TimestampDetail>
+              <TimestampDetail>Administration of relational databases.</TimestampDetail>
+              <TimestampDetail>Installation and management of local computer networks and operating systems.</TimestampDetail>
             </Timestamp>
           </ul>
         </Container>
@@ -201,20 +144,14 @@ import Layout from "@layouts/Layout.astro";
                 tailUrl="https://www.agh.edu.pl/en/"
               >
                 <TimestampDetail>
-                  <a href="https://www.informatyka.agh.edu.pl/en/">
-                    Faculty of Computer Science
-                  </a>{" "}
-                  +{" "}
+                  <a href="https://www.informatyka.agh.edu.pl/en/">Faculty of Computer Science</a> +{" "}
                   <a href="https://www.eaiib.agh.edu.pl/">
-                    Faculty of Electrical Engineering, Automatics, Computer
-                    Science and Biomedical Engineering
+                    Faculty of Electrical Engineering, Automatics, Computer Science and Biomedical Engineering.
                   </a>
-                  .
                 </TimestampDetail>
                 <TimestampDetail>Year representative.</TimestampDetail>
                 <TimestampDetail>
-                  Board member at <a href="https://knbit.edu.pl/en/">BIT</a>,
-                  one of the largest student research groups at the university.
+                  Board member at <a href="https://knbit.edu.pl/en/">BIT</a>, one of the largest student research groups at the university.
                 </TimestampDetail>
               </Timestamp>
               <Timestamp
@@ -229,8 +166,7 @@ import Layout from "@layouts/Layout.astro";
                   <strong> 100% </strong>
                   <br />
                   <i class="text-neutral-400 dark:text-slate-500">
-                    (Administration and management of operating systems,
-                    peripheral devices, and local computer networks)
+                    (Administration and management of operating systems, peripheral devices, and local computer networks)
                   </i>
                 </TimestampDetail>
                 <TimestampDetail>
@@ -238,28 +174,20 @@ import Layout from "@layouts/Layout.astro";
                   <strong> 100% </strong>
                   <br />
                   <i class="text-neutral-400 dark:text-slate-500">
-                    (Development and management of websites, web applications,
-                    and databases)
+                    (Development and management of websites, web applications, and databases)
                   </i>
                 </TimestampDetail>
                 <TimestampDetail>
-                  <i>Primus Inter Pares</i> scholarship for the years 2022,
-                  2023, 2024, and 2025.
+                  <i>Primus Inter Pares</i> scholarship for the years 2022, 2023, 2024, and 2025.
                 </TimestampDetail>
                 <TimestampDetail>
-                  My grade point average in my fifth year was{" "}
-                  <strong>6.00</strong>
-                  (on a 1.00 - 6.00 scale, the highest in the entire school).
+                  My grade point average in my fifth year was <strong>6.00</strong> (on a 1.00 - 6.00 scale, the highest in the entire
+                  school).
                 </TimestampDetail>
                 <TimestampDetail>
-                  Laureate of the national{" "}
-                  <a href="https://oowee.agh.edu.pl">OOWEE</a> olympiad in the
-                  field of computer science, organized by{" "}
-                  <a href="https://www.agh.edu.pl/en">
-                    AGH University of Technology
-                  </a>
-                  . This title granted me guaranteed admission to all technical
-                  universities in Poland.
+                  Laureate of the national <a href="https://oowee.agh.edu.pl">OOWEE</a> olympiad in the field of computer science, organized
+                  by <a href="https://www.agh.edu.pl/en">AGH University of Technology</a>. This title granted me guaranteed admission to all
+                  technical universities in Poland.
                 </TimestampDetail>
               </Timestamp>
             </ul>
@@ -268,63 +196,46 @@ import Layout from "@layouts/Layout.astro";
         <Section heading="Projects">
           <div class="max-w-4xl mx-auto flex gap-4 flex-col">
             <Project name="elektronet">
-              I created an internal administrative system used by over 100
-              employees of <a href="https://elektronik.rzeszow.pl/">ZSE</a>.
-              This system allows for managing employees, students, contests,
-              achievements, scholarships, applications, malfunctions, and room
-              reservations. This project was a great opportunity for me to learn
-              new technologies (Laravel and FilamentPHP) and to deploy a real
-              system on a physical server ("bare-metal"), using Portainer,
-              Traefik, and Docker among others. I also had to ensure proper
-              security and authorization for different employee access levels,
-              as well as the overall reliability of the application.
+              I created an internal administrative system used by over 100 employees of <a href="https://elektronik.rzeszow.pl/">ZSE</a>.
+              This system allows for managing employees, students, contests, achievements, scholarships, applications, malfunctions, and
+              room reservations. This project was a great opportunity for me to learn new technologies (Laravel and FilamentPHP) and to
+              deploy a real system on a physical server ("bare-metal"), using Portainer, Traefik, and Docker among others. I also had to
+              ensure proper security and authorization for different employee access levels, as well as the overall reliability of the
+              application.
             </Project>
             <Project name="nixos">
-              In this project, I created several pages on the official NixOS
-              distribution website. I worked with an international team,
-              improving my front-end development skills in the process. It is
-              also worth mentioning that NixOS is a widely recognized project
-              with over 20&nbsp;000 stars on GitHub, attracting significant
-              traffic to the pages I helped develop.
+              In this project, I created several pages on the official NixOS distribution website. I worked with an international team,
+              improving my front-end development skills in the process. It is also worth mentioning that NixOS is a widely recognized
+              project with over 20&nbsp;000 stars on GitHub, attracting significant traffic to the pages I helped develop.
             </Project>
             <Project name="arxchess">
-              Arx is a chess-based strategy game with fairy pieces and resource
-              management. Thanks to this project, I have learned TypeScript and
-              development of more complex web applications.
+              Arx is a chess-based strategy game with fairy pieces and resource management. Thanks to this project, I have learned
+              TypeScript and development of more complex web applications.
             </Project>
             <Project name="autocut">
-              Panel cutting optimization software that runs seamlessly on any
-              modern browser or device using PWA technology. This app utilizes
-              algorithms written in TypeScript to optimize stock cutting, saving
-              time and reducing waste. This project won a special prize at the
-              "Circular Business Transformation" hackathon.
+              Panel cutting optimization software that runs seamlessly on any modern browser or device using PWA technology. This app
+              utilizes algorithms written in TypeScript to optimize stock cutting, saving time and reducing waste. This project won a
+              special prize at the "Circular Business Transformation" hackathon.
             </Project>
             <Project name="sigmacars">
-              Web app for renting cars. It's a learning project showcasing
-              full-stack web development, containerization, and microservices
-              architecture. More details and documentation can be found in the
-              repository.
+              Web app for renting cars. It's a learning project showcasing full-stack web development, containerization, and microservices
+              architecture. More details and documentation can be found in the repository.
             </Project>
             <Project name="website">
-              This is my personal website. Through building and maintaining this
-              website, I have mastered my skills in front-end development.
+              This is my personal website. Through building and maintaining this website, I have mastered my skills in front-end
+              development.
             </Project>
           </div>
         </Section>
         <div class="flex justify-center">
-          <LinkArrow
-            link="https://github.com/kacperwyczawski?tab=repositories"
-            text="Check out more projects on my GitHub"
-          />
+          <LinkArrow link="https://github.com/kacperwyczawski?tab=repositories" text="Check out more projects on my GitHub" />
         </div>
       </Section>
     </div>
     <aside class="flex justify-center text-sm tracking-wide mb-2 mt-12 mx-2 text-neutral-700 dark:text-neutral-300">
       <Chip class="bg-neutral-100 dark:bg-slate-850">
         Last updated:
-        <time datetime={new Date().toISOString()}>
-          {new Date().toISOString().split("T")[0]}
-        </time>
+        <time datetime={new Date().toISOString()}>{new Date().toISOString().split("T")[0]}</time>
         <!-- <span class="mx-1 text-neutral-200 dark:text-slate-800"> | </span>
       <svg
         xmlns="http://www.w3.org/2000/svg"

@@ -27,10 +27,7 @@ const { image, alt, url } = Astro.props;
       />
     </div>
     {url && (
-      <a
-        href={url}
-        class="bg-neutral-100 py-1 px-2 rounded-lg dark:bg-slate-700 inset-shadow-xs"
-      >
+      <a href={url} class="bg-neutral-100 py-1 px-2 rounded-lg dark:bg-slate-700 inset-shadow-xs">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
@@ -52,9 +49,5 @@ const { image, alt, url } = Astro.props;
       </a>
     )}
   </div>
-  <Image
-    src={image}
-    alt={alt}
-    class="w-full rounded-lg md:rounded-t-none border border-neutral-200 md:border-t-0 dark:border-slate-800"
-  />
+  <Image src={image} alt={alt} class="w-full rounded-lg md:rounded-t-none border border-neutral-200 md:border-t-0 dark:border-slate-800" />
 </div>

@@ -22,10 +22,7 @@ const lang = en ? "en" : "pl";
     <meta name="theme-color" content="#a21caf" />
     <meta name="description" content="Kacper Wyczawski's website" />
     <meta property="og:title" content="Kacper Wyczawski's website" />
-    <meta
-      property="og:description"
-      content="Kacper is a web developer and open-source enthusiast."
-    />
+    <meta property="og:description" content="Kacper is a web developer and open-source enthusiast." />
     <meta property="og:url" content={import.meta.env.SITE} />
     <meta property="og:type" content="profile" />
     <meta property="og:profile:first_name" content="Kacper" />
@@ -85,24 +82,10 @@ const lang = en ? "en" : "pl";
         </a>
         <hr class="w-0 h-10 border-l border-neutral-200" />
         <div class="text-sm font-semibold flex flex-col dark:text-neutral-100">
-          <a
-            href={"/pl" + Astro.url.pathname}
-            class={
-              !en
-                ? "text-fuchsia-700 dark:text-fuchsia-400 pointer-events-none"
-                : ""
-            }
-          >
+          <a href={"/pl" + Astro.url.pathname} class={!en ? "text-fuchsia-700 dark:text-fuchsia-400 pointer-events-none" : ""}>
             PL
           </a>
-          <a
-            href={Astro.url.pathname.substring(3)}
-            class={
-              en
-                ? "text-fuchsia-700 dark:text-fuchsia-400 pointer-events-none"
-                : ""
-            }
-          >
+          <a href={Astro.url.pathname.substring(3)} class={en ? "text-fuchsia-700 dark:text-fuchsia-400 pointer-events-none" : ""}>
             EN
           </a>
         </div>
