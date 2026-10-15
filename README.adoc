@@ -2,4 +2,4 @@ Just a personal website built using https://astro.build[Astro], https://tailwind
 
 See it live https://wyczawski.dev[here].
 
-Eartrise is adapted from https://ascii.rest/earthrise/[ascii.rest] with its rendering heavily modified.
+Earthrise is adapted from https://ascii.rest/earthrise/[ascii.rest] with its rendering heavily modified.
