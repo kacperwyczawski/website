@@ -17,7 +17,7 @@ import Layout from "@layouts/Layout.astro";
     <div class="max-w-4xl mx-auto">
       <Section heading="O mnie">
         <Container>
-          <div class="prose dark:prose-invert prose-lg max-w-none">
+          <div class="prose prose-invert prose-lg max-w-none">
             Jestem 21-letnim software developerem z doświadczeniem w .NET, Astro, Vue, oraz <a href="#Umiejętności">innych technologiach</a>
             . Ukończyłem naukę na profilu technik informatyk, podczas której zdobyłem tytuł laureata ogólnopolskiej olimpiady{" "}
             <a href="https://oowee.agh.edu.pl">OOWEE</a> z informatyki, oraz miałem okazję zdobyć doświadczenie zawodowe na licznych
@@ -162,7 +162,7 @@ import Layout from "@layouts/Layout.astro";
                   Wynik z kwalifikacji INF.02:
                   <strong> 100% </strong>
                   <br />
-                  <i class="text-neutral-400 dark:text-slate-500">
+                  <i class="text-slate-500">
                     (Administracja i eksploatacja systemów operacyjnych, urządzeń peryferyjnych i lokalnych sieci komputerowych)
                   </i>
                 </TimestampDetail>
@@ -170,9 +170,7 @@ import Layout from "@layouts/Layout.astro";
                   Wynik z kwalifikacji INF.03:
                   <strong> 100% </strong>
                   <br />
-                  <i class="text-neutral-400 dark:text-slate-500">
-                    (Tworzenie i administrowanie stronami i aplikacjami internetowymi oraz bazami danych)
-                  </i>
+                  <i class="text-slate-500">(Tworzenie i administrowanie stronami i aplikacjami internetowymi oraz bazami danych)</i>
                 </TimestampDetail>
                 <TimestampDetail>
                   Stypendium <i>Primus Inter Pares</i> w latach 2022, 2023, 2024 oraz 2025.
@@ -228,8 +226,8 @@ import Layout from "@layouts/Layout.astro";
         </div>
       </Section>
     </div>
-    <aside class="flex justify-center text-sm tracking-wide mb-2 mt-12 mx-2 text-neutral-700 dark:text-neutral-300">
-      <Chip class="bg-neutral-100 dark:bg-slate-850">
+    <aside class="flex justify-center text-sm tracking-wide mb-2 mt-12 mx-2 text-neutral-300">
+      <Chip class="bg-slate-850">
         Ostatnia aktualizacja:
         <time datetime={new Date().toISOString()}>{new Date().toISOString().split("T")[0]}</time>
       </Chip>

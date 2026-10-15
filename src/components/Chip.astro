@@ -6,15 +6,11 @@ export interface Props {
 
 const { emphasis = false, class: additionalClass = "" } = Astro.props;
 
-const emphasisClass = emphasis ? "text-fuchsia-700 dark:text-fuchsia-400 font-semibold" : "";
+const emphasisClass = emphasis ? "text-fuchsia-400 font-semibold" : "";
 ---
 
 <span
-  class:list={[
-    "inline-block px-1.5 py-0.5 sm:px-2 sm:py-1 border border-neutral-200 dark:border-slate-800 rounded-lg shadow-xs",
-    emphasisClass,
-    additionalClass,
-  ]}
+  class:list={["inline-block px-1.5 py-0.5 sm:px-2 sm:py-1 border border-slate-800 rounded-lg shadow-xs", emphasisClass, additionalClass]}
 >
   <slot />
 </span>

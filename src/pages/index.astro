@@ -23,7 +23,7 @@ import Layout from "@layouts/Layout.astro";
     <div class="max-w-4xl mx-auto">
       <Section heading="About me">
         <Container>
-          <div class="prose dark:prose-invert prose-lg max-w-none">
+          <div class="prose prose-invert prose-lg max-w-none">
             I'm a 21-year-old software developer with experience in .NET, Astro, Vue, and <a href="#My skills">other technologies</a>. I
             have completed my studies as an IT Technician, during which I was honored as a laureate of the national{" "}
             <a href="https://oowee.agh.edu.pl">OOWEE</a> computer science olympiad, and gained professional experience through multiple
@@ -165,7 +165,7 @@ import Layout from "@layouts/Layout.astro";
                   INF.02 qualification result:
                   <strong> 100% </strong>
                   <br />
-                  <i class="text-neutral-400 dark:text-slate-500">
+                  <i class="text-slate-500">
                     (Administration and management of operating systems, peripheral devices, and local computer networks)
                   </i>
                 </TimestampDetail>
@@ -173,9 +173,7 @@ import Layout from "@layouts/Layout.astro";
                   INF.03 qualification result:
                   <strong> 100% </strong>
                   <br />
-                  <i class="text-neutral-400 dark:text-slate-500">
-                    (Development and management of websites, web applications, and databases)
-                  </i>
+                  <i class="text-slate-500">(Development and management of websites, web applications, and databases)</i>
                 </TimestampDetail>
                 <TimestampDetail>
                   <i>Primus Inter Pares</i> scholarship for the years 2022, 2023, 2024, and 2025.
@@ -232,11 +230,11 @@ import Layout from "@layouts/Layout.astro";
         </div>
       </Section>
     </div>
-    <aside class="flex justify-center text-sm tracking-wide mb-2 mt-12 mx-2 text-neutral-700 dark:text-neutral-300">
-      <Chip class="bg-neutral-100 dark:bg-slate-850">
+    <aside class="flex justify-center text-sm tracking-wide mb-2 mt-12 mx-2 text-neutral-300">
+      <Chip class="bg-slate-850">
         Last updated:
         <time datetime={new Date().toISOString()}>{new Date().toISOString().split("T")[0]}</time>
-        <!-- <span class="mx-1 text-neutral-200 dark:text-slate-800"> | </span>
+        <!-- <span class="mx-1 text-slate-800"> | </span>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="24"
