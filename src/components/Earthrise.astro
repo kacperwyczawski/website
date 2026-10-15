@@ -19,6 +19,7 @@ import { Image } from "astro:assets";
         width={713}
         height={199}
         priority
+        decoding="async"
       />
     </h1>
   </div>
@@ -806,7 +807,7 @@ import { Image } from "astro:assets";
     requestAnimationFrame(() => update());
 
     if (document.readyState !== "complete") {
-      window.addEventListener("load", () => update(), { once: true });
+      window.addEventListener("load", () => update(true), { once: true });
     }
   };
 
