@@ -727,27 +727,33 @@
   const heroOverlay = document.querySelector(".hero-overlay") as HTMLElement | null;
   let parallaxScheduled = false;
   let currentRows = 0;
-  let currentCanvasWidth = 0;
+  let lastWindowWidth = 0;
+  let lastWindowHeight = 0;
   let currentApp: any = null;
   let sharedTime = 0;
+  let cachedTrackHeight = 600;
+  let cachedRowHeightPx = 5;
+  let cachedSpeed = 0.4;
+
+  function updateMetrics() {
+    const isMobile = window.innerWidth <= 680;
+    const vWidth = isMobile ? window.innerWidth * 3 : window.innerWidth;
+    const canvasHeightPx = (currentRows / 200) * vWidth;
+    cachedTrackHeight = isMobile ? window.innerHeight + window.innerWidth * 0.15 : canvasHeightPx;
+    cachedRowHeightPx = canvasHeightPx / Math.max(1, currentRows);
+    cachedSpeed = isMobile ? 0.53 : 0.4;
+  }
 
   function applyParallax() {
-    if (!canvas) return;
+    if (!canvas || !currentApp || !currentApp.setParallaxOffset) return;
     const scrollY = window.pageYOffset || document.documentElement.scrollTop || 0;
-    if (currentApp && currentApp.setParallaxOffset && canvas) {
-      const frame = document.getElementById("frame");
-      const isMobile = window.innerWidth <= 680;
-      const trackHeight = frame ? frame.clientHeight : canvas.clientHeight || 600;
-      const progress = Math.min(1.0, scrollY / Math.max(350, trackHeight));
-      const rowOffset = progress * 19;
-      currentApp.setParallaxOffset(rowOffset);
+    const progress = Math.min(1.0, scrollY / Math.max(350, cachedTrackHeight));
+    const rowOffset = progress * 19;
+    currentApp.setParallaxOffset(rowOffset);
 
-      if (heroOverlay) {
-        const rowHeightPx = (canvas.clientHeight || canvas.clientWidth * (currentRows / 200) || 600) / Math.max(1, currentRows);
-        const speed = isMobile ? 0.53 : 0.4;
-        const textOffsetY = rowOffset * rowHeightPx * speed;
-        heroOverlay.style.transform = `translate3d(0, ${textOffsetY.toFixed(2)}px, 0)`;
-      }
+    if (heroOverlay) {
+      const textOffsetY = rowOffset * cachedRowHeightPx * cachedSpeed;
+      heroOverlay.style.transform = `translate3d(0, ${textOffsetY.toFixed(2)}px, 0)`;
     }
     parallaxScheduled = false;
   }
@@ -766,7 +772,9 @@
   function update(force = false) {
     if (!canvas) return;
     const isMobile = window.matchMedia("(max-width: 680px)").matches;
-    const aspect = window.innerWidth / window.innerHeight;
+    const w = window.innerWidth;
+    const h = window.innerHeight;
+    const aspect = w / h;
     const screenRows = aspect >= 16 / 9 ? 112 : Math.min(180, Math.round(200 / aspect));
     const totalRows = screenRows + 10;
     const extraSky = screenRows - 112 + 10;
@@ -776,9 +784,12 @@
     const vWidth = isMobile ? 300 : 100;
     canvas.style.height = `${(totalRows / 200) * vWidth}vw`;
 
-    if (totalRows === currentRows && canvas.clientWidth === currentCanvasWidth && !force) return;
+    if (totalRows === currentRows && w === lastWindowWidth && h === lastWindowHeight && !force) return;
     currentRows = totalRows;
-    currentCanvasWidth = canvas.clientWidth;
+    lastWindowWidth = w;
+    lastWindowHeight = h;
+
+    updateMetrics();
 
     const meta = {
       ...baseMeta,
@@ -797,25 +808,17 @@
   let resizeTimer: any = null;
   window.addEventListener("resize", () => {
     clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(update, 80);
+    resizeTimer = setTimeout(() => update(), 80);
   });
 
-  const init = () => {
+  const startCanvas = () => {
     update();
     applyParallax();
-
-    requestAnimationFrame(() => update());
-
-    if (document.readyState !== "complete") {
-      window.addEventListener("load", () => update(true), { once: true });
-    }
   };
 
   if (canvas) {
-    if ("requestIdleCallback" in window) {
-      requestIdleCallback(init, { timeout: 200 });
-    } else {
-      setTimeout(init, 0);
-    }
+    requestAnimationFrame(() => {
+      requestAnimationFrame(startCanvas);
+    });
   }
 </script>
