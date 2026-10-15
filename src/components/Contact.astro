@@ -1,30 +1,27 @@
 ---
 const contacts = [
   {
-    name: "Email",
     url: "mailto:kacper@wyczawski.dev",
-    text: "kacper@wyczawski.dev",
+    text: "email: kacper@wyczawski.dev",
   },
   {
-    name: "GitHub",
     url: "https://github.com/kacperwyczawski",
-    text: "kacperwyczawski",
+    text: "GitHub: kacperwyczawski",
   },
   {
-    name: "Signal",
     url: "https://signal.me/#eu/1Rv-2GNwOhi5isbKFI-TVbTh8aew_ZMG4kSngntXPD9VSjaGYeFNuJy3BFkAu1hv",
-    text: "ARC_55.55",
+    text: "Signal: ARC_55.55",
   },
 ];
 ---
 
-<ul class="flex flex-col gap-4 md:flex-row justify-center">
+<div class="flex flex-col md:flex-row w-full border border-zinc-700 rounded-lg overflow-hidden bg-zinc-950 font-body">
   {contacts.map((x) => (
-    <li class="px-4 py-2 border border-slate-800 rounded-lg bg-slate-850 shadow-xs prose prose-invert prose-lg text-center">
-      {x.name}:{" "}
-      <a href={x.url} class="">
-        {x.text}
-      </a>
-    </li>
+    <a
+      href={x.url}
+      class="flex-auto inline-flex items-center justify-center py-2.5 px-4 md:py-3 md:px-5 text-zinc-300 hover:text-white border-b md:border-b-0 md:border-r border-zinc-700 last:border-b-0 md:last:border-r-0 transition-colors text-lg whitespace-nowrap text-center no-underline"
+    >
+      {x.text}
+    </a>
   ))}
-</ul>
+</div>

@@ -12,42 +12,41 @@ const { date, location, head, tail, tailUrl, type } = Astro.props;
 const isCurrent = date.includes("present") || date.includes("obecnie");
 ---
 
-<li>
-  <span class="inline-flex items-center gap-1.5 text-slate-500 text-sm font-semibold border border-fuchsia-400 rounded-lg px-1.5 py-0.5 shadow-xs">
-    {isCurrent && (
-      <span class="relative flex h-2 w-2">
-        <span
-          class="animate-ping absolute inline-flex h-full w-full rounded-full bg-fuchsia-400 opacity-75"
-          style="animation-duration: 3s"
-        ></span>
-        <span class="relative inline-flex rounded-full h-2 w-2 bg-fuchsia-500"></span>
-      </span>
-    )}
-    {date}
-  </span>
-  <div class="border-l border-slate-800 pl-2 ml-4 pb-6 pt-2">
-    <div class="text-slate-500 text-lg leading-none">
+<li class="relative group pb-8 last:pb-2 list-none">
+  <div class="absolute left-4 top-0 -bottom-8 w-px bg-zinc-800 group-first:top-3.5 group-last:bottom-2" aria-hidden="true"></div>
+  <div class="flex items-center gap-3 relative z-10 flex-wrap sm:flex-nowrap">
+    <span class="inline-flex items-center gap-1.5 px-2.5 py-1 border border-zinc-800 bg-zinc-950 rounded-md text-sm font-heading font-normal text-zinc-400 shadow-sm shrink-0">
+      {isCurrent && (
+        <span class="relative flex h-2 w-2 shrink-0">
+          <span
+            class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"
+            style="animation-duration: 3s"
+          ></span>
+          <span class="relative inline-flex rounded-full h-2 w-2 bg-sky-500"></span>
+        </span>
+      )}
+      {date}
+    </span>
+    <span class="text-zinc-500 text-sm font-heading">
       {location}
-      {type && `- ${type}`}
-    </div>
-    <div class="text-xl font-semibold mt-1">
+      {type && ` · ${type}`}
+    </span>
+  </div>
+
+  <div class="ml-4 pl-6 pt-3">
+    <div class="text-xl font-heading font-semibold text-zinc-100">
       {head}{" "}
-      <a href={tailUrl} class="underline decoration-fuchsia-400 hover:decoration-2">
+      <a href={tailUrl} class="underline decoration-zinc-600 hover:decoration-white hover:text-white transition-colors">
         {tail}
       </a>
     </div>
     {Astro.slots.has("description") && (
-      <div class="prose prose-invert mt-1 leading-snug">
+      <div class="prose mt-1.5 leading-relaxed text-zinc-400 text-base">
         <slot name="description" />
       </div>
     )}
-    <ul class="max-w-none prose prose-invert mt-3 leading-snug">
+    <ul class="list-none p-0 m-0 mt-3 space-y-2.5 text-zinc-400 font-body">
       <slot />
     </ul>
   </div>
 </li>
-<style>
-  li:last-child > div {
-    padding-bottom: 0.5rem;
-  }
-</style>

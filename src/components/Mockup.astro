@@ -10,24 +10,27 @@ export interface Props {
 const { image, alt, url } = Astro.props;
 ---
 
-<div class="m-4 shadow-xs rounded-lg">
-  <div class="hidden bg-slate-800 p-2 rounded-t-lg border border-slate-800 md:flex justify-center items-center relative">
-    <div class="absolute left-4 flex gap-3">
+<div class="m-3 sm:m-4 rounded-md overflow-hidden">
+  <div class="hidden bg-zinc-950 p-2.5 rounded-t-md border border-zinc-800 md:flex justify-center items-center relative">
+    <div class="absolute left-4 flex gap-2">
       <span
         onclick="this.parentNode.parentNode.parentNode.remove()"
-        class="h-3.5 w-3.5 bg-slate-600 rounded-full hover:bg-red-400 transition-colors"
+        class="h-3 w-3 bg-zinc-800 rounded-full hover:bg-red-400 transition-colors cursor-pointer"
       />
       <span
         onclick="this.parentNode.parentNode.parentNode.remove()"
-        class="h-3.5 w-3.5 bg-slate-600 rounded-full hover:bg-yellow-400 transition-colors"
+        class="h-3 w-3 bg-zinc-800 rounded-full hover:bg-yellow-400 transition-colors cursor-pointer"
       />
       <span
         onclick="window.open(this.parentNode.parentNode.parentNode.querySelector('img').src)"
-        class="h-3.5 w-3.5 bg-slate-600 rounded-full hover:bg-lime-400 transition-colors"
+        class="h-3 w-3 bg-zinc-800 rounded-full hover:bg-lime-400 transition-colors cursor-pointer"
       />
     </div>
     {url && (
-      <a href={url} class="bg-slate-700 py-1 px-2 rounded-lg inset-shadow-xs">
+      <a
+        href={url}
+        class="bg-zinc-900 py-1 px-3 rounded text-xs font-mono text-zinc-400 hover:text-white border border-zinc-800 transition-colors flex items-center"
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
@@ -38,7 +41,7 @@ const { image, alt, url } = Astro.props;
           stroke-width="2"
           stroke-linecap="round"
           stroke-linejoin="round"
-          class="lucide lucide-link inline mr-1 h-5 w-5"
+          class="lucide lucide-link inline mr-1.5 h-3.5 w-3.5"
         >
           <>
             <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
@@ -49,5 +52,5 @@ const { image, alt, url } = Astro.props;
       </a>
     )}
   </div>
-  <Image src={image} alt={alt} class="w-full rounded-lg md:rounded-t-none border border-slate-800 md:border-t-0" />
+  <Image src={image} alt={alt} class="w-full rounded-md md:rounded-t-none border border-zinc-800 md:border-t-0" />
 </div>

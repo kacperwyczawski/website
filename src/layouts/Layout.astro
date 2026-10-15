@@ -1,6 +1,5 @@
 ---
 import "../styles/global.css";
-import { Font } from "astro:assets";
 
 interface Props {
   en?: boolean;
@@ -16,11 +15,8 @@ const enUrl = en ? undefined : currentPath.replace(/^\/pl(\/|$)/, "/$1").replace
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <Font cssVariable="--font-inter" preload />
-    <Font cssVariable="--font-sora" preload />
-    <Font cssVariable="--font-fira-code" preload />
     <meta name="generator" content={Astro.generator} />
-    <meta name="theme-color" content="#a21caf" />
+    <meta name="theme-color" content="#09090b" />
     <meta name="description" content="Kacper Wyczawski's website" />
     <meta property="og:title" content="Kacper Wyczawski's website" />
     <meta property="og:description" content="Kacper is a web developer and open-source enthusiast." />
@@ -45,32 +41,45 @@ const enUrl = en ? undefined : currentPath.replace(/^\/pl(\/|$)/, "/$1").replace
     <link rel="sitemap" href="/sitemap-index.xml" />
     <title>Kacper Wyczawski</title>
     <style>
-      html {
-        scroll-behavior: smooth;
+      #lang-select {
+        opacity: 1;
+        pointer-events: auto;
       }
 
-      body {
-        --grid-color: color-mix(in oklch, var(--color-slate-800) 70%, transparent);
-        background-size: 32px 32px;
-        background-image:
-          linear-gradient(to right, var(--grid-color) 1px, transparent 1px),
-          linear-gradient(to bottom, var(--grid-color) 1px, transparent 1px);
-        background-position: 10px 10px;
-        background-attachment: fixed;
+      @supports (animation-timeline: scroll()) {
+        @keyframes show-lang {
+          0% {
+            opacity: 0;
+            pointer-events: none;
+            visibility: hidden;
+          }
+          100% {
+            opacity: 1;
+            pointer-events: auto;
+            visibility: visible;
+          }
+        }
+
+        #lang-select {
+          animation: show-lang linear both;
+          animation-timeline: scroll();
+          animation-range: 0px 80px;
+        }
       }
     </style>
   </head>
-  <body class="selection:bg-fuchsia-700/20 text-neutral-100 flex flex-col bg-slate-900 scheme-dark">
+  <body class="flex min-h-screen flex-col bg-zinc-950 text-zinc-300 selection:bg-sky-500/30 selection:text-sky-100">
     <slot />
     <aside
+      id="lang-select"
       aria-label="Language selection"
-      class="fixed bottom-6 right-6 z-50 flex items-center rounded-full border border-slate-800 bg-slate-850/80 p-1 text-sm font-semibold shadow-lg backdrop-blur-sm text-neutral-100"
+      class="fixed bottom-5 right-5 z-50 inline-flex items-center rounded-lg border border-zinc-800 bg-zinc-950/90 shadow-md backdrop-blur-md text-xs font-mono select-none overflow-hidden divide-x divide-zinc-800"
     >
       <a
         href={plUrl}
         class:list={[
-          "rounded-full px-3 py-1 transition-colors",
-          !en ? "bg-fuchsia-600 text-white pointer-events-none" : "text-neutral-300 hover:text-fuchsia-400",
+          "px-3 py-1.5 flex items-center justify-center leading-none transition-colors",
+          !en ? "bg-zinc-800 text-zinc-100 font-semibold pointer-events-none" : "text-zinc-400 hover:text-zinc-100 hover:bg-zinc-900/60",
         ]}
       >
         PL
@@ -78,8 +87,8 @@ const enUrl = en ? undefined : currentPath.replace(/^\/pl(\/|$)/, "/$1").replace
       <a
         href={enUrl}
         class:list={[
-          "rounded-full px-3 py-1 transition-colors",
-          en ? "bg-fuchsia-600 text-white pointer-events-none" : "text-neutral-300 hover:text-fuchsia-400",
+          "px-3 py-1.5 flex items-center justify-center leading-none transition-colors",
+          en ? "bg-zinc-800 text-zinc-100 font-semibold pointer-events-none" : "text-zinc-400 hover:text-zinc-100 hover:bg-zinc-900/60",
         ]}
       >
         EN
