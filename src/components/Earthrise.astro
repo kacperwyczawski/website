@@ -2,7 +2,7 @@
 ---
 
 <div
-  class="relative flex w-full shrink-0 items-end justify-center overflow-hidden bg-zinc-950 transition-[max-width,margin] duration-300 max-[680px]:h-[calc(100dvh+15vw)] max-[680px]:min-h-[calc(100dvh+15vw)]"
+  class="relative flex w-full shrink-0 items-end justify-center overflow-hidden bg-zinc-950 transition-[max-width,margin] duration-300 max-[680px]:h-[calc(100vh+15vw)] max-[680px]:min-h-[calc(100vh+15vw)]"
   id="frame"
 >
   <canvas
@@ -762,7 +762,7 @@
 
   function update(force = false) {
     if (!canvas) return;
-    const isMobile = window.innerWidth <= 680;
+    const isMobile = window.matchMedia("(max-width: 680px)").matches;
     const aspect = window.innerWidth / window.innerHeight;
     const screenRows = aspect >= 16 / 9 ? 112 : Math.min(180, Math.round(200 / aspect));
     const totalRows = screenRows + 10;
@@ -800,5 +800,11 @@
   if (canvas) {
     update();
     applyParallax();
+
+    requestAnimationFrame(() => update());
+
+    if (document.readyState !== "complete") {
+      window.addEventListener("load", () => update(true), { once: true });
+    }
   }
 </script>
