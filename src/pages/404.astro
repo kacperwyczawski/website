@@ -1,18 +1,15 @@
 ---
 import { Image } from "astro:assets";
-import Container from "@components/Container.astro";
 import LinkArrow from "@components/LinkArrow.astro";
 import yoda from "@images/yoda.png";
 import Layout from "@layouts/Layout.astro";
 ---
 
 <Layout>
-  <div class="max-w-3xl mx-auto mt-4 p-2">
-    <Container>
-      <Image class="w-32 float-start mr-4" src={yoda} alt="Yoda" />
-      <h1 class="font-mono text-6xl">404</h1>
-      <p class="my-2">The page you are looking for, not found it is</p>
-      <LinkArrow link="/" text="Back home, you must go" />
-    </Container>
+  <div class="w-full max-w-2xl mx-auto mt-16 px-4">
+    <Image class="w-32 float-start mr-4" src={yoda} alt="Yoda" />
+    <h1 class="font-heading text-6xl font-bold text-zinc-100">404</h1>
+    <p class="my-3 text-lg font-body text-zinc-400">The page you are looking for, not found it is</p>
+    <LinkArrow link="/" text="Back home, you must go" />
   </div>
 </Layout>

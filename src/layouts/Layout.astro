@@ -1,25 +1,22 @@
 ---
 import "../styles/global.css";
-import { getRelativeLocaleUrl } from "astro:i18n";
-import { Font } from "astro:assets";
 
 interface Props {
   en?: boolean;
 }
 const { en } = Astro.props;
-const lang = en ? "en" : "pl";
+const currentPath = Astro.url.pathname;
+const plUrl = !en ? undefined : `/pl${currentPath === "/" ? "" : currentPath}`;
+const enUrl = en ? undefined : currentPath.replace(/^\/pl(\/|$)/, "/$1").replace(/\/\/+/, "/") || "/";
 ---
 
 <!doctype html>
-<html lang={en ? "en" : "pl"} class="h-full">
+<html lang={en ? "en" : "pl"} class="dark h-full">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <Font cssVariable="--font-inter" preload />
-    <Font cssVariable="--font-sora" preload />
-    <Font cssVariable="--font-fira-code" preload />
     <meta name="generator" content={Astro.generator} />
-    <meta name="theme-color" content="#a21caf" />
+    <meta name="theme-color" content="#09090b" />
     <meta name="description" content="Kacper Wyczawski's website" />
     <meta property="og:title" content="Kacper Wyczawski's website" />
     <meta property="og:description" content="Kacper is a web developer and open-source enthusiast." />
@@ -44,53 +41,58 @@ const lang = en ? "en" : "pl";
     <link rel="sitemap" href="/sitemap-index.xml" />
     <title>Kacper Wyczawski</title>
     <style>
-      html {
-        scroll-behavior: smooth;
+      #lang-select {
+        opacity: 1;
+        pointer-events: auto;
       }
 
-      body {
-        --grid-color: light-dark(
-          color-mix(in oklch, var(--color-neutral-200) 50%, transparent),
-          color-mix(in oklch, var(--color-slate-800) 70%, transparent)
-        );
-        background-size: 32px 32px;
-        background-image:
-          linear-gradient(to right, var(--grid-color) 1px, transparent 1px),
-          linear-gradient(to bottom, var(--grid-color) 1px, transparent 1px);
-        background-position: 10px 10px;
-        background-attachment: fixed;
+      @supports (animation-timeline: scroll()) {
+        @keyframes show-lang {
+          0% {
+            opacity: 0;
+            pointer-events: none;
+            visibility: hidden;
+          }
+          100% {
+            opacity: 1;
+            pointer-events: auto;
+            visibility: visible;
+          }
+        }
+
+        #lang-select {
+          animation: show-lang linear both;
+          animation-timeline: scroll();
+          animation-range: 0px 80px;
+        }
       }
     </style>
   </head>
-  <body class="selection:bg-fuchsia-700/20 dark:text-neutral-100 flex flex-col bg-neutral-50 dark:bg-slate-900 scheme-light-dark">
-    <header class="flex flex-col gap-1 md:flex-row md:justify-between p-4 md:p-8 sticky top-0 z-50 backdrop-blur-sm bg-neutral-50/70 dark:bg-slate-900/70">
-      <h1 class="font-fancy font-semibold text-3xl md:text-4xl dark:text-neutral-100">
-        <a href={getRelativeLocaleUrl(lang, "/")}>Kacper Wyczawski</a>
-      </h1>
-      <nav class="text-2xl leading-[2.5rem] flex gap-4 flex-row-reverse md:flex-row justify-end">
-        <a
-          class="transition text-fuchsia-700 dark:text-fuchsia-400 md:text-black dark:md:text-neutral-100 md:hover:text-fuchsia-700 md:hover:dark:text-fuchsia-400"
-          href={en ? "#Projects" : "#Projekty"}
-        >
-          {en ? "Projects" : "Projekty"}
-        </a>
-        <a
-          class="transition text-fuchsia-700 dark:text-fuchsia-400 md:text-black dark:md:text-neutral-100 md:hover:text-fuchsia-700 md:hover:dark:text-fuchsia-400"
-          href={en ? "#My skills" : "#Umiejętności"}
-        >
-          CV
-        </a>
-        <hr class="w-0 h-10 border-l border-neutral-200" />
-        <div class="text-sm font-semibold flex flex-col dark:text-neutral-100">
-          <a href={"/pl" + Astro.url.pathname} class={!en ? "text-fuchsia-700 dark:text-fuchsia-400 pointer-events-none" : ""}>
-            PL
-          </a>
-          <a href={Astro.url.pathname.substring(3)} class={en ? "text-fuchsia-700 dark:text-fuchsia-400 pointer-events-none" : ""}>
-            EN
-          </a>
-        </div>
-      </nav>
-    </header>
+  <body class="flex min-h-screen flex-col bg-zinc-950 text-zinc-300 selection:bg-sky-500/30 selection:text-sky-100">
     <slot />
+    <aside
+      id="lang-select"
+      aria-label="Language selection"
+      class="fixed bottom-5 right-5 z-50 inline-flex items-center rounded-lg border border-zinc-800 bg-zinc-950/90 shadow-md backdrop-blur-md text-xs font-mono select-none overflow-hidden divide-x divide-zinc-800"
+    >
+      <a
+        href={plUrl}
+        class:list={[
+          "px-3 py-1.5 flex items-center justify-center leading-none transition-colors",
+          !en ? "bg-zinc-800 text-zinc-100 font-semibold pointer-events-none" : "text-zinc-400 hover:text-zinc-100 hover:bg-zinc-900/60",
+        ]}
+      >
+        PL
+      </a>
+      <a
+        href={enUrl}
+        class:list={[
+          "px-3 py-1.5 flex items-center justify-center leading-none transition-colors",
+          en ? "bg-zinc-800 text-zinc-100 font-semibold pointer-events-none" : "text-zinc-400 hover:text-zinc-100 hover:bg-zinc-900/60",
+        ]}
+      >
+        EN
+      </a>
+    </aside>
   </body>
 </html>

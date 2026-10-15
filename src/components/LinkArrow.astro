@@ -9,8 +9,8 @@ const { link, text } = Astro.props;
 
 <a
   href={link}
-  class="group contrast-more:text-black text-neutral-400 text-center my-6 transition-color hover:text-neutral-600 dark:hover:text-neutral-100"
+  class="group font-heading text-sm sm:text-base text-zinc-400 hover:text-white my-6 inline-flex items-center gap-1.5 transition-colors no-underline"
 >
   {text}
-  <span class="group-hover:translate-x-2 inline-block transition-transform">-&gt;</span>
+  <span class="group-hover:translate-x-1.5 inline-block transition-transform duration-150">&rarr;</span>
 </a>

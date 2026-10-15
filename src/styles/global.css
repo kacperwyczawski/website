@@ -1,20 +1,45 @@
 @import "tailwindcss";
+@import "@fontsource-variable/space-grotesk";
+@import "@fontsource-variable/roboto-slab";
 
 /* TODO: when new version of this plugin is released, it will use another import method probably */
 @plugin "@tailwindcss/typography";
 
 @theme {
-  --font-sans: var(--font-inter);
-  --font-fancy: var(--font-sora);
-  --font-mono: var(--font-fira-code);
-  --color-slate-850: #172033;
+  --font-body: "Roboto Slab Variable", Georgia, serif;
+  --font-heading: "Space Grotesk Variable", sans-serif;
 }
 
 @utility list-dash {
   list-style-type: "- ";
 }
 
+body {
+  font-family: var(--font-body);
+  color: var(--color-zinc-300);
+  background-color: var(--color-zinc-950);
+}
+
+.prose {
+  color: var(--color-zinc-400);
+  font-family: var(--font-body);
+}
+
 .prose a {
-  color: inherit;
+  color: var(--color-zinc-100);
+  text-decoration: underline;
+  text-decoration-color: var(--color-zinc-600);
   font-weight: inherit;
+  transition:
+    color 0.15s ease,
+    text-decoration-color 0.15s ease;
+}
+
+.prose a:hover {
+  color: #ffffff;
+  text-decoration-color: #ffffff;
+}
+
+.prose strong {
+  color: var(--color-zinc-100);
 }

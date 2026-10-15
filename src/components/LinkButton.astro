@@ -9,8 +9,7 @@ const { link, text } = Astro.props;
 
 <a
   href={link}
-  class="block group rounded-lg border border-fuchsia-700 hover:bg-fuchsia-700 dark:border-fuchsia-400 dark:hover:bg-fuchsia-400 hover:text-white text-center py-2 px-4 grow transition-colors duration-75 shadow-xs"
+  class="block rounded-md border border-zinc-700 hover:border-zinc-600 bg-zinc-950 hover:bg-zinc-800 text-zinc-300 hover:text-white text-center py-2.5 px-4 grow transition-all duration-150 font-heading text-sm font-medium shadow-sm no-underline"
 >
   {text}
-  <span class="group-hover:translate-x-2 inline-block transition-transform">-&gt;</span>
 </a>
