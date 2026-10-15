@@ -42,29 +42,14 @@ const enUrl = en ? undefined : currentPath.replace(/^\/pl(\/|$)/, "/$1").replace
     <title>Kacper Wyczawski</title>
     <style>
       #lang-select {
-        opacity: 1;
-        pointer-events: auto;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.2s ease;
       }
 
-      @supports (animation-timeline: scroll()) {
-        @keyframes show-lang {
-          0% {
-            opacity: 0;
-            pointer-events: none;
-            visibility: hidden;
-          }
-          100% {
-            opacity: 1;
-            pointer-events: auto;
-            visibility: visible;
-          }
-        }
-
-        #lang-select {
-          animation: show-lang linear both;
-          animation-timeline: scroll();
-          animation-range: 0px 80px;
-        }
+      #lang-select.is-scrolled {
+        opacity: 1;
+        pointer-events: auto;
       }
     </style>
   </head>
@@ -94,5 +79,15 @@ const enUrl = en ? undefined : currentPath.replace(/^\/pl(\/|$)/, "/$1").replace
         EN
       </a>
     </aside>
+
+    <script>
+      const updateLang = () => {
+        const hasArtwork = document.getElementById("frame") !== null;
+        const isScrolled = !hasArtwork || window.scrollY > 60;
+        document.getElementById("lang-select")?.classList.toggle("is-scrolled", isScrolled);
+      };
+      window.addEventListener("scroll", updateLang, { passive: true });
+      updateLang();
+    </script>
   </body>
 </html>
