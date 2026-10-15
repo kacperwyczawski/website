@@ -30,4 +30,7 @@ export default defineConfig({
   devToolbar: {
     enabled: false,
   },
+  build: {
+    inlineStylesheets: "always",
+  },
 });
