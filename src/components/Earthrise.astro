@@ -3,19 +3,19 @@ import { Image } from "astro:assets";
 ---
 
 <div
-  class="relative flex w-full shrink-0 items-end justify-center overflow-hidden bg-zinc-950 transition-[max-width,margin] duration-300 max-[680px]:h-[calc(100vh+15vw)] max-[680px]:min-h-[calc(100vh+15vw)]"
+  class="relative flex w-full shrink-0 items-end justify-center overflow-hidden bg-zinc-950 transition-[max-width,margin] duration-300"
   id="frame"
 >
   <canvas
     id="art"
-    class="mx-auto block aspect-[200/var(--art-rows,122)] h-auto w-screen shrink-0 origin-bottom will-change-transform max-[680px]:absolute max-[680px]:bottom-0 max-[680px]:left-0 max-[680px]:w-[300vw] max-[680px]:max-w-none max-[680px]:[transform:translateX(-51%)]"
+    class="mx-auto block aspect-[200/var(--art-rows,122)] h-auto w-screen shrink-0 origin-bottom will-change-transform"
   ></canvas>
-  <div class="hero-overlay pointer-events-none absolute left-8 top-8 z-5 will-change-transform max-[680px]:left-5 max-[680px]:right-5 max-[680px]:top-5">
+  <div class="hero-overlay pointer-events-none absolute left-8 top-8 z-5 will-change-transform max-sm:left-5 max-sm:right-5 max-sm:top-5">
     <h1 class="m-0 p-0 leading-none" id="heroTitle">
       <Image
         src="/hero-title.svg"
         alt="Kacper Wyczawski"
-        class="block h-auto w-[clamp(280px,54vw,713px)] max-w-[calc(100vw-2.5rem)] select-none pointer-events-none max-[680px]:w-full max-[680px]:max-w-full"
+        class="hero-title block h-auto select-none pointer-events-none"
         width={713}
         height={199}
         priority
@@ -24,6 +24,49 @@ import { Image } from "astro:assets";
     </h1>
   </div>
 </div>
+
+<style>
+  /* Base Desktop Title Size */
+  .hero-title {
+    width: clamp(280px, 54vw, 713px);
+    max-width: calc(100vw - 2.5rem);
+  }
+
+  /* Vertical / Portrait Mode (Tablets & Mobile) */
+  @media (orientation: portrait) {
+    #frame {
+      height: calc(100vh + var(--track-extra, 10vw));
+      min-height: calc(100vh + var(--track-extra, 10vw));
+
+      @media (width <= 680px) {
+        --track-extra: 15vw;
+      }
+    }
+
+    #art {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      max-width: none;
+      width: var(--art-width, 200vw);
+      transform: translateX(var(--art-shift, -35%));
+
+      @media (width <= 680px) {
+        --art-width: 300vw;
+        --art-shift: -51%;
+      }
+    }
+
+    .hero-title {
+      width: clamp(380px, 66vw, 680px);
+      max-width: 100%;
+
+      @media (width <= 680px) {
+        width: 100%;
+      }
+    }
+  }
+</style>
 
 <script>
   const baseMeta = {
@@ -737,6 +780,7 @@ import { Image } from "astro:assets";
     if (currentApp && currentApp.setParallaxOffset && canvas) {
       const frame = document.getElementById("frame");
       const isMobile = window.innerWidth <= 680;
+      const isTabletPortrait = window.innerWidth > 680 && window.innerWidth <= 1024 && window.innerHeight > window.innerWidth;
       const trackHeight = frame ? frame.clientHeight : canvas.clientHeight || 600;
       const progress = Math.min(1.0, scrollY / Math.max(350, trackHeight));
       const rowOffset = progress * 19;
@@ -744,7 +788,7 @@ import { Image } from "astro:assets";
 
       if (heroOverlay) {
         const rowHeightPx = (canvas.clientHeight || canvas.clientWidth * (currentRows / 200) || 600) / Math.max(1, currentRows);
-        const speed = isMobile ? 0.53 : 0.4;
+        const speed = isMobile ? 0.53 : isTabletPortrait ? 0.46 : 0.4;
         const textOffsetY = rowOffset * rowHeightPx * speed;
         heroOverlay.style.transform = `translate3d(0, ${textOffsetY.toFixed(2)}px, 0)`;
       }
@@ -766,6 +810,7 @@ import { Image } from "astro:assets";
   function update(force = false) {
     if (!canvas) return;
     const isMobile = window.matchMedia("(max-width: 680px)").matches;
+    const isTabletPortrait = window.matchMedia("(min-width: 681px) and (max-width: 1024px) and (orientation: portrait)").matches;
     const aspect = window.innerWidth / window.innerHeight;
     const screenRows = aspect >= 16 / 9 ? 112 : Math.min(180, Math.round(200 / aspect));
     const totalRows = screenRows + 10;
@@ -773,7 +818,7 @@ import { Image } from "astro:assets";
 
     document.documentElement.style.setProperty("--art-rows", String(totalRows));
     canvas.style.aspectRatio = `200 / ${totalRows}`;
-    const vWidth = isMobile ? 300 : 100;
+    const vWidth = isMobile ? 300 : isTabletPortrait ? 200 : 100;
     canvas.style.height = `${(totalRows / 200) * vWidth}vw`;
 
     if (totalRows === currentRows && canvas.clientWidth === currentCanvasWidth && !force) return;
