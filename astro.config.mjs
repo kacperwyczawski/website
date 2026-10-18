@@ -24,9 +24,6 @@ export default defineConfig({
     locales: ["pl", "en"],
     defaultLocale: "en",
   },
-  image: {
-    service: passthroughImageService(),
-  },
   devToolbar: {
     enabled: false,
   },
