@@ -2,16 +2,19 @@
 import "../styles/global.css";
 
 interface Props {
-  en?: boolean;
+  lang?: string;
 }
-const { en } = Astro.props;
-const currentPath = Astro.url.pathname;
-const plUrl = !en ? undefined : `/pl${currentPath === "/" ? "" : currentPath}`;
-const enUrl = en ? undefined : currentPath.replace(/^\/pl(\/|$)/, "/$1").replace(/\/\/+/, "/") || "/";
+
+const { lang } = Astro.props;
+const currentLocale = lang ?? Astro.currentLocale ?? "en";
+const isEn = currentLocale === "en";
+
+const plUrl = isEn ? "/pl" : undefined;
+const enUrl = !isEn ? "/" : undefined;
 ---
 
 <!doctype html>
-<html lang={en ? "en" : "pl"} class="dark h-full">
+<html lang={currentLocale} class="dark h-full">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
@@ -65,7 +68,7 @@ const enUrl = en ? undefined : currentPath.replace(/^\/pl(\/|$)/, "/$1").replace
         href={plUrl}
         class:list={[
           "px-3 py-1.5 flex items-center justify-center leading-none transition-colors",
-          !en ? "bg-zinc-800 text-zinc-100 font-semibold pointer-events-none" : "text-zinc-400 hover:text-zinc-100 hover:bg-zinc-900/60",
+          !isEn ? "bg-zinc-800 text-zinc-100 font-semibold pointer-events-none" : "text-zinc-400 hover:text-zinc-100 hover:bg-zinc-900/60",
         ]}
       >
         PL
@@ -74,7 +77,7 @@ const enUrl = en ? undefined : currentPath.replace(/^\/pl(\/|$)/, "/$1").replace
         href={enUrl}
         class:list={[
           "px-3 py-1.5 flex items-center justify-center leading-none transition-colors",
-          en ? "bg-zinc-800 text-zinc-100 font-semibold pointer-events-none" : "text-zinc-400 hover:text-zinc-100 hover:bg-zinc-900/60",
+          isEn ? "bg-zinc-800 text-zinc-100 font-semibold pointer-events-none" : "text-zinc-400 hover:text-zinc-100 hover:bg-zinc-900/60",
         ]}
       >
         EN

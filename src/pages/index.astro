@@ -11,13 +11,7 @@ import Layout from "@layouts/Layout.astro";
 import Earthrise from "@components/Earthrise.astro";
 ---
 
-<script>
-  if (navigator.language.startsWith("pl") && localStorage.getItem("redirected") === null) {
-    localStorage.setItem("redirected", "true");
-    window.location.href = "/pl";
-  }
-</script>
-<Layout en>
+<Layout>
   <Earthrise />
   <main class="w-full max-w-4xl mx-auto px-5 py-16 sm:px-8 sm:py-24">
     <Section heading="About me">
