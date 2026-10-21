@@ -1,15 +1,13 @@
 ---
-import { Image } from "astro:assets";
 import LinkArrow from "@components/LinkArrow.astro";
-import yoda from "@images/yoda.png";
 import Layout from "@layouts/Layout.astro";
 ---
 
 <Layout>
-  <div class="w-full max-w-2xl mx-auto mt-16 px-4">
-    <Image class="w-32 float-start mr-4" src={yoda} alt="Yoda" />
-    <h1 class="font-heading text-6xl font-bold text-zinc-100">404</h1>
-    <p class="my-3 text-lg font-body text-zinc-400">The page you are looking for, not found it is</p>
-    <LinkArrow link="/" text="Back home, you must go" />
+  <div class="w-full max-w-2xl mx-auto mt-24 px-4">
+    <h1 class="font-heading text-4xl sm:text-5xl font-bold tracking-tight text-zinc-100 mb-6">
+      404: <del class="line-through decoration-zinc-500 text-zinc-500">gravity</del> <span class="italic">page</span> not found
+    </h1>
+    <LinkArrow link="/" text="Houston, take me back home" />
   </div>
 </Layout>
