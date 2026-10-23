@@ -14,7 +14,7 @@ const isCurrent = date.includes("present") || date.includes("obecnie");
 
 <li class="relative group pb-8 last:pb-2 list-none">
   <div class="absolute left-4 top-0 -bottom-8 w-px bg-zinc-800 group-first:top-3.5 group-last:bottom-2" aria-hidden="true"></div>
-  <div class="flex items-center gap-3 relative z-10 flex-wrap sm:flex-nowrap">
+  <div class="flex items-center gap-3 relative z-10">
     <span class="inline-flex items-center gap-1.5 px-2.5 py-1 border border-zinc-800 bg-zinc-950 rounded-md text-sm font-heading font-normal text-zinc-400 shadow-sm shrink-0">
       {isCurrent && (
         <span class="relative flex h-2 w-2 shrink-0">
@@ -27,13 +27,17 @@ const isCurrent = date.includes("present") || date.includes("obecnie");
       )}
       {date}
     </span>
-    <span class="text-zinc-500 text-sm font-heading">
+    <span class="text-zinc-500 text-sm font-heading hidden sm:inline">
       {location}
       {type && ` · ${type}`}
     </span>
   </div>
 
   <div class="ml-4 pl-6 pt-3">
+    <div class="text-zinc-500 text-sm font-heading sm:hidden mb-1">
+      {location}
+      {type && ` · ${type}`}
+    </div>
     <div class="text-xl font-heading font-semibold text-zinc-100">
       {head}{" "}
       <a href={tailUrl} class="underline decoration-zinc-600 hover:decoration-white hover:text-white transition-colors">
