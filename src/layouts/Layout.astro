@@ -1,20 +1,9 @@
 ---
 import "../styles/global.css";
-
-interface Props {
-  lang?: string;
-}
-
-const { lang } = Astro.props;
-const currentLocale = lang ?? Astro.currentLocale ?? "en";
-const isEn = currentLocale === "en";
-
-const plUrl = isEn ? "/pl" : undefined;
-const enUrl = !isEn ? "/" : undefined;
 ---
 
 <!doctype html>
-<html lang={currentLocale} class="dark h-full">
+<html lang="en" class="dark h-full">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
@@ -44,54 +33,8 @@ const enUrl = !isEn ? "/" : undefined;
     <link rel="preload" href="/hero-title.svg" as="image" type="image/svg+xml" fetchpriority="high" />
     <link rel="sitemap" href="/sitemap-index.xml" />
     <title>Kacper Wyczawski</title>
-    <style>
-      #lang-select {
-        opacity: 0;
-        pointer-events: none;
-        transition: opacity 0.2s ease;
-      }
-
-      #lang-select.is-scrolled {
-        opacity: 1;
-        pointer-events: auto;
-      }
-    </style>
   </head>
   <body class="flex min-h-screen flex-col bg-zinc-950 text-zinc-300 selection:bg-sky-500/30 selection:text-sky-100">
     <slot />
-    <aside
-      id="lang-select"
-      aria-label="Language selection"
-      class="fixed bottom-5 right-5 z-50 inline-flex items-center rounded-lg border border-zinc-800 bg-zinc-950/90 shadow-md backdrop-blur-md text-xs font-mono select-none overflow-hidden divide-x divide-zinc-800"
-    >
-      <a
-        href={plUrl}
-        class:list={[
-          "px-3 py-1.5 flex items-center justify-center leading-none transition-colors",
-          !isEn ? "bg-zinc-800 text-zinc-100 font-semibold pointer-events-none" : "text-zinc-400 hover:text-zinc-100 hover:bg-zinc-900/60",
-        ]}
-      >
-        PL
-      </a>
-      <a
-        href={enUrl}
-        class:list={[
-          "px-3 py-1.5 flex items-center justify-center leading-none transition-colors",
-          isEn ? "bg-zinc-800 text-zinc-100 font-semibold pointer-events-none" : "text-zinc-400 hover:text-zinc-100 hover:bg-zinc-900/60",
-        ]}
-      >
-        EN
-      </a>
-    </aside>
-
-    <script>
-      const updateLang = () => {
-        const hasArtwork = document.getElementById("frame") !== null;
-        const isScrolled = !hasArtwork || window.scrollY > 60;
-        document.getElementById("lang-select")?.classList.toggle("is-scrolled", isScrolled);
-      };
-      window.addEventListener("scroll", updateLang, { passive: true });
-      updateLang();
-    </script>
   </body>
 </html>

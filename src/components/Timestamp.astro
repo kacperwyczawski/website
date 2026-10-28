@@ -9,7 +9,7 @@ export interface Props {
 }
 
 const { date, location, head, tail, tailUrl, type } = Astro.props;
-const isCurrent = date.includes("present") || date.includes("obecnie");
+const isCurrent = date.includes("present");
 ---
 
 <li class="relative group pb-8 last:pb-2 list-none">

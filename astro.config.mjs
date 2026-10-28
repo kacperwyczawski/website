@@ -1,6 +1,6 @@
 import sitemap from "@astrojs/sitemap";
 import tailwindcss from "@tailwindcss/vite";
-import { defineConfig, passthroughImageService } from "astro/config";
+import { defineConfig } from "astro/config";
 
 // https://astro.build/config
 export default defineConfig({
@@ -11,19 +11,8 @@ export default defineConfig({
   integrations: [
     sitemap({
       customPages: ["https://autocut.wyczawski.dev/", "https://arx.wyczawski.dev/"],
-      i18n: {
-        defaultLocale: "en",
-        locales: {
-          en: "en-US",
-          pl: "pl-PL",
-        },
-      },
     }),
   ],
-  i18n: {
-    locales: ["pl", "en"],
-    defaultLocale: "en",
-  },
   devToolbar: {
     enabled: false,
   },
